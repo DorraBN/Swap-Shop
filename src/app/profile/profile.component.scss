@@ -14,6 +14,51 @@
     margin-top: -14px;
 
 }
+/* Style pour le menu latéral */
+ion-menu {
+    --ion-background-color: #f4f4f4; /* Couleur de fond */
+    --ion-width: 250px; /* Largeur du menu */
+  }
+  
+  ion-header {
+    background-color: #007bff; /* Couleur de fond de l'en-tête */
+    color: white; /* Couleur du texte de l'en-tête */
+  }
+  
+  ion-toolbar {
+    --ion-color-base: #007bff; /* Couleur de base de la barre d'outils */
+  }
+  
+  ion-title {
+    font-size: 1.5rem; /* Taille de police du titre */
+  }
+  
+  ion-content {
+    height: calc(100% - 56px); /* Hauteur du contenu, ajustée pour l'en-tête */
+  }
+  
+  ion-list {
+    padding: 0; /* Supprimer le remplissage par défaut */
+  }
+  
+  ion-item {
+    padding: 10px 20px; /* Remplissage intérieur */
+    font-size: 1.1rem; /* Taille de police */
+    color: #333; /* Couleur du texte */
+  }
+  
+  ion-item:hover {
+    background-color: #ddd; /* Couleur de fond au survol */
+  }
+  
+  ion-item:first-child {
+    border-top: none; /* Supprimer la bordure supérieure pour le premier élément */
+  }
+  
+  ion-item:last-child {
+    border-bottom: none; /* Supprimer la bordure inférieure pour le dernier élément */
+  }
+  
 
 .card-img-top {
     width: 100%;

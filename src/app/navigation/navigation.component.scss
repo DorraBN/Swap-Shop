@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+
+body{
+	background: #FFC308;
+	font-family: nunito;
+}
+
+.container{
+	height: 100%;
+	width: 100%;
+	text-align:center;
+}
+
+.bottom-navigation-item {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  .bottom-navigation-item div {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px; /* Ajustez cette valeur selon vos besoins */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+ 
+  
+  
+  
+  .bottom-navigation-item div.active {
+    background: linear-gradient(90deg, #C7C5F4, #776BCC);
+    margin-bottom: 10px; /* Espace blanc en bas */
+    padding-bottom: 20px; /* Réduisez le padding en bas pour pousser le contenu vers le haut */
+    font-size: 40px;
+    border: 5px solid #fff; /* Ajoutez une bordure autour du contour */
+    border-radius: 50%; /* Ajoutez le border-radius pour créer un cercle */
+  }
+  
+  
+  .bottom-navigation-item ion-icon {
+    font-size: 24px;
+    color: white;
+  }
+  
+.bottom-navigation{
+	width: 400px;
+	max-width: 100%;
+	
+    background: linear-gradient(90deg, #312f49, #d8d7df);
+	background-size: 1000px 1000px;
+
+	margin: 30% auto;
+	
+	border-radius: 50px;
+	box-shadow: 0 0 25px rgba(0,0,0,.15);
+	display: flex;
+	padding: 0px 20px;
+	
+}
+
+.bottom-navigation-item{
+		color: #777;
+    width: 25%;
+    transition: .25s linear;
+    white-space: pre-line;
+    height: 70px;
+		margin: -6px 0;
+}
+.bottom-navigation-item i{
+	font-size: 20px;
+	transition-property: all;
+	transition-duration: .5s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+	
+}
+.bottom-navigation-item label{
+	font-weight: 600;
+	font-size: 11px;
+ 	display: none;
+	transition-property: all;
+	transition-duration: .5s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+	
+}
+.bars{
+    font-size: 24px;
+    padding-top: 10px;
+    margin-top: 15px;
+}
+
+.bottom-navigation-item.active{
+	& i{
+		color: #FFC308;
+		font-size: 16px;
+	}
+	
+	& label{
+		display: block;
+		color: #FFC308;
+	}
+}
+
+.bottom-navigation-item{
+	& i{
+		color: #2a1cf1;
+		font-size: 16px;
+	}
+	
+	& label{
+		display: block;
+		color: #0814ff;
+	}
+}
+
+p{
+	position: absolute;
+	bottom: 0;
+	
+	& a{
+		text-decoration: none;
+	}
+}
+
+
+@media only screen and (max-width: 400px)
+{
+	body{
+		padding: 0;
+		margin:0;
+	}
+	.container{
+		margin: 0 20px 0px 0;
+	}
+	.bottom-navigation{
+		display: block;
+		max-width: 25% !important;
+		width: auto !important;
+		margin: 50% 0;
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+		padding: 20px 16px;
+	}
+	
+	.bottom-navigation-item{
+		margin: -6px auto;
+		padding: 0;
+	}
+	.bottom-navigation-item.active label{
+			display: none; 
+	}
+}

@@ -1,0 +1,41 @@
+<!-- Importer les styles de Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-vQbC7jo2Psdheux1lSnfvkDMNfU/nZkzVsw6A6fGFG5AdK2GDuPAdD/WDJ4IzYhqkvX2SdprnE17kS0E9Ye9kQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- Barre de navigation -->
+<div class="container">
+  <div class="bottom-navigation">
+    <!-- Item Home -->
+    <div class="bottom-navigation-item" (click)="selectNavItem('home')">
+      <div [ngClass]="{'active': selectedNavItem === 'home'}">
+        <ion-icon name="home" class="bars"></ion-icon>
+      </div>
+    </div>
+    <!-- Item Notification -->
+    <div class="bottom-navigation-item" (click)="selectNavItem('notifications')">
+      <div [ngClass]="{'active': selectedNavItem === 'notifications'}">
+        <ion-icon name="notifications" class="bars"></ion-icon>
+      </div>
+    </div>
+    <!-- Item Search -->
+    <div class="bottom-navigation-item" (click)="selectNavItem('search')">
+      <div [ngClass]="{'active': selectedNavItem === 'search'}">
+        <ion-icon name="search" class="bars"></ion-icon>
+      </div>
+    </div>
+    <!-- Item Settings -->
+    <div class="bottom-navigation-item" (click)="selectNavItem('cart')">
+      <div [ngClass]="{'active': selectedNavItem === 'cart'}">
+        <ion-icon name="cart-outline" class="bars"></ion-icon>
+      </div>
+    </div>
+    <!-- Item Profile -->
+    <div class="bottom-navigation-item" (click)="selectNavItem('person')">
+      <div [ngClass]="{'active': selectedNavItem === 'person'}">
+        <ion-icon name="person" class="bars"></ion-icon>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Source d'inspiration -->
+<p>Inspiration By <a href="https://dribbble.com/shots/7801617-Bottom-Bar-Navigation-Pattern">Franck Helaine</a></p>
