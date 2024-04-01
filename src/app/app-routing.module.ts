@@ -3,12 +3,10 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component'; // Importez le composant de connexion
 import { ProfileComponent } from './profile/profile.component';
 import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
-  {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
-  },
+
   {
     path: 'login', // Chemin pour le composant de connexion
     component: LoginComponent, // Composant de connexion
@@ -16,6 +14,10 @@ const routes: Routes = [
   {
     path: 'profile', // Chemin pour le composant de connexion
     component: ProfileComponent, // Composant de connexion
+  },
+  {
+    path: 'signup', // Chemin pour le composant de connexion
+    component: SignupComponent, // Composant de connexion
   },
   {
     path: 'sign', // Chemin pour le composant de connexion
