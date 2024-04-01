@@ -90,7 +90,7 @@ body {
 
 .login {
 	width: 320px;
-	padding: 30px;
+	padding: 20px;
 	padding-top: 10px;
     color: #fff;
 }
@@ -115,7 +115,7 @@ body {
     width: 160px; /* Définissez la largeur souhaitée */
     height: 120px; /* Gardez la hauteur proportionnelle à la largeur */
     display: block; /* Assurez-vous que l'image est affichée en tant que bloc */
-    margin-top: 50px; /* Définissez la marge supérieure pour l'aligner en haut */
+    margin-top: 45px; /* Définissez la marge supérieure pour l'aligner en haut */
     margin-left: 100px; /* Décalage vers la droite */
   }
   
@@ -176,6 +176,16 @@ body {
 .text1{
     margin-left: 70px;
     font-size: 10px;
+}
+.ion-list-small {
+    font-size: 18px; 
+    background-color: rebeccapurple;
+    margin-top: 10px;/* Adjust the font size as needed */
+  }
+  
+.reg{
+font-size: 10px;
+
 }
 .text3{
 

@@ -29,6 +29,16 @@
 				</div>
      
         <input type="file" accept="image/*" class="image" id="profileImage" name="profileImage">
+        <ion-list class="ion-list-small">
+          <ion-item class="reg">
+            <ion-select placeholder="register as" [multiple]="false">
+              <ion-select-option value="apples">buyer</ion-select-option>
+              <ion-select-option value="oranges">seller</ion-select-option>
+              <ion-select-option value="bananas">both</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+        
  
 				<button class="button login__submit">
           <ion-icon name="log-in" class="button__icon"></ion-icon>
