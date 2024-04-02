@@ -31,11 +31,11 @@
     <!-- Item Profile -->
     <div class="bottom-navigation-item" (click)="selectNavItem('person')">
       <div [ngClass]="{'active': selectedNavItem === 'person'}">
-        <ion-icon name="person" class="bars"></ion-icon>
+        <ion-icon name="person" class="bars" (click)="goToProfile()"></ion-icon>
+
       </div>
     </div>
   </div>
 </div>
 
-<!-- Source d'inspiration -->
-<p>Inspiration By <a href="https://dribbble.com/shots/7801617-Bottom-Bar-Navigation-Pattern">Franck Helaine</a></p>
+

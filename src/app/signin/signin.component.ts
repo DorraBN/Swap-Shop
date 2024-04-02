@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -8,6 +9,11 @@ import { Component, OnInit } from '@angular/core';
 
 
   export class SigninComponent {
+    constructor(private router: Router) {}
+
+    redirectToHome2() {
+      this.router.navigate(['/home2']); // Assurez-vous que '/home2' correspond au chemin vers votre page "home2"
+    }
     email: string = '';
     password: string = '';
   
