@@ -10,6 +10,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { Home2Component } from './home2/home2.component';
 import { AllComponent } from './all/all.component';
 import { EditComponent } from './edit/edit.component';
+import { SearcheComponent } from './searche/searche.component';
 
 const routes: Routes = [
 
@@ -33,6 +34,7 @@ const routes: Routes = [
     path: 'signup', // Chemin pour le composant de connexion
     component: SignupComponent, // Composant de connexion
   },
+  
   {
     path: 'sign', // Chemin pour le composant de connexion
     component:SigninComponent, // Composant de connexion
@@ -48,6 +50,10 @@ const routes: Routes = [
   {
     path: 'edit', // Chemin pour le composant de connexion
     component:EditComponent, // Composant de connexion
+  },
+  {
+    path: 'search', // Chemin pour le composant de connexion
+    component:SearcheComponent, // Composant de connexion
   },
   
   

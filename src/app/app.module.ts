@@ -14,9 +14,10 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { Home2Component } from './home2/home2.component';
 import { AllComponent } from './all/all.component';
 import { EditComponent } from './edit/edit.component';
+import { SearcheComponent } from './searche/searche.component';
 
 @NgModule({
-  declarations: [AppComponent, SigninComponent, SignupComponent, ProfileComponent, NavigationComponent,Home2Component, AllComponent, EditComponent],
+  declarations: [AppComponent, SigninComponent, SignupComponent, ProfileComponent, NavigationComponent,Home2Component, AllComponent, EditComponent, SearcheComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,  FormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
