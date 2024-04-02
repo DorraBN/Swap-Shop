@@ -10,17 +10,24 @@
   
   .card-row {
     display: flex;
+    margin-top: 15px;
   }
-  .search-icon {
-    
-    left: 90px; /* Ajustez cette valeur selon l'espacement désiré entre le bord gauche du conteneur et l'icône */
-    top: 50%;
-    transform: translateY(-50%);
-  }
+ .arrow{
+    margin-top: 18px;
+    color: white;
+    font-size: 30px;
+ }
+h2{
+ 
+    font-size: 20px;
+    color: white;
+    margin-left: 15px;
+}
+
   .im {
     margin-top: 5px;
-    width: 50px; /* Définir la largeur souhaitée pour les images */
-    height: 50px; /* Définir la hauteur souhaitée pour les images */
+    width: 85px; /* Définir la largeur souhaitée pour les images */
+    height: 85px; /* Définir la hauteur souhaitée pour les images */
     border-radius: 50%; /* Créer un cercle en utilisant un rayon de bordure égal à la moitié de la largeur/hauteur */
     border: 2px solid blue;
     background-color: #ae7ceb; /* Ajouter une bordure bleue de 2px */
@@ -88,7 +95,8 @@
   
   .container1 {
     background: linear-gradient(90deg, #C7C5F4, #776BCC);
-    height: 90px;
+    height: 80px;
+    display: flex;
   }
   
   .bars1 {
@@ -114,23 +122,7 @@
     border-radius: 50px;
     
   }
-  /* Modifie la taille de la police */
-ion-searchbar {
-    --ion-font-size: 16px;
-  }
-  
-  /* Modifie le remplissage */
-  ion-searchbar {
-    --padding-start: 20px; /* Remplissage à gauche */
-    --padding-end: 20px; /* Remplissage à droite */
-    --padding-top: 12px; /* Remplissage en haut */
-    --padding-bottom: 12px; /* Remplissage en bas */
-  }
-  
-  /* Modifie le rayon de bordure */
-  ion-searchbar {
-    --border-radius: 20px;
-  }
+
   
 
   .p2{

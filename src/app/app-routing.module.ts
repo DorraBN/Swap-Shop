@@ -4,10 +4,12 @@ import { LoginComponent } from './login/login.component'; // Importez le composa
 import { ProfileComponent } from './profile/profile.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
-import { Home1Component } from './Home1/home1.component';
+import { Home1Component } from './home1/home1.component';
 
 import { NavigationComponent } from './navigation/navigation.component';
 import { Home2Component } from './home2/home2.component';
+import { AllComponent } from './all/all.component';
+import { EditComponent } from './edit/edit.component';
 
 const routes: Routes = [
 
@@ -33,12 +35,21 @@ const routes: Routes = [
   },
   {
     path: 'sign', // Chemin pour le composant de connexion
-    component: SigninComponent, // Composant de connexion
+    component:SigninComponent, // Composant de connexion
   },
   {
     path: 'nav', // Chemin pour le composant de connexion
     component:NavigationComponent, // Composant de connexion
   },
+  {
+    path: 'all', // Chemin pour le composant de connexion
+    component:AllComponent, // Composant de connexion
+  },
+  {
+    path: 'edit', // Chemin pour le composant de connexion
+    component:EditComponent, // Composant de connexion
+  },
+  
   
   {
     path: '', // Redirection par défaut vers la page d'accueil

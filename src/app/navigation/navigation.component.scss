@@ -21,13 +21,13 @@ body{
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.2s ease;
   }
  
   
   
   
-  .bottom-navigation-item div.active {
+  .bottom-navigation-item div:hover {
     background: linear-gradient(90deg, #C7C5F4, #776BCC);
     margin-bottom: 10px; /* Espace blanc en bas */
     padding-bottom: 20px; /* Réduisez le padding en bas pour pousser le contenu vers le haut */
