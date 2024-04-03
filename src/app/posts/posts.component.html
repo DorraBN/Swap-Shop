@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="container1">
+    <ion-icon name="arrow-back" class="arrow" (click)="gotoprofile()"></ion-icon>
+    <h2>My posts</h2>
+    <ion-icon name="add" class="arrow" (click)="gotonew()"></ion-icon>
+  </div>
+  <div class="post-container">
+    <!-- Header of post -->
+    <div class="post-header">
+      <!-- Image de la personne qui publie la poste -->
+      <img src="https://i.imgur.com/8RKXAIV.jpg" alt="Profile Picture">
+      <!-- Nom de la personne -->
+      <span>{{ post.author }}</span>
+    </div>
+
+    <!-- Image de la poste -->
+    <img src="{{ post.image }}" alt="Post Image">
+
+    <!-- Caption for the post -->
+    <div class="post-caption">
+      <strong>{{ post.caption }}</strong>
+    </div>
+
+    <!-- Likes and Comments -->
+    <div class="post-interactions">
+      <!-- Likes -->
+      <div class="likes">
+        <button (click)="toggleLike()">
+          <ion-icon [name]="isLiked ? 'heart' : 'heart-outline'"></ion-icon>
+        </button>
+        <span>{{ post.likes }} Likes</span>
+      </div>
+      <!-- Comments -->
+      <div class="comments">
+        <button (click)="toggleComment()">
+          <ion-icon name="chatbubble"></ion-icon>
+        </button>
+        <span>{{ post.comments }} Comments</span>
+      </div>
+    </div>
+
+    <!-- Write a comment -->
+    <div *ngIf="isCommentVisible" class="write-comment">
+      <input type="text" placeholder="Add a comment...">
+      <button><ion-icon name="paper-plane"></ion-icon></button>
+    </div>
+  </div>
+
+  <!-- Divider -->
+  <hr>
+
+  <!-- Repetitive Posts -->
+  <div class="repetitive-posts">
+    <!-- Repeating Posts Here -->
+  </div>
+</div>

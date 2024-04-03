@@ -12,6 +12,7 @@ import { AllComponent } from './all/all.component';
 import { EditComponent } from './edit/edit.component';
 import { SearcheComponent } from './searche/searche.component';
 import { NewpostComponent } from './newpost/newpost.component';
+import { PostsComponent } from './posts/posts.component';
 
 const routes: Routes = [
 
@@ -47,6 +48,10 @@ const routes: Routes = [
   {
     path: 'all', // Chemin pour le composant de connexion
     component:AllComponent, // Composant de connexion
+  },
+  {
+    path: 'post', // Chemin pour le composant de connexion
+    component:PostsComponent, // Composant de connexion
   },
   {
     path: 'new', // Chemin pour le composant de connexion

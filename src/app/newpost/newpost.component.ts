@@ -13,6 +13,9 @@ export class NewpostComponent  implements OnInit {
   goToHome2() {
     this.router.navigate(['/profile']); // Assurez-vous que '/home2' correspond au chemin vers votre page "home2"
   }
+  goTopost() {
+    this.router.navigate(['/post']); // Assurez-vous que '/home2' correspond au chemin vers votre page "home2"
+  }
 
   ngOnInit() {}
 

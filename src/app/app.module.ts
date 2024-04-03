@@ -16,10 +16,11 @@ import { Home2Component } from './home2/home2.component';
 import { AllComponent } from './all/all.component';
 import { EditComponent } from './edit/edit.component';
 import { SearcheComponent } from './searche/searche.component';
+import { PostsComponent } from './posts/posts.component';
 
 
 @NgModule({
-  declarations: [AppComponent, SigninComponent, SignupComponent, ProfileComponent, NavigationComponent,Home2Component, AllComponent, EditComponent, SearcheComponent, NewpostComponent],
+  declarations: [AppComponent, SigninComponent, SignupComponent, ProfileComponent, NavigationComponent,Home2Component, AllComponent, EditComponent, SearcheComponent, NewpostComponent, PostsComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,  FormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

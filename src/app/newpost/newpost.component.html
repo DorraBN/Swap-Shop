@@ -3,7 +3,7 @@
 </head><div class="container">
   <div class="container1">
   
-      <ion-icon name="arrow-back" class="arrow"  (click)="goToHome2()"></ion-icon>
+      <ion-icon name="arrow-back" class="arrow"  (click)="goTopost()"></ion-icon>
   
     <h2>New post</h2>  <ion-icon name="document-text-outline" class="post"></ion-icon>
   </div>
@@ -30,7 +30,7 @@
     <div class="buttons">
      
       <button class="m-t-10   btn1 btn-secondary btn-md btn-rounded" data-abc="true" >Cancel</button>
-      <button class="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true" >Publish</button>
+      <button class="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded" data-abc="true"(click)="goTopost()" >Publish</button>
 
 
     </div>
