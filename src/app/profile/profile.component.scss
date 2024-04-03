@@ -1,6 +1,7 @@
 .container {
     max-width: 320px;
     margin: 0 auto;
+  
     
 }
 
@@ -82,6 +83,7 @@ a{
     
     overflow: hidden;
 }
+
 
 .btn {
     display: inline-block;
@@ -166,9 +168,9 @@ a{
     cursor: pointer;
   }
   .sidebar {
-    height: 82%;
+    height: 73%;
     width: 0;
-   margin-top: -10px;
+   margin-top: 20px;
     z-index: 1;
 position: fixed;
     left: 160;

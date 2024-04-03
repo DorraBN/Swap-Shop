@@ -10,9 +10,7 @@ import { MenuController } from '@ionic/angular';
 export class ProfileComponent implements OnInit {
 
   constructor(private menu: MenuController,private router: Router) { }
-  goToHome2() {
-    this.router.navigate(['/home2']); // Assurez-vous que '/home2' correspond au chemin vers votre page "home2"
-  }
+  
   ngOnInit() {}
 
   toggleMenu() {

@@ -7,6 +7,7 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SigninComponent } from './signin/signin.component';
+import { NewpostComponent } from './newpost/newpost.component';
 import { FormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -16,8 +17,9 @@ import { AllComponent } from './all/all.component';
 import { EditComponent } from './edit/edit.component';
 import { SearcheComponent } from './searche/searche.component';
 
+
 @NgModule({
-  declarations: [AppComponent, SigninComponent, SignupComponent, ProfileComponent, NavigationComponent,Home2Component, AllComponent, EditComponent, SearcheComponent],
+  declarations: [AppComponent, SigninComponent, SignupComponent, ProfileComponent, NavigationComponent,Home2Component, AllComponent, EditComponent, SearcheComponent, NewpostComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,  FormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

@@ -1,0 +1,202 @@
+.container {
+    position: relative;
+    height: 100vh;
+    width: 350px;
+    margin-left: 500px;
+    margin-top: 10px;
+    box-shadow: 0px 0px 20px #5C5696;
+    background-color: #dedde0;
+  }
+  
+ 
+ .arrow{
+    margin-top: 18px;
+    color: white;
+    font-size: 30px;
+ }
+h2{
+ 
+    font-size: 20px;
+    color: white;
+    margin-left: 15px;
+}
+
+  .im {
+    margin-top: 5px;
+    width: 85px; /* Définir la largeur souhaitée pour les images */
+    height: 85px; /* Définir la hauteur souhaitée pour les images */
+    border-radius: 50%; /* Créer un cercle en utilisant un rayon de bordure égal à la moitié de la largeur/hauteur */
+    border: 2px solid blue;
+    background-color: #ae7ceb; /* Ajouter une bordure bleue de 2px */
+    object-fit: cover; /* Pour s'assurer que l'image couvre tout le cercle */
+  }
+  
+  .btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    margin-left: 120px;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    color: #fff;
+    width: 30%;
+}
+label{
+    margin-right: 230px;
+    color: rgb(125, 21, 222);
+    font-size: 22px;
+}
+
+input:focus{
+    border-color: #2a0654;
+    border: 2px solid;
+}
+textarea:focus{
+    border-color: #2a0654;
+    border: 2px solid;
+}
+
+textarea{
+    margin-right: 20px;
+}
+.btn1 {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+   background-color: #caaaf0;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    color: #fff;
+}
+
+
+.btn-primary {
+    background: linear-gradient(90deg, #090911, #7060e9);
+}
+
+.btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+.btn-md {
+    padding: 0.45rem 0.85rem;
+}
+
+.btn-rounded {
+    border-radius: 20px;
+}
+
+ 
+
+
+
+.post{
+    color: white;
+    font-size: 18px;
+    margin-left: 170px;
+    margin-top: 17px;
+}
+.form {
+    margin-left: 15px;
+    margin-top: 75px;
+    justify-content: center;
+    text-align: center;
+}
+
+.info {
+    width: 90%;
+    padding: 10px;
+    margin-right: 20px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    height: 50px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #5C5696;
+}
+
+.for {
+    width: calc(100% - 110px - 20px);
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    outline: none;
+    margin-bottom: 80px;
+}
+
+input {
+    width: calc(100% - 20px);
+}
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+  .in{
+    font-size: 50px;
+    color: #5C5696;
+  }
+  img {
+    height: 30%;
+    width: 100%;
+  }
+  
+  .p1 {
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .container1 {
+    background: linear-gradient(90deg, #C7C5F4, #776BCC);
+    height: 80px;
+    display: flex;
+  }
+  
+  .bars1 {
+    font-size: 29px;
+    margin-top: -5px;
+    color: white;
+  }
+  
+  .bars {
+    margin-left: 280px;
+    color: white;
+    font-size: 21px;
+  }
+  
+  .search-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  ion-searchbar {
+    padding: 8px 12px;
+
+    border-radius: 50px;
+    
+  }
+
+  
+
+  .p2{
+    font-size: 10px;
+    color: #7f34db;
+    margin-left: 310px;
+    margin-top: -25px;
+  }
