@@ -17,10 +17,11 @@ import { AllComponent } from './all/all.component';
 import { EditComponent } from './edit/edit.component';
 import { SearcheComponent } from './searche/searche.component';
 import { PostsComponent } from './posts/posts.component';
-
+import { MeublesComponent } from './meubles/meubles.component';
+import { DetailsComponent } from './Details/details.component';
 
 @NgModule({
-  declarations: [AppComponent, SigninComponent, SignupComponent, ProfileComponent, NavigationComponent,Home2Component, AllComponent, EditComponent, SearcheComponent, NewpostComponent, PostsComponent],
+  declarations: [AppComponent, SigninComponent, SignupComponent, ProfileComponent, NavigationComponent,Home2Component, AllComponent, EditComponent, SearcheComponent, NewpostComponent, PostsComponent, MeublesComponent, DetailsComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,  FormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

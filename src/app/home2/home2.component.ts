@@ -13,6 +13,9 @@ export class Home2Component implements OnInit {
   onSearchFocus() {
     this.router.navigate(['/search']);
   }
+  gotomeuble() {
+    this.router.navigate(['/meubles']);
+  }
   ngOnInit() {}
 selectedNavItem: string | undefined;
 
