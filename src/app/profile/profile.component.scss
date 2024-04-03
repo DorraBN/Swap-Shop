@@ -71,7 +71,9 @@ ion-menu {
     padding: 20px;
 }
 
-
+a{
+    text-decoration: none;
+}
 
 .pro-img img {
     width: 110px;
@@ -153,13 +155,51 @@ ion-menu {
     padding-top: 3rem;
     padding-bottom: 3rem;
 }
-
+.arrow{
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 185px;
+    margin-top: -280px;
+}
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+  }
+  .sidebar {
+    height: 82%;
+    width: 0;
+   margin-top: -10px;
+    z-index: 1;
+position: fixed;
+    left: 160;
+    background-color: #6d0df4;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidebar-open {
+    width: 250px;
+  }
 .px-2 {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
 }
 .pro-img {
-    margin-top: -55px; /* Ajout de cette propriété pour ajuster la position de l'image pro-img */
+    margin-top: -65px; /* Ajout de cette propriété pour ajuster la position de l'image pro-img */
 }
 .card-body {
     padding: 0; /* Modification de cette propriété pour éliminer le padding */

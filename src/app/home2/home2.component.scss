@@ -26,7 +26,10 @@
     background-color: #ae7ceb; /* Ajouter une bordure bleue de 2px */
     object-fit: cover; /* Pour s'assurer que l'image couvre tout le cercle */
   }
-  
+  a{
+    text-decoration: none;
+}
+
   .card {
     width: 50%;
     margin: 3px;

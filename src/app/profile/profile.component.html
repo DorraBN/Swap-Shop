@@ -6,7 +6,7 @@
       <div class="col-md-8">
           <div class="card">
               <!-- Ajout de l'icône de trois tirets -->
-              <ion-icon name="menu-outline" class="bars"></ion-icon>
+              <span class="menu-icon" (click)="toggleSidebar()">&#9776;</span>
 
 
               <img class="card-img-top" src="assets/sales.jpg" alt="Card image cap">
@@ -35,5 +35,21 @@
               </div>
           </div>
       </div>
-  </div>
-</div>
+      <div class="sidebar" [ngClass]="{'sidebar-open': sidebarOpen}">
+        <div class="sidebar" [ngClass]="{'sidebar-open': sidebarOpen}">
+          <ion-icon name="arrow-forward" class="arrow" (click)="goToHome2()"></ion-icon>
+          <div class="pro-img">
+            <img src="https://i.imgur.com/8RKXAIV.jpg" alt="user">
+        </div>
+        <h3 class="m-b-0">Brad Macullam</h3>
+          <a href="/home2"><ion-icon name="home"></ion-icon> home</a><a href=""><ion-icon name="stats-chart"></ion-icon> Statistics</a>
+
+          <a href="#"><ion-icon name="mail"></ion-icon> Messages</a>
+          <a href="#"><ion-icon name="settings"></ion-icon> Settings</a>
+          <a href="#"><ion-icon name="log-out"></ion-icon> Logout</a>
+        </div>
+        
+
+  
+
+
