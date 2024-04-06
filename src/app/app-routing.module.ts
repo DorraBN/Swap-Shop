@@ -14,7 +14,7 @@ import { SearcheComponent } from './searche/searche.component';
 import { NewpostComponent } from './newpost/newpost.component';
 import { PostsComponent } from './posts/posts.component';
 import { MeublesComponent } from './meubles/meubles.component';
-import { DetailsComponent } from './Details/details.component';
+
 
 const routes: Routes = [
 
@@ -47,14 +47,12 @@ const routes: Routes = [
     path: 'nav', // Chemin pour le composant de connexion
     component:NavigationComponent, // Composant de connexion
   },
+ 
   {
     path: 'meubles', // Chemin pour le composant de connexion
     component:MeublesComponent, // Composant de connexion
   },
-  {
-    path: 'details', // Chemin pour le composant de connexion
-    component:DetailsComponent, // Composant de connexion
-  },
+ 
   {
     path: 'all', // Chemin pour le composant de connexion
     component:AllComponent, // Composant de connexion
@@ -81,6 +79,10 @@ const routes: Routes = [
     path: '', // Redirection par défaut vers la page d'accueil
     redirectTo: 'home',
     pathMatch: 'full'
+  },
+  {
+    path: 'plus',
+    loadChildren: () => import('./plus/plus.module').then( m => m.PlusPageModule)
   },
 ];
 
