@@ -22,7 +22,7 @@ import { DetailsComponent } from './Details/details.component';
 
 @NgModule({
   declarations: [AppComponent, SigninComponent, SignupComponent, ProfileComponent, NavigationComponent,Home2Component, AllComponent, EditComponent, SearcheComponent, NewpostComponent, PostsComponent, MeublesComponent, DetailsComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,  FormsModule],
+  imports: [ IonicModule,BrowserModule, IonicModule.forRoot(), AppRoutingModule,  FormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
