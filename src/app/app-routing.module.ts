@@ -13,7 +13,7 @@ import { EditComponent } from './edit/edit.component';
 import { SearcheComponent } from './searche/searche.component';
 import { NewpostComponent } from './newpost/newpost.component';
 import { PostsComponent } from './posts/posts.component';
-import { MeublesComponent } from './meubles/meubles.component';
+
 
 
 const routes: Routes = [
@@ -48,11 +48,7 @@ const routes: Routes = [
     component:NavigationComponent, // Composant de connexion
   },
  
-  {
-    path: 'meubles', // Chemin pour le composant de connexion
-    component:MeublesComponent, // Composant de connexion
-  },
- 
+
   {
     path: 'all', // Chemin pour le composant de connexion
     component:AllComponent, // Composant de connexion
@@ -83,6 +79,18 @@ const routes: Routes = [
   {
     path: 'plus',
     loadChildren: () => import('./plus/plus.module').then( m => m.PlusPageModule)
+  },
+  {
+    path: 'detail',
+    loadChildren: () => import('./detail/detail.module').then( m => m.DetailPageModule)
+  },
+  {
+    path: 'info',
+    loadChildren: () => import('./info/info.module').then( m => m.InfoPageModule)
+  },
+  {
+    path: 'favoris',
+    loadChildren: () => import('./favoris/favoris.module').then( m => m.FavorisPageModule)
   },
 ];
 

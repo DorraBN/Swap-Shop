@@ -1,0 +1,46 @@
+ion-toolbar {
+    --background: linear-gradient(90deg, #C7C5F4, #776BCC);
+}
+
+ion-content {
+    --background-color: #dedde0;
+    text-align: center;
+
+    img {
+        padding-top: 28px;
+    }
+
+    .desc {
+        text-align: left;
+        padding-bottom: 20px;
+
+        h4 {
+            font-weight: 900;
+        }
+
+        h6 {
+            font-weight: 400;
+            color: #47615a;
+            line-height: .7cm;
+        }
+    }
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    color: #fff;
+    background: linear-gradient(90deg, #090911, #7060e9);
+}
+
