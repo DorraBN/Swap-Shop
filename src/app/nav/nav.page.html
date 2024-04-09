@@ -28,6 +28,11 @@
         <ion-icon name="cart-outline" class="bars"></ion-icon>
       </div>
     </div>
+    <div class="bottom-navigation-item" (click)="selectNavItem('heart')">
+      <div [ngClass]="{'active': selectedNavItem === 'heart'}">
+        <ion-icon name="heart-outline" class="bars" (click)="goToFavoris()" ></ion-icon>
+      </div>
+    </div>
     <!-- Item Profile -->
     <div class="bottom-navigation-item" (click)="selectNavItem('person')">
       <div [ngClass]="{'active': selectedNavItem === 'person'}">

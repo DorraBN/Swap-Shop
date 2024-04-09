@@ -3,10 +3,10 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-searche',
-  templateUrl: './searche.component.html',
-  styleUrls: ['./searche.component.scss'],
+  templateUrl: './searche.page.html',
+  styleUrls: ['./searche.page.scss'],
 })
-export class SearcheComponent  implements OnInit {
+export class SearchePage implements OnInit {
 
   constructor(private router: Router) {}
 
@@ -14,6 +14,7 @@ export class SearcheComponent  implements OnInit {
     this.router.navigate(['/home2']); // Assurez-vous que '/home2' correspond au chemin vers votre page "home2"
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
 }

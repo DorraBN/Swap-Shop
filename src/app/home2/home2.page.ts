@@ -13,7 +13,7 @@ export class Home2Page implements OnInit {
   constructor(private router: Router) {}
 
   onSearchFocus() {
-    this.router.navigate(['/search']);
+    this.router.navigate(['/searche']);
   }
   gotomeuble() {
     this.router.navigate(['/detail']);

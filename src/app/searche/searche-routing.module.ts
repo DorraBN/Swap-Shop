@@ -1,28 +1,23 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DetailPage } from '../detail/detail.page'; // Importez correctement la page de détail
 
-import { Home2Page } from './home2.page';
-import { HomePage } from '../home/home.page';
+import { SearchePage } from './searche.page';
+import { Home2Page } from '../home2/home2.page';
 import { SigninPage } from '../signin/signin.page';
-import { NavPage } from '../nav/nav.page';
+import { DetailPage } from '../detail/detail.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: Home2Page
+    component: SearchePage
   },
   {
-    path: 'home',
-    component: HomePage
+    path: 'home2',
+    component: Home2Page
   },
   {
     path: 'signin',
     component: SigninPage
-  },
-  {
-    path: 'nav',
-    component: NavPage
   },
   {
     path: 'detail',
@@ -34,4 +29,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class Home2PageRoutingModule {}
+export class SearchePageRoutingModule {}

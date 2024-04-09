@@ -3,13 +3,12 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component'; // Importez le composant de connexion
 import { ProfileComponent } from './profile/profile.component';
 
-import { SignupComponent } from './signup/signup.component';
 
-import { NavigationComponent } from './navigation/navigation.component';
+
 
 import { AllComponent } from './all/all.component';
 import { EditComponent } from './edit/edit.component';
-import { SearcheComponent } from './searche/searche.component';
+
 import { NewpostComponent } from './newpost/newpost.component';
 import { PostsComponent } from './posts/posts.component';
 
@@ -27,16 +26,9 @@ const routes: Routes = [
     path: 'profile', // Chemin pour le composant de connexion
     component: ProfileComponent, // Composant de connexion
   },
-  {
-    path: 'signup', // Chemin pour le composant de connexion
-    component: SignupComponent, // Composant de connexion
-  },
+
   
-  
-  {
-    path: 'nav', // Chemin pour le composant de connexion
-    component:NavigationComponent, // Composant de connexion
-  },
+
  
 
   {
@@ -55,10 +47,7 @@ const routes: Routes = [
     path: 'edit', // Chemin pour le composant de connexion
     component:EditComponent, // Composant de connexion
   },
-  {
-    path: 'search', // Chemin pour le composant de connexion
-    component:SearcheComponent, // Composant de connexion
-  },
+ 
   
   {
     path: 'plus',
@@ -88,6 +77,18 @@ const routes: Routes = [
   {
     path: 'signin',
     loadChildren: () => import('./signin/signin.module').then( m => m.SigninPageModule)
+  },
+  {
+    path: 'signup',
+    loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
+  },
+  {
+    path: 'nav',
+    loadChildren: () => import('./nav/nav.module').then( m => m.NavPageModule)
+  },
+  {
+    path: 'searche',
+    loadChildren: () => import('./searche/searche.module').then( m => m.SearchePageModule)
   },
 ];
 

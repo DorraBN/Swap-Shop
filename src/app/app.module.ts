@@ -12,40 +12,32 @@ import { RouteReuseStrategy } from '@angular/router'; // Import manquant pour Ro
 
 import { NewpostComponent } from './newpost/newpost.component';
 
-import { SignupComponent } from './signup/signup.component';
+
 import { ProfileComponent } from './profile/profile.component';
-import { NavigationComponent } from './navigation/navigation.component';
+
 import { PreloadAllModules} from '@angular/router';
 import { AllComponent } from './all/all.component';
 import { EditComponent } from './edit/edit.component';
-import { SearcheComponent } from './searche/searche.component';
+
 import { PostsComponent } from './posts/posts.component';
 import { Home2Page } from './home2/home2.page';
 import { DetailPage } from './detail/detail.page';
 import { SigninPage } from './signin/signin.page';
 import { HomePage } from './home/home.page';
-
+import { SignupPage } from './signup/signup.page';
 const routes: Routes = [
-  {
-    path: 'home2',
-    component: Home2Page
-  },
-  {
-    path: 'detail',
-    component: DetailPage
-  },{
-    path: 'signin',
-    component: SigninPage
-  }
-  ,{
-    path: 'home',
-    component: HomePage
-  }
+  { path: 'home2', component: Home2Page },
+  { path: 'detail', component: DetailPage },
+  { path: 'signin', component: SigninPage },
+  { path: 'home', component: HomePage },
+  { path: 'signup', component: SignupPage },
 ];
 
 
+
+
 @NgModule({
-  declarations: [AppComponent,  SignupComponent, ProfileComponent, NavigationComponent, AllComponent, EditComponent, SearcheComponent, NewpostComponent, PostsComponent],
+  declarations: [AppComponent,  ProfileComponent, AllComponent, EditComponent, NewpostComponent, PostsComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
