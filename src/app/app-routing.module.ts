@@ -2,12 +2,11 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component'; // Importez le composant de connexion
 import { ProfileComponent } from './profile/profile.component';
-import { SigninComponent } from './signin/signin.component';
+
 import { SignupComponent } from './signup/signup.component';
-import { Home1Component } from './home1/home1.component';
 
 import { NavigationComponent } from './navigation/navigation.component';
-import { Home2Component } from './home2/home2.component';
+
 import { AllComponent } from './all/all.component';
 import { EditComponent } from './edit/edit.component';
 import { SearcheComponent } from './searche/searche.component';
@@ -22,14 +21,8 @@ const routes: Routes = [
     path: 'login', // Chemin pour le composant de connexion
     component: LoginComponent, // Composant de connexion
   },
-  {
-    path: 'home1', // Chemin pour le composant de connexion
-    component: Home1Component, // Composant de connexion
-  },
-  {
-    path: 'home2', // Chemin pour le composant de connexion
-    component: Home2Component, // Composant de connexion
-  },
+
+
   {
     path: 'profile', // Chemin pour le composant de connexion
     component: ProfileComponent, // Composant de connexion
@@ -39,10 +32,7 @@ const routes: Routes = [
     component: SignupComponent, // Composant de connexion
   },
   
-  {
-    path: 'sign', // Chemin pour le composant de connexion
-    component:SigninComponent, // Composant de connexion
-  },
+  
   {
     path: 'nav', // Chemin pour le composant de connexion
     component:NavigationComponent, // Composant de connexion
@@ -70,12 +60,6 @@ const routes: Routes = [
     component:SearcheComponent, // Composant de connexion
   },
   
-  
-  {
-    path: '', // Redirection par défaut vers la page d'accueil
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
   {
     path: 'plus',
     loadChildren: () => import('./plus/plus.module').then( m => m.PlusPageModule)
@@ -91,6 +75,19 @@ const routes: Routes = [
   {
     path: 'favoris',
     loadChildren: () => import('./favoris/favoris.module').then( m => m.FavorisPageModule)
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
+  
+  },
+  {
+    path: 'home2',
+    loadChildren: () => import('./home2/home2.module').then( m => m.Home2PageModule)
+  },
+  {
+    path: 'signin',
+    loadChildren: () => import('./signin/signin.module').then( m => m.SigninPageModule)
   },
 ];
 

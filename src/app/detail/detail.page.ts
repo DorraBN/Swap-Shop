@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import Swiper from 'swiper';
 
 @Component({
@@ -10,10 +11,16 @@ export class DetailPage implements OnInit {
 
   swiperInitialized = false;
 
-  constructor() { }
+  constructor(private router: Router) {}
+
+ 
+  goback() {
+    this.router.navigate(['/home2']);
+  }
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
+  
 
   ngAfterViewInit() {
     // Définition des options de swiper

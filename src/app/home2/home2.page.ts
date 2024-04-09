@@ -3,10 +3,12 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home2',
-  templateUrl: './home2.component.html',
-  styleUrls: ['./home2.component.scss']
+  templateUrl: './home2.page.html',
+  styleUrls: ['./home2.page.scss'],
 })
-export class Home2Component implements OnInit {
+export class Home2Page implements OnInit {
+
+  navCtrl: any;
 
   constructor(private router: Router) {}
 
@@ -14,11 +16,12 @@ export class Home2Component implements OnInit {
     this.router.navigate(['/search']);
   }
   gotomeuble() {
-    this.router.navigate(['/meubles']);
+    this.router.navigate(['/detail']);
   }
   ngOnInit() {}
 selectedNavItem: string | undefined;
 
   selectNavItem(navItem: string) {
     this.selectedNavItem = navItem;
-}}
+}
+}

@@ -1,32 +1,136 @@
-<ion-header class="ion-no-border">
+<div class="container">
+
+<ion-header class="ion-no-border"><ion-icon name="arrow-back" class="barrr" (click)="goback()"></ion-icon>
   <ion-item lines="none">
+    
     <ion-avatar slot="end">
       <img src="https://i.imgur.com/8RKXAIV.jpg" alt="user">
     </ion-avatar>
-    <ion-label>
+    <ion-label><ion-icon name="grid" class="bar"></ion-icon>
       <h2>Categories</h2>
       <p>Meubles</p>
-    </ion-label>
-  </ion-item>
-</ion-header>
+   
+    </ion-label></ion-item></ion-header>
 
 <ion-content [fullscreen]="true">
 
 <div class="ion-padding wrapper">
+<div class="search" style="display: flex;justify-content:center">
+  <ion-searchbar></ion-searchbar><ion-icon name="options-outline" class="b2"></ion-icon></div>
+  <div class="ion-padding-horizontal wrapper">
+  
+    <ion-grid class="ion-no-padding">
+      <ion-row class="ion-align-items-baseline">
+        <ion-col size="6">
+          <h4 class="title">
+            <ion-icon name="list" ></ion-icon> Categories
+          </h4>
+        </ion-col>
+        <ion-col size="6">
+          <h4 class="more ion-text-end">
+            Show more
+            <ion-icon name="chevron-forward-outline" class="b1"></ion-icon> </h4>
+        </ion-col>
+      </ion-row>
 
-  <ion-searchbar></ion-searchbar>
+
+
+
+
+
+
+
+      <ion-grid class="ion-no-padding">
+        <ion-row>
+          <ion-col size="12" style="display: flex;">
+            
+                <ion-card class="card1">
+                  <ion-card-content class="ion-text-left">
+    
+                    <div class="img-wrapper1">
+                     
+                      <ion-icon name="cart" class="b"></ion-icon>
+                      <ion-card-subtitle>All</ion-card-subtitle>
+                    </div>
+
+                  </ion-card-content>
+                </ion-card>
+
+
+                <ion-card class="card1">
+                  <ion-card-content class="ion-text-left">
+    
+                    <div class="img-wrapper1">
+                     
+                      
+                      <ion-card-subtitle>Lampes</ion-card-subtitle>
+                    </div>
+                    
+                  
+                    
+      
+                  </ion-card-content>
+                </ion-card><ion-card class="card1">
+                  <ion-card-content class="ion-text-left">
+    
+                    <div class="img-wrapper1">
+                     
+                      
+                      <ion-card-subtitle>Lampes</ion-card-subtitle>
+                    </div>
+                    
+                  
+                    
+      
+                  </ion-card-content>
+                </ion-card>
+                <ion-card class="card1">
+                  <ion-card-content class="ion-text-left">
+    
+                    <div class="img-wrapper1">
+                     
+                      
+                      <ion-card-subtitle>Tables</ion-card-subtitle>
+                    </div>
+           
+      
+                  </ion-card-content>
+                </ion-card>
+                
+          </ion-col></ion-row></ion-grid>    
+    </ion-grid>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    </div>
 
   <ion-grid class="ion-no-padding">
     <ion-row class="ion-align-items-baseline">
       <ion-col size="6">
         <h4 class="title">
-          Popular posts
+          <ion-icon name="list" ></ion-icon>Popular posts
         </h4>
       </ion-col>
       <ion-col size="6">
         <h4 class="more ion-text-end">
           View more
-        </h4>
+         <ion-icon name="chevron-forward-outline" class="b1"></ion-icon></h4>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -167,109 +271,12 @@
   </ion-grid>
 
 
-  <div class="ion-padding-horizontal wrapper">
   
-    <ion-grid class="ion-no-padding">
-      <ion-row class="ion-align-items-baseline">
-        <ion-col size="6">
-          <h4 class="title">
-            Explore Categories
-          </h4>
-        </ion-col>
-        <ion-col size="6">
-          <h4 class="more ion-text-end">
-            Show more
-          </h4>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  
-    </div>
-  
-    <ion-grid class="ion-no-padding">
-      <ion-row>
-        <ion-col size="12">
-          
-              <ion-card class="category" color="danger">
-                <ion-card-header class="ion-text-center">
-                  <ion-icon src="assets/dish.svg"></ion-icon>
-                  <ion-card-title>Armoire</ion-card-title>
-                  <ion-card-subtitle>Something here</ion-card-subtitle>
-                </ion-card-header>
-              </ion-card>
-           
-              <ion-card class="category" color="primary">
-                <ion-card-header class="ion-text-center">
-                  <ion-icon src="assets/cocktail.svg"></ion-icon>
-                  <ion-card-title>Lampes</ion-card-title>
-                  <ion-card-subtitle>Something here</ion-card-subtitle>
-                </ion-card-header>
-              </ion-card>
-           
-              <ion-card class="category" color="warning">
-                <ion-card-header class="ion-text-center">
-                  <ion-icon src="assets/svg"></ion-icon>
-                  <ion-card-title>Miroir</ion-card-title>
-                  <ion-card-subtitle>Something here</ion-card-subtitle>
-                </ion-card-header>
-              </ion-card>
-            
-              <ion-card class="category" color="success">
-                <ion-card-header class="ion-text-center">
-                  <ion-icon src="assets/pizza.svg"></ion-icon>
-                  <ion-card-title>Chaise</ion-card-title>
-                  <ion-card-subtitle>Something here</ion-card-subtitle>
-                </ion-card-header>
-              </ion-card>
-            
-              <ion-card class="category" color="tertiary">
-                <ion-card-header class="ion-text-center">
-                  <ion-icon src="assets/taco.svg"></ion-icon>
-                  <ion-card-title>Bureau</ion-card-title>
-                  <ion-card-subtitle>Something here</ion-card-subtitle>
-                </ion-card-header>
-              </ion-card>
-          
-              <ion-card class="category" color="danger">
-                <ion-card-header class="ion-text-center">
-                  <ion-icon src="assets/cookies.svg"></ion-icon>
-                  <ion-card-title>Lit</ion-card-title>
-                  <ion-card-subtitle>Something here</ion-card-subtitle>
-                </ion-card-header>
-              </ion-card>
-           
-              <ion-card class="category" color="secondary">
-                <ion-card-header class="ion-text-center">
-                  <ion-icon src="assets/noodle.svg"></ion-icon>
-                  <ion-card-title>canapé</ion-card-title>
-                  <ion-card-subtitle>Something here</ion-card-subtitle>
-                </ion-card-header>
-              </ion-card>
-            
-        </ion-col>
-      </ion-row>
-    </ion-grid>
 
 
 
-    <div class="ion-padding-horizontal wrapper">
     
-      <ion-grid class="ion-no-padding">
-        <ion-row class="ion-align-items-baseline">
-          <ion-col size="6">
-            <h4 class="title">
-              Recommended Drinks
-            </h4>
-          </ion-col>
-          <ion-col size="6">
-            <h4 class="more ion-text-end">
-              Show more
-            </h4>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
     
-      </div>
     
       <ion-grid class="ion-no-padding">
         <ion-row>
@@ -347,4 +354,4 @@
         </ion-row>
       </div>
 
-</ion-content>
+</ion-content> 

@@ -3,16 +3,17 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
-  templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.scss'],
+  templateUrl: './signin.page.html',
+  styleUrls: ['./signin.page.scss'],
 })
-
-
-  export class SigninComponent {
-    constructor(private router: Router) {}
+export class SigninPage implements OnInit {
+  constructor(private router: Router) {}
+  ngOnInit(): void {
+    
+  }
 
     redirectToHome2() {
-      this.router.navigate(['/home2']); // Assurez-vous que '/home2' correspond au chemin vers votre page "home2"
+      this.router.navigate(['/detail']); // Assurez-vous que '/home2' correspond au chemin vers votre page "home2"
     }
     email: string = '';
     password: string = '';
@@ -24,5 +25,5 @@ import { Router } from '@angular/router';
       
       // Par exemple, vous pouvez appeler un service d'authentification pour valider les informations d'identification.
     }
-  }
 
+}
