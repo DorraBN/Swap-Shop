@@ -39,18 +39,27 @@
     );
   }
   
-  .price {
-    z-index: 1;
-  }
+
+.input{
+    margin-left: 40px;
+    width: 80%;
+}
+
 
 
   .show{
     margin-left: 250px;
     font-size: 10px;
+    margin-top: -27px;
   }
   .color{
     font-weight: bold;
-    font-size: 12px;
+    font-size: 22px;
+    margin-left: 15px;
+  }
+  .ball-red{
+width: 50%;
+height: 50%;
   }
   button {
     position: relative;
@@ -62,10 +71,11 @@
     letter-spacing: 0.1rem;
     font-size: 1rem;
     justify-content: center;
-    margin-left: 100px;
+    margin-left: 40px;
     padding: 1rem 3rem;
     transition: 0.2s;
-    margin-top: 20px;
+    margin-top: 30px;
+    width: 80%;
   }
   
   button:hover {
@@ -154,7 +164,20 @@
     }
   }
   
-
+  ion-card-subtitle {
+    --font-size: 11px;
+    font-size: var(--font-size);
+    text-align: justify; /* Utilisation de la propriété text-align pour le justification du texte */
+    padding: var(--padding, 2px); /* Utilisation de la propriété padding avec une valeur par défaut de 2px */
+  }
+  ion-card-subtitle:hover {
+  color: black;
+  cursor: pointer;
+  }
+  
+  
+  
+  
 .container {
     position: relative;
     height: 100vh;
@@ -174,7 +197,10 @@
     margin-left: 15px;
     font-family: Georgia, 'Times New Roman', Times, serif;
   }
-
+.price{
+    margin-left: 15px;
+    margin-top: -2px;
+}
 
   .container1 {
     display: flex;
@@ -187,14 +213,17 @@
   .row {
     display: flex;
     justify-content: center;
+    
+    
   }
   
   .ball {
-    width: 21px;
-    height: 21px;
-    border-radius: 50%;
-    margin: 5px;
+    width: 40px; /* Largeur de chaque balle */
+    height: 40px; /* Hauteur de chaque balle */
+    border-radius: 50%; /* Pour créer des balles rondes */
+    margin: 5px; /* Marge entre chaque balle */
   }
+  
   
   .red {
     background-color: red;
@@ -220,43 +249,36 @@
     background-color: purple;
   }
   
-  .card1{
-    
-    width:67%;
- 
-    background-color: white;
-    height: 55%;
-    
-    border-radius: 15px;
-
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-  .card1.active{
-    background-color: rgb(189, 110, 226);
-  }
-  .card1:hover{
+  .card1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin: 10px;
    
- font-weight: 900;
-    background-color: rgb(189, 110, 226);
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    width: 50%;
+   /* Ajoutez une marge entre les cartes si nécessaire */
+   /* Taille minimale de la carte */
+    /* Taille maximale de la carte */
+  }
+  ion-loading.custom-loading {
+    --background: #e3edff;
+    --spinner-color: #910e9f;
+  
+    color: #1c0122;
+    margin-right: 47px;
+    
+  }
+  .card1 ion-card-subtitle:hover{
+   color: black;
+  }
+
+
+  .card1:hover{
+    border:1px solid black;
+ 
+   
+   
    border-radius: 15px;
 
   }

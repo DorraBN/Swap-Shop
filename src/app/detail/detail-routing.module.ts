@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { DetailPage } from './detail.page';
 import { Home2Page } from '../home2/home2.page';
 import { InfoPage } from '../info/info.page';
+import { FilterPage } from '../filter/filter.page';
 
 const routes: Routes = [
   {
@@ -15,8 +16,12 @@ const routes: Routes = [
     component: InfoPage
   },
   {
-    path: 'home',
+    path: 'home2',
     component: Home2Page
+  },
+  {
+    path: 'filter',
+    component: FilterPage
   }
 ];
 

@@ -1,6 +1,6 @@
 <div class="container">
   
-  <ion-icon name="close" class="close"></ion-icon>
+  <ion-icon name="close" class="close" (click)="goback()"></ion-icon>
 <h1 class="filter">Filters</h1>
 <h4 class="type">Types</h4>
 <ion-grid class="ion-no-padding">
@@ -23,11 +23,11 @@
           <ion-card class="card1" >
             <ion-card-content class="ion-text-left">
 
-              <div class="img-wrapper1">
+           
                
                 
                 <ion-card-subtitle>Lampes</ion-card-subtitle>
-              </div>
+     
               
             
               
@@ -36,12 +36,10 @@
           </ion-card>
           <ion-card class="card1">
             <ion-card-content class="ion-text-left">
-
-              <div class="img-wrapper1">
                
                 
                 <ion-card-subtitle>Tables</ion-card-subtitle>
-              </div>
+          
      
 
             </ion-card-content>
@@ -141,7 +139,7 @@
                   
             </ion-col></ion-row></ion-grid> 
             
-            <h4>price</h4>
+            <h4 class="price">price</h4>
         
             <div
             class="RadialProgress"
@@ -151,7 +149,7 @@
             aria-valuemax="100"
           ></div>
           
-          <input type="range" value="25" min="0" max="100" />
+          <input  class="input" type="range" value="25" min="0" max="1500" />
           
 <h4 class="color">color</h4>
             <h4 class="show">show more</h4>
@@ -181,7 +179,13 @@
               </div>
               <!-- Ajoutez autant de lignes que nécessaire -->
             </div>
-
+    
+            <ion-loading class="custom-loading" trigger="open-loading" message="Loading..." [duration]="3000"></ion-loading>
+            <!-- Ajout de la balise <button> avec un style personnalisé -->
+            <button style="--clr:#8A2BE2"   id="open-loading">
+              <span>Apply</span>
+              <i></i>
+            </button>
 
 
 
@@ -196,4 +200,4 @@
 
 
           
-                        <button style="--clr:#8A2BE2"><span>Apply</span><i></i></button>
+                     

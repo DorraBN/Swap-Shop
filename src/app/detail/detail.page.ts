@@ -23,6 +23,13 @@ export class DetailPage implements OnInit {
   go() {
     this.router.navigate(['/info']);
   }
+
+
+
+
+  goback1(){
+    this.router.navigate(['/filter']);
+  }
   
 
   ngAfterViewInit() {
