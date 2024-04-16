@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
-
+import { CommonModule } from '@angular/common'; 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
@@ -18,11 +18,20 @@ import { EditComponent } from './edit/edit.component';
 import { SearcheComponent } from './searche/searche.component';
 import { PostsComponent } from './posts/posts.component';
 import { MeublesComponent } from './meubles/meubles.component';
-import { DetailsComponent } from './Details/details.component';
+import { DetailsComponent } from './details/details.component';
+
+import { VendeurMainPageComponent } from './vendeur-main-page/vendeur-main-page.component';
+import {VendeurCategoriesComponent}  from './vendeur-categories/vendeur-categories.component';
+import { VendeurCategoriesAjoutezComponent } from './vendeur-categories-ajoutez/vendeur-categories-ajoutez.component';
+import {VendeurVentesComponent} from './vendeur-ventes/vendeur-ventes.component';
+import { AdminMainPageComponent} from './admin-main-page/admin-main-page.component';
+import { AjouterVendeurComponent } from './ajouter-vendeur/ajouter-vendeur.component';
+
+
 
 @NgModule({
-  declarations: [AppComponent, SigninComponent, SignupComponent, ProfileComponent, NavigationComponent,Home2Component, AllComponent, EditComponent, SearcheComponent, NewpostComponent, PostsComponent, MeublesComponent, DetailsComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,  FormsModule],
+  declarations: [AppComponent,AjouterVendeurComponent,AdminMainPageComponent,VendeurVentesComponent ,SigninComponent, SignupComponent,VendeurCategoriesAjoutezComponent, ProfileComponent, NavigationComponent,Home2Component,VendeurCategoriesComponent, AllComponent, EditComponent, SearcheComponent, NewpostComponent, PostsComponent, MeublesComponent, DetailsComponent,VendeurMainPageComponent],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,  FormsModule,IonicModule,CommonModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
