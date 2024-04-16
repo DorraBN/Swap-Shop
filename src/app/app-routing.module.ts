@@ -90,6 +90,10 @@ const routes: Routes = [
     path: 'searche',
     loadChildren: () => import('./searche/searche.module').then( m => m.SearchePageModule)
   },
+  {
+    path: 'filter',
+    loadChildren: () => import('./filter/filter.module').then( m => m.FilterPageModule)
+  },
 ];
 
 @NgModule({

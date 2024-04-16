@@ -42,7 +42,7 @@ ion-header {
       margin-top: 38px;
       
       ion-card {
-        width: 260px;
+        width: 180px;
         box-shadow: none;
         border-radius: 18%;
   
@@ -59,7 +59,7 @@ ion-header {
           }
           ion-card-title, ion-card-subtitle {
             font-weight: bold;
-            padding-left: 18px;
+            
           }
           ion-button {
             --box-shadow: none;
@@ -94,7 +94,7 @@ ion-header {
         ion-card-title, ion-card-subtitle {
           font-weight: bold;
           padding-bottom: 6px;
-          padding-left: 18px;
+         
         }
         ion-button {
           --box-shadow: none;
@@ -108,4 +108,13 @@ ion-header {
       transform: scale(.8, .8);
     }
     
+  }
+  .container1{
+    position: relative;
+   
+    width: 350px;
+    margin-left: 500px;
+    
+    box-shadow: 0px 0px 20px #5C5696;
+
   }

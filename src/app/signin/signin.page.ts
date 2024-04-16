@@ -13,7 +13,7 @@ export class SigninPage implements OnInit {
   }
 
     redirectToHome2() {
-      this.router.navigate(['/detail']); // Assurez-vous que '/home2' correspond au chemin vers votre page "home2"
+      this.router.navigate(['/home2']); // Assurez-vous que '/home2' correspond au chemin vers votre page "home2"
     }
     email: string = '';
     password: string = '';

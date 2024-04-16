@@ -20,6 +20,9 @@ export class DetailPage implements OnInit {
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
+  go() {
+    this.router.navigate(['/info']);
+  }
   
 
   ngAfterViewInit() {

@@ -25,12 +25,14 @@ import { DetailPage } from './detail/detail.page';
 import { SigninPage } from './signin/signin.page';
 import { HomePage } from './home/home.page';
 import { SignupPage } from './signup/signup.page';
+import { FilterPage } from './filter/filter.page';
 const routes: Routes = [
   { path: 'home2', component: Home2Page },
   { path: 'detail', component: DetailPage },
   { path: 'signin', component: SigninPage },
   { path: 'home', component: HomePage },
   { path: 'signup', component: SignupPage },
+  { path: 'sfilter', component: FilterPage },
 ];
 
 

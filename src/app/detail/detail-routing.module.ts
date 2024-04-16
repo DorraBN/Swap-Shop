@@ -3,11 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { DetailPage } from './detail.page';
 import { Home2Page } from '../home2/home2.page';
+import { InfoPage } from '../info/info.page';
 
 const routes: Routes = [
   {
     path: '',
     component: DetailPage
+  },
+  {
+    path: 'info',
+    component: InfoPage
   },
   {
     path: 'home',

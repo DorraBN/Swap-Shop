@@ -19,12 +19,13 @@
   }
   .im {
     margin-top: 5px;
-    width: 50px; /* Définir la largeur souhaitée pour les images */
-    height: 50px; /* Définir la hauteur souhaitée pour les images */
+    width: 60px; /* Définir la largeur souhaitée pour les images */
+    height: 60px; /* Définir la hauteur souhaitée pour les images */
     border-radius: 50%; /* Créer un cercle en utilisant un rayon de bordure égal à la moitié de la largeur/hauteur */
     border: 2px solid blue;
     background-color: #ae7ceb; /* Ajouter une bordure bleue de 2px */
-    object-fit: cover; /* Pour s'assurer que l'image couvre tout le cercle */
+    object-fit: cover; 
+    padding: 4px;/* Pour s'assurer que l'image couvre tout le cercle */
   }
   a{
     text-decoration: none;
@@ -33,14 +34,15 @@
   .card {
     width: 50%;
     margin: 3px;
-    height: 90%;
+    height: 70%;
    
     box-shadow: 0px 0px 10px #5C5696;
     
   }
   .p3
   {
-    font-size: 12px;
+    font-size: 11.5px;
+    
   }
   .values-container {
     display: flex;

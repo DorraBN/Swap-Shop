@@ -18,6 +18,7 @@ export class Home2Page implements OnInit {
   gotomeuble() {
     this.router.navigate(['/detail']);
   }
+ 
   ngOnInit() {}
 selectedNavItem: string | undefined;
 
