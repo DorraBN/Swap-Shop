@@ -2,28 +2,17 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component'; // Importez le composant de connexion
 import { ProfileComponent } from './profile/profile.component';
-<<<<<<< HEAD
 
 
 
-
-=======
-import { SigninComponent } from './signin/signin.component';
-import { SignupComponent } from './signup/signup.component';
-import { Home1Component } from './home1/home1.component';
-import { NavigationComponent } from './navigation/navigation.component';
-import { Home2Component } from './home2/home2.component';
->>>>>>> branch1
 import { AllComponent } from './all/all.component';
 import { EditComponent } from './edit/edit.component';
 
 import { NewpostComponent } from './newpost/newpost.component';
 import { PostsComponent } from './posts/posts.component';
-<<<<<<< HEAD
 
 
-=======
-import { MeublesComponent } from './meubles/meubles.component';
+
 import { DetailsComponent } from './details/details.component';
 
 import { VendeurMainPageComponent } from './vendeur-main-page/vendeur-main-page.component';
@@ -32,7 +21,11 @@ import{VendeurCategoriesComponent} from './vendeur-categories/vendeur-categories
 import { VendeurCategoriesAjoutezComponent } from './vendeur-categories-ajoutez/vendeur-categories-ajoutez.component';
 import { AdminMainPageComponent} from './admin-main-page/admin-main-page.component';
 import { AjouterVendeurComponent } from './ajouter-vendeur/ajouter-vendeur.component';
->>>>>>> branch1
+import { Home2Page } from './home2/home2.page';
+import { SigninPage } from './signin/signin.page';
+import { SignupPage } from './signup/signup.page';
+import { HomePage } from './home/home.page';
+
 
 const routes: Routes = [
 
@@ -43,10 +36,7 @@ const routes: Routes = [
     path: 'ajoutervendeur', // Chemin pour le composant de connexion
     component: AjouterVendeurComponent, // Composant de connexion
   },
-<<<<<<< HEAD
 
-
-=======
   {
     path: 'ajouter', // Chemin pour le composant de connexion
     component: VendeurCategoriesAjoutezComponent, // Composant de connexion
@@ -69,20 +59,27 @@ const routes: Routes = [
     component: VendeurMainPageComponent, // Composant de connexion
   },
   
-  {
-    path: 'home1', // Chemin pour le composant de connexion
-    component: Home1Component, // Composant de connexion
-  },
-  {
-    path: 'home2', // Chemin pour le composant de connexion
-    component: Home2Component, // Composant de connexion
-  },
->>>>>>> branch1
+
   {
     path: 'profile', // Chemin pour le composant de connexion
     component: ProfileComponent, // Composant de connexion
   },
-
+  {
+    path: 'home2', // Chemin pour le composant de connexion
+    component: Home2Page, // Composant de connexion
+  },
+  {
+    path: 'signin', // Chemin pour le composant de connexion
+    component: SigninPage, // Composant de connexion
+  },
+  {
+    path: 'signup', // Chemin pour le composant de connexion
+    component: SignupPage, // Composant de connexion
+  },
+  {
+    path: 'home', // Chemin pour le composant de connexion
+    component: HomePage, // Composant de connexion
+  },
   
 
  
