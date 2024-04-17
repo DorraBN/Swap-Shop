@@ -1,0 +1,52 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-xrC2fXFcqEpqq3DfTsoUqdyJGE2F3ZjZiJ7IBIKDyKP+Xwbawc+4/+LPRPbzMTTqYjA5fNLoKk69fkYFFtxGcg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<div class="container">
+  <div class="container1">
+    <ion-icon name="menu-outline" class="bars1"></ion-icon>
+    <ion-icon name="cart-outline" class="bars"></ion-icon>
+    <div class="search-wrapper">
+      <ion-searchbar (ionFocus)="onSearchFocus()"></ion-searchbar>
+    </div>
+  </div>
+
+  <img src="assets/rec4.jpg" alt="" />
+  <p class="p1">Shop by category</p>
+  <p class="p2"><a href="/all" class="text3">view all</a></p>
+
+  <div class="card-row">
+    <div class="card" (click)="gotomeuble()">
+      <img src="assets/c1.png" alt="" class="im" />
+      <p class="p3">meubles</p>
+    </div>
+    <div class="card">
+      <img src="assets/c9.png" alt="" class="im" />
+      <p class="p3">Livres</p>
+    </div>
+    <div class="card">
+      <img src="assets/c3.png" alt="" class="im" />
+      <p class="p3">Vetements</p>
+    </div>
+  </div>
+  <div class="card-row">
+    <div class="card">
+      <img src="assets/c4.png" alt="" class="im" />
+      <p class="p3">apareils electromenagers</p>
+    </div>
+    <div class="card">
+      <img src="assets/c5.png" alt="" class="im" />
+      <p class="p3">fournitures scolaires</p>
+    </div>
+    <div class="card">
+      <img src="assets/c13.png" alt="" class="im" />
+      <p class="p3">apareils electroniques</p>
+    </div>
+  </div>
+  <app-navigation></app-navigation>
+</div>

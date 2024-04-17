@@ -1,0 +1,86 @@
+<div class="container">
+  <div class="container1">
+    <ion-icon name="arrow-back" class="arrow" (click)="goToHome2()"></ion-icon>
+
+    <h2>Edit profile</h2>
+    <ion-icon name="pencil" class="edit"></ion-icon>
+  </div>
+
+  <div class="container2"></div>
+  <div class="container3">
+    <div class="contain">
+      <div class="pro-img">
+        <img src="https://i.imgur.com/8RKXAIV.jpg" alt="user" />
+        <div class="camera-icon">
+          <ion-icon name="camera"></ion-icon>
+        </div>
+      </div>
+      <div class="for">
+        <input
+          type="date"
+          id="phone"
+          placeholder="Enter your phone"
+          class="in"
+          required
+        /><br /><br />
+
+        <!-- Input pour le genre -->
+        <div class="gender-icon"></div>
+        <select id="gender" class="in1">
+          <option value="male">Homme</option>
+          <option value="female">Femme</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form">
+      <div class="form-group">
+        <ion-icon name="person"></ion-icon>
+        <input
+          type="name"
+          id="name"
+          placeholder="Enter your Fullname"
+          class="info"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <ion-icon name="call"></ion-icon>
+
+        <input
+          type="phone"
+          id="phone"
+          placeholder="Enter your phone"
+          class="info"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <ion-icon name="mail"></ion-icon>
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email"
+          class="info"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <ion-icon name="lock-open"></ion-icon>
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter your password"
+          class="info"
+          required
+        />
+      </div>
+      <button
+        class="m-t-50 waves-effect waves-dark btn btn-primary btn-md btn-rounded"
+        data-abc="true"
+      >
+        Save
+      </button>
+    </div>
+  </div>
+</div>

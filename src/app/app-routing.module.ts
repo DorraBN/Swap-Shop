@@ -1,107 +1,26 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component'; // Importez le composant de connexion
-import { ProfileComponent } from './profile/profile.component';
-import { SigninComponent } from './signin/signin.component';
-import { SignupComponent } from './signup/signup.component';
-import { Home1Component } from './home1/home1.component';
+import { LoginComponent } from './login/login.component'; 
 import { NavigationComponent } from './navigation/navigation.component';
-import { Home2Component } from './home2/home2.component';
-import { AllComponent } from './all/all.component';
-import { EditComponent } from './edit/edit.component';
 import { SearcheComponent } from './searche/searche.component';
-import { NewpostComponent } from './newpost/newpost.component';
-import { PostsComponent } from './posts/posts.component';
-import { MeublesComponent } from './meubles/meubles.component';
-import { DetailsComponent } from './details/details.component';
-
-import { VendeurMainPageComponent } from './vendeur-main-page/vendeur-main-page.component';
-import { VendeurVentesComponent } from './vendeur-ventes/vendeur-ventes.component';
-import{VendeurCategoriesComponent} from './vendeur-categories/vendeur-categories.component';
-import { VendeurCategoriesAjoutezComponent } from './vendeur-categories-ajoutez/vendeur-categories-ajoutez.component';
-import { AdminMainPageComponent} from './admin-main-page/admin-main-page.component';
-import { AjouterVendeurComponent } from './ajouter-vendeur/ajouter-vendeur.component';
 
 const routes: Routes = [
 
   {
     path: 'login', // Chemin pour le composant de connexion
     component: LoginComponent, // Composant de connexion
-  },{
-    path: 'ajoutervendeur', // Chemin pour le composant de connexion
-    component: AjouterVendeurComponent, // Composant de connexion
-  },
-  {
-    path: 'ajouter', // Chemin pour le composant de connexion
-    component: VendeurCategoriesAjoutezComponent, // Composant de connexion
-  },
-  {
-    path: 'categories', // Chemin pour le composant de connexion
-    component: VendeurCategoriesComponent, // Composant de connexion
-  },
-  {
-    path: 'Admin', // Chemin pour le composant de connexion
-    component: AdminMainPageComponent, // Composant de connexion
-  },
-  {
-    path: 'ventes', // Chemin pour le composant de connexion
-    component: VendeurVentesComponent, // Composant de connexion
   },
   
-  {
-    path: 'vendeur', // Chemin pour le composant de connexion
-    component: VendeurMainPageComponent, // Composant de connexion
-  },
+ 
   
-  {
-    path: 'home1', // Chemin pour le composant de connexion
-    component: Home1Component, // Composant de connexion
-  },
-  {
-    path: 'home2', // Chemin pour le composant de connexion
-    component: Home2Component, // Composant de connexion
-  },
-  {
-    path: 'profile', // Chemin pour le composant de connexion
-    component: ProfileComponent, // Composant de connexion
-  },
-  {
-    path: 'signup', // Chemin pour le composant de connexion
-    component: SignupComponent, // Composant de connexion
-  },
   
-  {
-    path: 'sign', // Chemin pour le composant de connexion
-    component:SigninComponent, // Composant de connexion
-  },
   {
     path: 'nav', // Chemin pour le composant de connexion
     component:NavigationComponent, // Composant de connexion
   },
-  {
-    path: 'meubles', // Chemin pour le composant de connexion
-    component:MeublesComponent, // Composant de connexion
-  },
-  {
-    path: 'details', // Chemin pour le composant de connexion
-    component:DetailsComponent, // Composant de connexion
-  },
-  {
-    path: 'all', // Chemin pour le composant de connexion
-    component:AllComponent, // Composant de connexion
-  },
-  {
-    path: 'post', // Chemin pour le composant de connexion
-    component:PostsComponent, // Composant de connexion
-  },
-  {
-    path: 'new', // Chemin pour le composant de connexion
-    component:NewpostComponent, // Composant de connexion
-  },
-  {
-    path: 'edit', // Chemin pour le composant de connexion
-    component:EditComponent, // Composant de connexion
-  },
+  
+ 
+  
   {
     path: 'search', // Chemin pour le composant de connexion
     component:SearcheComponent, // Composant de connexion
@@ -113,6 +32,93 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'vendeur-ventes',
+    loadChildren: () => import('./vendeur-ventes/vendeur-ventes.module').then( m => m.VendeurVentesPageModule)
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
+  },
+ 
+  {
+    path: 'vendeur',
+    loadChildren: () => import('./vendeur/vendeur.module').then( m => m.VendeurPageModule)
+  },
+  {
+    path: 'categories-ajouter',
+    loadChildren: () => import('./categories-ajouter/categories-ajouter.module').then( m => m.CategoriesAjouterPageModule)
+  },
+  {
+    path: 'vendeur-category',
+    loadChildren: () => import('./vendeur-category/vendeur-category.module').then( m => m.VendeurCategoryPageModule)
+  },
+  {
+    path: 'signup',
+    loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
+  },
+  {
+    path: 'signin',
+    loadChildren: () => import('./signin/signin.module').then( m => m.SigninPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'posts',
+    loadChildren: () => import('./posts/posts.module').then( m => m.PostsPageModule)
+  },
+  {
+    path: 'newpost',
+    loadChildren: () => import('./newpost/newpost.module').then( m => m.NewpostPageModule)
+  },
+  {
+    path: 'ajoutervendeur',
+    loadChildren: () => import('./ajoutervendeur/ajoutervendeur.module').then( m => m.AjoutervendeurPageModule)
+  },
+  {
+    path: 'all',
+    loadChildren: () => import('./all/all.module').then( m => m.AllPageModule)
+  },
+  {
+    path: 'details',
+    loadChildren: () => import('./details/details.module').then( m => m.DetailsPageModule)
+  },
+  {
+    path: 'edit',
+    loadChildren: () => import('./edit/edit.module').then( m => m.EditPageModule)
+  },
+  {
+    path: 'field',
+    loadChildren: () => import('./field/field.module').then( m => m.FieldPageModule)
+  },
+  {
+    path: 'home1',
+    loadChildren: () => import('./home1/home1.module').then( m => m.Home1PageModule)
+  },
+  {
+    path: 'home2',
+    loadChildren: () => import('./home2/home2.module').then( m => m.Home2PageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'meubles',
+    loadChildren: () => import('./meubles/meubles.module').then( m => m.MeublesPageModule)
+  },
+  {
+    path: 'settings',
+    loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule)
+  },
+
+
+
+
+
+
 ];
 
 @NgModule({
