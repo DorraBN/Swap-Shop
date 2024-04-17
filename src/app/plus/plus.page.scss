@@ -1,0 +1,390 @@
+.container {
+    max-width: 320px;
+    margin: 0 auto;
+  
+    
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0px 0px 20px #5C5696; /* Ajout du nouveau box-shadow */
+    overflow: hidden;
+    flex: 1;
+    margin-top: -14px;
+  }
+  
+.ba:hover{
+    font-weight: 800;
+}
+.ba{
+    margin-left:150px ;
+    font-size: 22px;
+    background-color: #b74aa7;
+    border-radius: 100%;
+    border: 2px solid #5C5696;
+    padding: 5px;
+}
+.bar{
+    margin-left: 150px;
+    font-size: 22px;
+}
+
+.im1{
+ 
+    padding: 10px;
+    margin-right: 50px;
+    margin-top: 25px;
+    border-radius: 10%;
+}
+
+
+.card1 {
+    background-color: #ffffff;
+    border-radius: 8px;
+    text-align: center;
+  border:2px solid #5C5696;
+    max-width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    width: 70%;
+    margin: 3px;
+   
+   display: flex;
+    box-shadow: 0px 0px 10px #5C5696;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    box-shadow: 0px 0px 20px #5C5696;
+    margin-top: -14px;
+
+}
+/* Style pour le menu latéral */
+ion-menu {
+    --ion-background-color: #f4f4f4; /* Couleur de fond */
+    --ion-width: 250px; /* Largeur du menu */
+  }
+  
+  ion-header {
+    background-color: #007bff; /* Couleur de fond de l'en-tête */
+    color: white; /* Couleur du texte de l'en-tête */
+  }
+  
+  ion-toolbar {
+    --ion-color-base: #007bff; /* Couleur de base de la barre d'outils */
+  }
+  
+  ion-title {
+    font-size: 1.9rem; 
+    background-color: #6d0df4;
+
+   
+  }
+  
+  ion-content {
+    height: calc(100% - 56px); /* Hauteur du contenu, ajustée pour l'en-tête */
+  }
+  
+  ion-list {
+    padding: 0; /* Supprimer le remplissage par défaut */
+  }
+  
+  ion-item {
+    padding: 10px 20px; /* Remplissage intérieur */
+    font-size: 1.1rem; /* Taille de police */
+    color: #333; /* Couleur du texte */
+  }
+  
+  ion-item:hover {
+    background-color: #ddd; /* Couleur de fond au survol */
+  }
+  
+  ion-item:first-child {
+    border-top: none; /* Supprimer la bordure supérieure pour le premier élément */
+  }
+  
+  ion-item:last-child {
+    border-bottom: none; /* Supprimer la bordure inférieure pour le dernier élément */
+  }
+  
+
+
+
+a{
+    text-decoration: none;
+}
+
+.pro-img img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    
+    overflow: hidden;
+}
+
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    color: #fff;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #090911, #7060e9);
+}
+
+.btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+.btn-md {
+    padding: 0.45rem 0.85rem;
+}
+
+.btn-rounded {
+    border-radius: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-md-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.m-t-10 {
+    margin-top: 10px;
+}
+
+.m-t-20 {
+    margin-top: 20px;
+}
+
+.font-light {
+    font-weight: 300;
+}
+.bars{
+    font-size: 35px;
+    background: linear-gradient(90deg, #C7C5F4, #776BCC);
+}
+
+.py-5 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+.arrow{
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 185px;
+    margin-top: -280px;
+}
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  
+ 
+
+  
+  
+.px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+.pro-img {
+    margin-top: -10px;
+   /* Ajout de cette propriété pour ajuster la position de l'image pro-img */
+}
+
+.titre{
+margin-right: 150px;
+font-size: 19px;
+color: white;
+}
+.arrow{
+    margin-right:480px;
+ 
+   
+    color: white;
+    font-size: 25px;
+ }
+ 
+
+
+ 
+
+  .p3
+  {
+    margin-right: 100px;
+    padding-bottom: 2px;
+    font-size: 22px;
+  }
+  .values-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #f7f7f7, #dcdcdc);
+}
+
+
+
+.card1:hover {
+    transform: translateZ(-10px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+   
+    background-color: #7f34db;
+}
+
+.card:hover {
+    transform: translateZ(-10px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+   
+    background-color: #7f34db;
+}
+
+.barr{
+    color: yellow;
+    margin-top: -62px;
+
+}
+
+
+.prix{
+    font-size: 22px;
+    font-weight: bold;
+    margin-right: 100px;
+    margin-top: -12px;
+}
+ .container2{
+  height: 500vh;
+width: 400px;
+    box-shadow: 0px 0px 20px #5C5696;
+    background-color: #dedde0;
+  }
+  .arr{
+    font-size: 22px;
+    color: white;
+  }
+.option{
+   font-size: 22px;
+    color: white;
+}
+.search{
+    background-color: #6d0df4;
+    display: flex;
+    align-items: center;
+}
+
+ /* Ajuste la taille de la barre de recherche */
+ion-searchbar {
+    
+    --padding-start: 8px; /* Remplissage à gauche */
+    --padding-end: 12px; /* Remplissage à droite */
+    --padding-top: 2px; /* Remplissage en haut */
+    --padding-bottom: 6px; /* Remplissage en bas */
+    --border-radius: 20px; /* Rayon de bordure */
+    --ion-font-size: 14px; /* Taille de police */
+}
+
+/* Ajuste la taille de l'icône de recherche */
+ion-searchbar::part(search-icon) {
+    font-size: 18px; /* Taille de l'icône de recherche */
+}
+
+/* Ajuste la taille de l'icône de suppression du texte */
+ion-searchbar::part(clear-icon) {
+    font-size: 18px; /* Taille de l'icône de suppression */
+}
+
+/* Ajuste la taille du bouton d'annulation */
+ion-searchbar::part(cancel-button) {
+    font-size: 14px; /* Taille du texte du bouton d'annulation */
+}
+
+.container3 {
+    display: flex;
+    align-items: center; /* Aligne les éléments verticalement au centre */
+    justify-content: space-between; /* Répartit l'espace disponible entre les éléments */
+    background-color: #6d0df4;
+    padding: 10px;
+   /* Ajoute un espacement autour des éléments */
+}
+
+
+  .card-row1{ display: flex;}
+
+  img {
+    height: 30%;
+    width: 100%;
+  }
+  
+.search-wrapper {
+    display: flex;
+    align-items: center; /* Aligne les éléments de la recherche verticalement au centre */
+}
+
+.pro-img img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+
+.posts {
+    display: flex;
+    flex-direction: column;
+    height: 500px; /* Vous pouvez ajuster cette valeur en fonction de vos besoins */
+    /* Ou utilisez max-height pour une hauteur maximale */
+    /* max-height: 500px; */
+  }
+  
+  .card {
+    width: 50%;
+    margin: 1px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 2px solid #5C5696;
+    max-width: 300px;
+    height: 350px; /* Définissez la hauteur des cartes selon vos besoins */
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  }
+  
+  
+  .card-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  /* Cette classe étire les cartes pour occuper toute la hauteur disponible */
+  .stretch {
+    flex: 1;
+  }
+  

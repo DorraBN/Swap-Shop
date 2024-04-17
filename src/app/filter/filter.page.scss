@@ -1,0 +1,288 @@
+.RadialProgress {
+    --hue: 220;
+    --holesize: 45%;
+    --track-bg: hsl(234, 4%, 52%);
+    
+    width: 50px; /* Taille du cercle */
+    height: 50px; /* Taille du cercle */
+    border-radius: 50%; /* Cercle */
+    display: grid;
+    place-items: center;
+    position: relative;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-left: 150px;
+    background: var(--track-bg); /* Couleur de fond */
+    color: white; /* Couleur du texte */
+  }
+  
+  .RadialProgress::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+    z-index: -1;
+    margin-left: 100px;
+    background: conic-gradient(
+      hsl(var(--hue) 100% 70%),
+      hsl(var(--hue) 100% 40%),
+      hsl(var(--hue) 100% 70%) var(--progress, 0%),
+      var(--track-bg) var(--progress, 0%) 100%
+    );
+    
+    mask-image: radial-gradient(
+      transparent var(--holesize),
+      black calc(var(--holesize) + 0.5px)
+    );
+  }
+  
+
+.input{
+    margin-left: 40px;
+    width: 80%;
+}
+
+
+
+  .show{
+    margin-left: 250px;
+    font-size: 10px;
+    margin-top: -27px;
+  }
+  .color{
+    font-weight: bold;
+    font-size: 22px;
+    margin-left: 15px;
+  }
+  .ball-red{
+width: 50%;
+height: 50%;
+  }
+  button {
+    position: relative;
+    background: #e6b6ec;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    letter-spacing: 0.1rem;
+    font-size: 1rem;
+    justify-content: center;
+    margin-left: 40px;
+    padding: 1rem 3rem;
+    transition: 0.2s;
+    margin-top: 30px;
+    width: 80%;
+  }
+  
+  button:hover {
+    letter-spacing: 0.2rem;
+    padding: 1.1rem 3.1rem;
+    background: var(--clr);
+    color: var(--clr);
+    /* box-shadow: 0 0 35px var(--clr); */
+    animation: box 3s infinite;
+  }
+  
+  button::before {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background: #d69cea;
+  }
+  
+  button span {
+    position: relative;
+    z-index: 1;
+  }
+  button i {
+    position: absolute;
+    inset: 0;
+    display: block;
+  }
+  
+  button i::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    left: 80%;
+    top: -2px;
+    border: 2px solid var(--clr);
+    background: #272822;
+    transition: 0.2s;
+  }
+  
+  button:hover i::before {
+    width: 15px;
+    left: 20%;
+    animation: move 3s infinite;
+  }
+  
+  button i::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    left: 20%;
+    bottom: -2px;
+    border: 2px solid var(--clr);
+    background: #272822;
+    transition: 0.2s;
+  }
+  
+  button:hover i::after {
+    width: 15px;
+    left: 80%;
+    animation: move 3s infinite;
+  }
+  
+  @keyframes move {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(5px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes box {
+    0% {
+      box-shadow: #27272c;
+    }
+    50% {
+      box-shadow: 0 0 25px var(--clr);
+    }
+    100% {
+      box-shadow: #27272c;
+    }
+  }
+  
+  ion-card-subtitle {
+    --font-size: 11px;
+    font-size: var(--font-size);
+    text-align: justify; /* Utilisation de la propriété text-align pour le justification du texte */
+    padding: var(--padding, 2px); /* Utilisation de la propriété padding avec une valeur par défaut de 2px */
+  }
+  ion-card-subtitle:hover {
+  color: black;
+  cursor: pointer;
+  }
+  
+  
+  
+  
+.container {
+    position: relative;
+    height: 100vh;
+    width: 350px;
+    margin-left: 500px;
+    
+    box-shadow: 0px 0px 20px #5C5696;
+    background-color: #dedde0;
+  }
+  .close{
+    margin-left: 300px;
+    font-size: 25px;
+    margin-top: 15px;
+  }
+  .filter{
+    font-size: 25px;
+    margin-left: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+.price{
+    margin-left: 15px;
+    margin-top: -2px;
+}
+
+  .container1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+  }
+  
+  .row {
+    display: flex;
+    justify-content: center;
+    
+    
+  }
+  
+  .ball {
+    width: 40px; /* Largeur de chaque balle */
+    height: 40px; /* Hauteur de chaque balle */
+    border-radius: 50%; /* Pour créer des balles rondes */
+    margin: 5px; /* Marge entre chaque balle */
+  }
+  
+  
+  .red {
+    background-color: red;
+  }
+  
+  .blue {
+    background-color: blue;
+  }
+  
+  .green {
+    background-color: green;
+  }
+  
+  .yellow {
+    background-color: yellow;
+  }
+  
+  .orange {
+    background-color: orange;
+  }
+  
+  .purple {
+    background-color: purple;
+  }
+  
+  .card1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin: 10px;
+   
+    width: 50%;
+   /* Ajoutez une marge entre les cartes si nécessaire */
+   /* Taille minimale de la carte */
+    /* Taille maximale de la carte */
+  }
+  ion-loading.custom-loading {
+    --background: #e3edff;
+    --spinner-color: #910e9f;
+  
+    color: #1c0122;
+    margin-right: 47px;
+    
+  }
+  .card1 ion-card-subtitle:hover{
+   color: black;
+  }
+
+
+  .card1:hover{
+    border:1px solid black;
+ 
+   
+   
+   border-radius: 15px;
+
+  }
+  .type{
+    font-size: 14px;
+    margin-left: 18px;
+  }

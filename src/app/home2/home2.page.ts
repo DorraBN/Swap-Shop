@@ -7,18 +7,25 @@ import { Router } from '@angular/router';
   styleUrls: ['./home2.page.scss'],
 })
 export class Home2Page implements OnInit {
+<<<<<<< HEAD
+=======
+
+  navCtrl: any;
+>>>>>>> 8353bd8d1aa4e4bdd0908bae58d0f76050c62ef4
 
   constructor(private router: Router) {}
 
   onSearchFocus() {
-    this.router.navigate(['/search']);
+    this.router.navigate(['/searche']);
   }
   gotomeuble() {
-    this.router.navigate(['/meubles']);
+    this.router.navigate(['/detail']);
   }
+ 
   ngOnInit() {}
 selectedNavItem: string | undefined;
 
   selectNavItem(navItem: string) {
     this.selectedNavItem = navItem;
-}}
+}
+}
