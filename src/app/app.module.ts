@@ -1,6 +1,11 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+<<<<<<< HEAD
 
+=======
+import { RouteReuseStrategy } from '@angular/router';
+import { CommonModule } from '@angular/common'; 
+>>>>>>> branch1
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +25,7 @@ import { AllComponent } from './all/all.component';
 import { EditComponent } from './edit/edit.component';
 
 import { PostsComponent } from './posts/posts.component';
+<<<<<<< HEAD
 import { Home2Page } from './home2/home2.page';
 import { DetailPage } from './detail/detail.page';
 import { SigninPage } from './signin/signin.page';
@@ -35,10 +41,22 @@ const routes: Routes = [
   { path: 'filter', component: FilterPage },
 ];
 
+=======
+import { MeublesComponent } from './meubles/meubles.component';
+import { DetailsComponent } from './details/details.component';
+
+import { VendeurMainPageComponent } from './vendeur-main-page/vendeur-main-page.component';
+import {VendeurCategoriesComponent}  from './vendeur-categories/vendeur-categories.component';
+import { VendeurCategoriesAjoutezComponent } from './vendeur-categories-ajoutez/vendeur-categories-ajoutez.component';
+import {VendeurVentesComponent} from './vendeur-ventes/vendeur-ventes.component';
+import { AdminMainPageComponent} from './admin-main-page/admin-main-page.component';
+import { AjouterVendeurComponent } from './ajouter-vendeur/ajouter-vendeur.component';
+>>>>>>> branch1
 
 
 
 @NgModule({
+<<<<<<< HEAD
   declarations: [AppComponent,  ProfileComponent, AllComponent, EditComponent, NewpostComponent, PostsComponent],
   imports: [
     BrowserModule,
@@ -50,6 +68,11 @@ const routes: Routes = [
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy } // Ajoutez votre fournisseur de stratégie de réutilisation ici
   ],
+=======
+  declarations: [AppComponent,AjouterVendeurComponent,AdminMainPageComponent,VendeurVentesComponent ,SigninComponent, SignupComponent,VendeurCategoriesAjoutezComponent, ProfileComponent, NavigationComponent,Home2Component,VendeurCategoriesComponent, AllComponent, EditComponent, SearcheComponent, NewpostComponent, PostsComponent, MeublesComponent, DetailsComponent,VendeurMainPageComponent],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,  FormsModule,IonicModule,CommonModule],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+>>>>>>> branch1
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA] // Ajoutez votre schéma ici
 })

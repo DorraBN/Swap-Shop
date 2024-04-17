@@ -1,0 +1,77 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  integrity="sha512-vQbC7jo2Psdheux1lSnfvkDMNfU/nZkzVsw6A6fGFG5AdK2GDuPAdD/WDJ4IzYhqkvX2SdprnE17kS0E9Ye9kQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+<div class="container" style="width: 380px">
+  <div class="row py-5 px-2">
+    <div class="col-md-8" style="width: 360px; height: 410px">
+      <ion-toolbar class="custom-toolbar">
+        <div style="display: flex; align-items: center">
+          <span class="menu-icon" (click)="toggleSidebar()">&#9776;</span>
+          <h3 class="m-b-0" style="margin-left: 10px">Categories</h3>
+        </div>
+      </ion-toolbar>
+
+      <div class="card" style="width: 230px; padding-top: 20px">
+        <div class="card-body little-profile text-center">
+          <ion-list style="height: 320px">
+            <ion-list>
+              <ion-item>
+                <ion-input
+                  style="height: 50px; width: 90%"
+                  placeholder="Nom Complet"
+                ></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input placeholder="Nom d utilisateur"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input placeholder="Email" type="email"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-input type="tel" placeholder="Telephone"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-input type="password" placeholder="Password"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input placeholder="Adresse de boutique"></ion-input>
+              </ion-item>
+            </ion-list>
+          </ion-list>
+
+          <ion-button color="tertiary" style="margin-top: 20px">
+            Ajoutez
+          </ion-button>
+          <ion-icon
+            name="arrow-back"
+            class="arrow"
+            slot="start"
+            style="margin-right: 100px"
+            (click)="goToHome2()"
+            color="default"
+          ></ion-icon>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar" [ngClass]="{ 'sidebar-open': sidebarOpen }">
+      <div class="pro-img">
+        <img src="https://i.imgur.com/8RKXAIV.jpg" alt="user" />
+      </div>
+      <h3 class="m-b-0">Vendeur</h3>
+      <a href="/home2"><ion-icon name="home"></ion-icon> home</a
+      ><a href=""><ion-icon name="stats-chart"></ion-icon> Statistics</a>
+      <a href="/post"> <ion-icon name="create-outline"></ion-icon> Posts </a>
+
+      <a href="#"><ion-icon name="mail"></ion-icon> Messages</a>
+      <a href="#"><ion-icon name="settings"></ion-icon> Settings</a>
+      <a href="/sign"><ion-icon name="log-out"></ion-icon> Logout</a>
+    </div>
+  </div>
+</div>
