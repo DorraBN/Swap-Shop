@@ -93,7 +93,11 @@ const routes: Routes = [
   {
     path: 'filter',
     loadChildren: () => import('./filter/filter.module').then( m => m.FilterPageModule)
+  },  {
+    path: 'home3',
+    loadChildren: () => import('./home3/home3.module').then( m => m.Home3PageModule)
   },
+
 ];
 
 @NgModule({

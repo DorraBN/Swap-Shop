@@ -12,6 +12,10 @@ export class Home2Page implements OnInit {
 
   constructor(private router: Router) {}
 
+  gotosign() {
+    this.router.navigate(['/signin']);
+  }
+
   onSearchFocus() {
     this.router.navigate(['/searche']);
   }
