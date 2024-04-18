@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="container1">
+    <!-- Bouton de retour -->
+    <ion-icon name="arrow-back" class="arrow" (click)="gotoelectronic()"></ion-icon>
+    <app-headerpaim></app-headerpaim>
+  </div>
+ 
+  <div class="row product-detail">
+    <img class="product-img" src="{{productdata?.images[0]}}">
+ 
+ 
+    <div class="button-container">
+      <button  class="btn btn-primary">Buy Now</button>&nbsp;
+      <button (click)="addtocart(productdata)" class="btn btn-success"  *ngIf="showadd">Add to Cart</button>
+      <button (click)="removeitem(productdata)"  class="btn btn-rem"  *ngIf="showremove">Remove Item</button>
+
+    </div>
+  </div>
+ 
+<div class="col-sm-8">
+  <div class="product-details" id="product-description">
+    <h1>{{productdata?.title}} </h1>
+    <p style="color:green;">Special Price</p>
+    <h3>Price:{{productdata?.price}}DT</h3>
+    <strong>Category:&nbsp;{{productdata?.category}}</strong><br><br>
+    <strong>Description:</strong>
+    <p>{{productdata?.description}}</p>
+    <p style="color: green;">Discount:{{productdata?.discountPercentage}}%</p><br>
+    <strong>Stocks:{{productdata?.stock}}Units left</strong>
+</div>
+
+</div>
+</div>

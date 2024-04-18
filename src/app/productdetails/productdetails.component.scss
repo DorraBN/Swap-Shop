@@ -1,0 +1,116 @@
+.container {
+  position: relative;
+  height: 100vh;
+  width: 350px;
+  margin-left: 500px;
+  margin-top: 10px;
+  box-shadow: 0px 0px 20px #5C5696;
+  background-color: #dedde0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container1 {
+  background: linear-gradient(90deg, #C7C5F4, #776BCC);
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Aligner les éléments à chaque extrémité */
+  width: 100%;
+  margin-left: 0px; /* Ajuster la marge gauche */
+}
+
+  .arrow {
+    font-size: 24px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .product-details {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .product-img {
+    max-width: 100%; /* Conserver la largeur maximale */
+    max-height: 370px; /* Définir une hauteur maximale pour l'image */
+    height: auto; /* Permettre à l'image de conserver son ratio hauteur/largeur */
+}
+
+  .product-details h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .product-details p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .product-details p:last-child {
+    margin-bottom: 0;
+  }
+  #product-description {
+    margin-top: 40px; /* ajuster la valeur négative selon vos besoins */
+}
+.product-details h1,
+.product-details h3,
+.product-details strong {
+    color: black; /* Rendre le texte noir */
+}
+
+.product-details p {
+    color: rgb(0, 0, 0); /* Conserver le texte vert */
+}
+.btn {
+  padding: 10px 20px; /* Ajoutez un rembourrage pour rendre les boutons plus spacieux */
+  border: none; /* Supprime les bordures par défaut */
+  border-radius: 5px; /* Ajoute un arrondi aux coins */
+  cursor: pointer; /* Change le curseur lorsqu'on survole le bouton */
+  margin-right: 10px; /* Ajoute une marge à droite pour espacer les boutons */
+}
+
+.btn-primary {
+  background-color: #007bff; /* Couleur de fond bleue pour le bouton "Buy Now" */
+  color: #fff; /* Couleur du texte blanc */
+}
+
+.btn-success {
+  background-color: #28a745; /* Couleur de fond verte pour le bouton "Add to Cart" */
+  color: #fff; /* Couleur du texte blanc */
+}
+.btn-rem{
+  background-color: #a72828; /* Couleur de fond verte pour le bouton "Add to Cart" */
+  color: #fff; /* Couleur du texte blanc */
+}
+/* Styles supplémentaires pour les boutons lorsqu'ils sont survolés */
+.btn:hover {
+  opacity: 0.8; /* Réduit légèrement l'opacité pour indiquer qu'ils sont survolés */
+}
+
+.button-container {
+  margin-top: 10px; /* Ajoute une marge supérieure pour déplacer les boutons vers le bas */
+}
+.bars {
+  font-size: 35px; /* Ajuster la taille de l'icône */
+  margin-right:30px; /* Déplacer l'icône légèrement vers la gauche */
+  color: black; /* Définir la couleur du texte en noir */
+}
+.cart-container {
+display: flex;
+align-items: center;
+
+}
+
+.cart-container ion-icon {
+  margin-right: 10px; /* Ajuster l'espacement entre l'icône et le texte */
+}
+.cart-container span {
+  margin-right:14px; /* Ajuster la marge à gauche pour déplacer le texte */
+}

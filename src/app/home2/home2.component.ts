@@ -16,6 +16,12 @@ export class Home2Component implements OnInit {
   gotomeuble() {
     this.router.navigate(['/meubles']);
   }
+  gotolivre() {
+    this.router.navigate(['/livres']);
+  }
+  gotoelectronic(){
+    this.router.navigate(['/electronic']);
+  }
   ngOnInit() {}
 selectedNavItem: string | undefined;
 

@@ -1,5 +1,6 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
@@ -19,10 +20,16 @@ import { SearcheComponent } from './searche/searche.component';
 import { PostsComponent } from './posts/posts.component';
 import { MeublesComponent } from './meubles/meubles.component';
 import { DetailsComponent } from './Details/details.component';
+import { LivresComponent } from './livres/livres.component';
+import { ProductdetailsComponent } from './productdetails/productdetails.component';
+import { ElectronicComponent } from './electronic/electronic.component';
+import { HeaderpaimComponent } from './headerpaim/headerpaim.component';
+import { CartPageComponent } from './cart-page/cart-page.component';
+
 
 @NgModule({
-  declarations: [AppComponent, SigninComponent, SignupComponent, ProfileComponent, NavigationComponent,Home2Component, AllComponent, EditComponent, SearcheComponent, NewpostComponent, PostsComponent, MeublesComponent, DetailsComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,  FormsModule],
+  declarations: [AppComponent, SigninComponent, SignupComponent, ProfileComponent, NavigationComponent,Home2Component, AllComponent, EditComponent, SearcheComponent, NewpostComponent, PostsComponent, MeublesComponent, DetailsComponent,LivresComponent,ProductdetailsComponent,ElectronicComponent,HeaderpaimComponent,CartPageComponent],
+  imports: [HttpClientModule,BrowserModule, IonicModule.forRoot(), AppRoutingModule,  FormsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="container1">
+    <!-- Bouton de retour -->
+    <ion-icon name="arrow-back" class="arrow" (click)="goToHome2()"></ion-icon>
+    <!-- Titre de la catégorie -->
+    <h2>Appareils Electronique</h2>
+    <!-- Icône du panier et nombre d'éléments -->
+    <app-headerpaim></app-headerpaim>
+  </div>
+  <!-- Image promotionnelle -->
+  <img src="assets/ee.jpg" alt="" class="home">
+  <div *ngFor="let item of data?.products" class="post-container">
+    <!-- En-tête du post -->
+    <div class="post-header">
+      <!-- Image du vendeur -->
+      <img routerLink="/productdetails/{{item.id}}" src="https://i.imgur.com/8RKXAIV.jpg" alt="Profile Picture" class="pro">
+      <!-- Nom du vendeur -->
+      <span><h5>{{item.title}}</h5></span>
+    </div>
+    <!-- Image du produit -->
+    <img [src]="item.thumbnail" alt="Post Image" class="impo">
+    <!-- Bouton "J'aime" -->
+    <ion-icon [name]="isLiked ? 'heart' : 'heart-outline'"  class="i1"></ion-icon>
+    <!-- Bouton "Ajouter au panier" -->
+    <ion-icon name="cart-outline" class="i2"  ></ion-icon>
+    <!-- Description ou détails du produit -->
+    <!-- Bouton "Ajouter au panier" -->
+<button (click)="addtocart(item)" class="add-to-cart-button" >Add</button>
+
+<!-- Bouton "Retirer l'article" -->
+<button (click)="removeitem(item)" class="remove-item-button" >Remove</button>
+
+<!-- Bouton "Voir les détails du produit" -->
+<button class="details-button" routerLink="/productdetails/{{item.id}}">more</button>
+</div>
+</div>

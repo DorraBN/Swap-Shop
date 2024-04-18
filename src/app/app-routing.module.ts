@@ -15,6 +15,10 @@ import { NewpostComponent } from './newpost/newpost.component';
 import { PostsComponent } from './posts/posts.component';
 import { MeublesComponent } from './meubles/meubles.component';
 import { DetailsComponent } from './Details/details.component';
+import { LivresComponent } from './livres/livres.component';
+import { ProductdetailsComponent } from './productdetails/productdetails.component';
+import { ElectronicComponent } from './electronic/electronic.component';
+import { CartPageComponent } from './cart-page/cart-page.component';
 
 const routes: Routes = [
 
@@ -52,8 +56,16 @@ const routes: Routes = [
     component:MeublesComponent, // Composant de connexion
   },
   {
+    path: 'livres', // Chemin pour le composant de connexion
+    component:LivresComponent, // Composant de connexion
+  },
+  {
     path: 'details', // Chemin pour le composant de connexion
     component:DetailsComponent, // Composant de connexion
+  },
+  {
+    path: 'electronic', // Chemin pour le composant de connexion
+    component:ElectronicComponent, // Composant de connexion
   },
   {
     path: 'all', // Chemin pour le composant de connexion
@@ -75,8 +87,19 @@ const routes: Routes = [
     path: 'search', // Chemin pour le composant de connexion
     component:SearcheComponent, // Composant de connexion
   },
+  {
+    path: 'productdetails', // Chemin pour le composant de connexion
+    component:ProductdetailsComponent, // Composant de connexion
+  },
   
-  
+  {
+    path: 'productdetails/:productid', // Chemin pour le composant de connexion
+    component:ProductdetailsComponent, // Composant de connexion
+  },
+  {
+    path: 'cart-page', // Chemin pour le composant de connexion
+    component:CartPageComponent, // Composant de connexion
+  },
   {
     path: '', // Redirection par défaut vers la page d'accueil
     redirectTo: 'home',
