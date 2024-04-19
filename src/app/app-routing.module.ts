@@ -103,6 +103,30 @@ const routes: Routes = [
     path: 'admin-main-page',
     loadChildren: () => import('./admin-main-page/admin-main-page.module').then( m => m.AdminMainPagePageModule)
   },
+  {
+    path: 'vendeur-main-page',
+    loadChildren: () => import('./vendeur-main-page/vendeur-main-page.module').then( m => m.VendeurMainPagePageModule)
+  },
+  {
+    path: 'vendeur-ventes',
+    loadChildren: () => import('./vendeur-ventes/vendeur-ventes.module').then( m => m.VendeurVentesPageModule)
+  },
+  {
+    path: 'vendeur-categories',
+    loadChildren: () => import('./vendeur-categories/vendeur-categories.module').then( m => m.VendeurCategoriesPageModule)
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
+  },
+  {
+    path: 'ajoutervendeur',
+    loadChildren: () => import('./ajoutervendeur/ajoutervendeur.module').then( m => m.AjoutervendeurPageModule)
+  },
+  {
+    path: 'categories-ajouter',
+    loadChildren: () => import('./categories-ajouter/categories-ajouter.module').then( m => m.CategoriesAjouterPageModule)
+  },
 
 
 ];
