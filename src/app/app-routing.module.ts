@@ -126,7 +126,11 @@ const routes: Routes = [
   {
     path: 'categories-ajouter',
     loadChildren: () => import('./categories-ajouter/categories-ajouter.module').then( m => m.CategoriesAjouterPageModule)
+  },  {
+    path: 'statics',
+    loadChildren: () => import('./statics/statics.module').then( m => m.StaticsPageModule)
   },
+
 
 
 ];

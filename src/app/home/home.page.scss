@@ -48,13 +48,14 @@
     position: absolute;
     top: 590px; /* Ajustez la position verticale du bouton */
     left: 120px; /* Ajustez la position horizontale du bouton */
-    padding: 10px 20px; /* Ajoutez un rembourrage au bouton */
+    padding: 12px 20px; /* Ajoutez un rembourrage au bouton */
     font-size: 18px; /* Taille de la police du bouton */
     background-color: #6a0dad; /* Couleur de fond du bouton */
     color: #fff; /* Couleur du texte du bouton */
     border: none; /* Supprimez la bordure du bouton */
     border-radius: 5px; /* Ajoutez un rayon de bordure au bouton */
-    cursor: pointer; /* Curseur de souris lors du survol */
+    cursor: pointer; 
+    width: 40%;/* Curseur de souris lors du survol */
   }
   
   .next-button:hover {

@@ -11,7 +11,7 @@ export class HomePage implements OnInit {
   constructor(private router :Router) { }
   go()
   {
-    this.router.navigate(['/signin']);
+    this.router.navigate(['/home3']);
   }
 
   ngOnInit() {
