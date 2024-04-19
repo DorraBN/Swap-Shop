@@ -1,0 +1,17 @@
+.bars {
+    font-size: 35px; /* Ajuster la taille de l'icône */
+    margin-right: 20px; /* Déplacer l'icône légèrement vers la gauche */
+    color: black; /* Définir la couleur du texte en noir */
+}
+.cart-container {
+  display: flex;
+  align-items: center;
+ 
+}
+
+  .cart-container ion-icon {
+    margin-right: 1px; /* Ajuster l'espacement entre l'icône et le texte */
+  }
+  .cart-container span {
+    margin-right:14px; /* Ajuster la marge à gauche pour déplacer le texte */
+  }

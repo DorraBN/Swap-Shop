@@ -134,6 +134,26 @@ const routes: Routes = [
     path: 'dashv',
     loadChildren: () => import('./dashv/dashv.module').then( m => m.DashvPageModule)
   },
+  {
+    path: 'cart-page',
+    loadChildren: () => import('./cart-page/cart-page.module').then( m => m.CartPagePageModule)
+  },
+  {
+    path: 'electronic',
+    loadChildren: () => import('./electronic/electronic.module').then( m => m.ElectronicPageModule)
+  },
+  {
+    path: 'headerpaim',
+    loadChildren: () => import('./headerpaim/headerpaim.module').then( m => m.HeaderpaimPageModule)
+  },
+  {
+    path: 'livres',
+    loadChildren: () => import('./livres/livres.module').then( m => m.LivresPageModule)
+  },
+  {
+    path: 'productdetails',
+    loadChildren: () => import('./productdetails/productdetails.module').then( m => m.ProductdetailsPageModule)
+  },
 
 
 

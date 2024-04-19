@@ -35,6 +35,7 @@ import { HomePage } from './home/home.page';
 import { SignupPage } from './signup/signup.page';
 import { FilterPage } from './filter/filter.page';
 import { AdminMainPagePage } from './admin-main-page/admin-main-page.page';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   { path: 'home2', component: Home2Page },
@@ -56,6 +57,7 @@ const routes: Routes = [
 
   declarations: [AppComponent,  ProfileComponent, AllComponent, EditComponent, NewpostComponent, PostsComponent,AppComponent, AllComponent, EditComponent,  NewpostComponent, PostsComponent,  DetailsComponent],
   imports: [
+    HttpClientModule,
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
