@@ -117,6 +117,14 @@ const routes: Routes = [
     path: 'vendeur-ventes',
     loadChildren: () => import('./vendeur-ventes/vendeur-ventes.module').then( m => m.VendeurVentesPageModule)
   },
+  {
+    path: 'edit-vendeur',
+    loadChildren: () => import('./edit-vendeur/edit-vendeur.module').then( m => m.EditVendeurPageModule)
+  },
+  {
+    path: 'view-vendeur',
+    loadChildren: () => import('./view-vendeur/view-vendeur.module').then( m => m.ViewVendeurPageModule)
+  },
 
 ];
 

@@ -1,0 +1,11 @@
+/* Centering the image within its container */
+.image-preview img {
+  display: block;
+  margin: 0 auto;
+}
+.circular-image img {
+  border-radius: 100%;
+  width: 130px; /* Adjust as needed */
+  height: 130px; /* Adjust as needed */
+  object-fit: cover; /* Maintain aspect ratio */
+}

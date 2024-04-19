@@ -1,24 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-ajouter-vendeur',
-  templateUrl: './ajouter-vendeur.page.html',
-  styleUrls: ['./ajouter-vendeur.page.scss'],
+  selector: 'app-edit-vendeur',
+  templateUrl: './edit-vendeur.page.html',
+  styleUrls: ['./edit-vendeur.page.scss'],
 })
-export class AjouterVendeurPage implements OnInit {
+export class EditVendeurPage implements OnInit {
 
   ngOnInit(): void {
     
   }
-  nomComplet: string | undefined;
-  nomUtilisateur: string | undefined;
-  email: string | undefined;
-  telephone: string | undefined;
-  password: string | undefined;
-  adresseBoutique: string | undefined;
-  imageUrl: string | undefined;
+  
+  nomComplet: string | undefined = "syrine hentati";
+  nomUtilisateur: string | undefined = "syrine";
+  email: string | undefined = "sirinehentati2084@gmail.com";
+  telephone: number | undefined = 54698214; // Declared as number
+  password: string | undefined = "syrine0123";
+  adresseBoutique: string | undefined = "addresse1";
+
+  imageUrl: string | undefined ="https://ionicframework.com/docs/img/demos/card-media.png";
   constructor(private modalCtrl: ModalController) {}
 
   cancel() {
@@ -26,18 +27,19 @@ export class AjouterVendeurPage implements OnInit {
   }
 
   confirm() {
-    // Gather the data and send it back to the caller
-    const formData = {
+     const formData = {
       nomComplet: this.nomComplet,
       nomUtilisateur: this.nomUtilisateur,
       email: this.email,
       telephone: this.telephone,
       password: this.password,
       adresseBoutique: this.adresseBoutique,
+      
       imageUrl: this.imageUrl,
     };
     this.modalCtrl.dismiss(formData, 'confirm');
   }
+  
 
   previewImage(event: any) {
     const file = event.target.files[0];
@@ -55,4 +57,5 @@ export class AjouterVendeurPage implements OnInit {
     const fileInput = document.getElementById('fileInput') as HTMLElement;
     fileInput.click();
   }
+
 }

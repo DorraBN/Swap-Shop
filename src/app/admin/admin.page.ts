@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActionSheetController, MenuController, IonModal, ModalController } from '@ionic/angular';
 import { AjouterVendeurPage } from '../ajouter-vendeur/ajouter-vendeur.page';
-
+import { EditVendeurPage } from '../edit-vendeur/edit-vendeur.page';
+import { ViewVendeurPage } from '../view-vendeur/view-vendeur.page';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.page.html',
@@ -32,25 +33,25 @@ export class AdminPage implements OnInit {
       title: 'Card 1', 
       email: 'example1@example.com', 
       location: 'Location 1', 
-      image: 'https://ionicframework.com/docs/img/demos/card-media.png"' 
+      image: 'https://ionicframework.com/docs/img/demos/card-media.png' 
     },
     { 
       title: 'Card 2', 
       email: 'example2@example.com', 
       location: 'Location 2', 
-      image: 'https://ionicframework.com/docs/img/demos/card-media.png"' 
+      image: 'https://ionicframework.com/docs/img/demos/card-media.png' 
     },
     { 
       title: 'Card 3', 
       email: 'example3@example.com', 
       location: 'Location 3', 
-      image: 'https://ionicframework.com/docs/img/demos/card-media.png"' 
+      image: 'https://ionicframework.com/docs/img/demos/card-media.png' 
     },
     { 
       title: 'Card 4', 
       email: 'example4@example.com', 
       location: 'Location 4', 
-      image: 'https://ionicframework.com/docs/img/demos/card-media.png"' 
+      image: 'https://ionicframework.com/docs/img/demos/card-media.png' 
     }
   ];
  
@@ -76,7 +77,41 @@ export class AdminPage implements OnInit {
   Delete(){
     
   }
-  Edit(){}
+
+  async View(){
+
+    const modal = await this.modalCtrl.create({
+      component: ViewVendeurPage,
+      componentProps: {
+        
+      }
+    });
+  
+    modal.present();
+
+    const { data, role } = await modal.onWillDismiss();
+
+    if (role === 'confirm') {
+    }
+
+  }
+  async Edit(){
+    
+    const modal = await this.modalCtrl.create({
+      component: EditVendeurPage,
+      componentProps: {
+        
+      }
+    });
+  
+    modal.present();
+
+    const { data, role } = await modal.onWillDismiss();
+
+    if (role === 'confirm') {
+    }
+
+  }
 
   toggleMenu() {
     this.menu.toggle();
@@ -99,15 +134,18 @@ export class AdminPage implements OnInit {
     },
     {
       text: 'Edit',
-      data: {
-        action: 'Edit',
-      },
+      role:'destructive',
+      handler:()  => {
+        this.Edit();
+      }
+      
     },
     {
       text: 'View',
-      data: {
-        action: 'View',
-      },
+      role:'destructive',
+      handler:()  => {
+        this.View();
+      }
     },
     {
       text: 'Cancel',

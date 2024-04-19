@@ -5,12 +5,13 @@
   crossorigin="anonymous"
   referrerpolicy="no-referrer"
 />
+
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-button color="medium" (click)="cancel()">Cancel</ion-button>
     </ion-buttons>
-    <ion-title style="text-align: center">Ajouter un vendeur</ion-title>
+    <ion-title style="text-align: center">Modifier un vendeur</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
     </ion-buttons>
@@ -58,32 +59,40 @@
       </div>
     </div>
   </ion-item>
-  <ion-item style="height: 80px">
-    <ion-input placeholder="Nom Complet" [(ngModel)]="nomComplet"></ion-input>
+  <ion-item style="height: 80px; margin-top: 40px">
+    <ion-input
+      placeholder="{{nomComplet}}"
+      [(ngModel)]="nomComplet"
+    ></ion-input>
   </ion-item>
   <ion-item style="height: 80px">
     <ion-input
-      placeholder="Nom d'utilisateur"
+      placeholder="{{nomUtilisateur}}"
       [(ngModel)]="nomUtilisateur"
     ></ion-input>
   </ion-item>
   <ion-item style="height: 80px">
-    <ion-input placeholder="Email" type="email" [(ngModel)]="email"></ion-input>
+    <ion-input
+      placeholder="{{email}}"
+      type="email"
+      [(ngModel)]="email"
+    ></ion-input>
   </ion-item>
   <ion-item style="height: 80px">
     <ion-input
       type="tel"
-      placeholder="Telephone"
+      placeholder="{{telephone}}"
       [(ngModel)]="telephone"
     ></ion-input>
   </ion-item>
   <ion-item style="height: 80px">
     <ion-input
       type="password"
-      placeholder="Password"
+      placeholder="{{password}} "
       [(ngModel)]="password"
     ></ion-input>
   </ion-item>
+
   <ion-item style="height: 80px">
     <ion-label>Adresse de boutique</ion-label>
     <ion-select [(ngModel)]="adresseBoutique" placeholder="{{adresseBoutique}}">
