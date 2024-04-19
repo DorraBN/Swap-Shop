@@ -93,7 +93,31 @@ const routes: Routes = [
   {
     path: 'filter',
     loadChildren: () => import('./filter/filter.module').then( m => m.FilterPageModule)
+  },  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
   },
+  {
+    path: 'ajouter-vendeur',
+    loadChildren: () => import('./ajouter-vendeur/ajouter-vendeur.module').then( m => m.AjouterVendeurPageModule)
+  },
+  {
+    path: 'vendeur-categories',
+    loadChildren: () => import('./vendeur-categories/vendeur-categories.module').then( m => m.VendeurCategoriesPageModule)
+  },
+  {
+    path: 'vendeur-categories-ajouter',
+    loadChildren: () => import('./vendeur-categories-ajouter/vendeur-categories-ajouter.module').then( m => m.VendeurCategoriesAjouterPageModule)
+  },
+  {
+    path: 'vendeur-main-page',
+    loadChildren: () => import('./vendeur-main-page/vendeur-main-page.module').then( m => m.VendeurMainPagePageModule)
+  },
+  {
+    path: 'vendeur-ventes',
+    loadChildren: () => import('./vendeur-ventes/vendeur-ventes.module').then( m => m.VendeurVentesPageModule)
+  },
+
 ];
 
 @NgModule({
