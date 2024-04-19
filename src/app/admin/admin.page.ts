@@ -8,17 +8,40 @@ import { MenuController } from '@ionic/angular';
   styleUrls: ['./admin.page.scss'],
 })
 export class AdminPage implements OnInit {
-
   
-  tableData = [
-    { id: 1, email: 'seller1@example.com', localisation: 'Paris', ventestotales: 20 },
-    { id: 2, email: 'seller2@example.com', localisation: 'New York', ventestotales: 15 },
-    { id: 3, email: 'seller3@example.com', localisation: 'London', ventestotales: 10 },
-    { id: 4, email: 'seller4@example.com', localisation: 'Tokyo', ventestotales: 25 },
-    // Add more seller data as needed
+  cards: any[] = [
+    { 
+      title: 'Card 1', 
+      email: 'example1@example.com', 
+      location: 'Location 1', 
+      image: 'https://ionicframework.com/docs/img/demos/card-media.png"' 
+    },
+    { 
+      title: 'Card 2', 
+      email: 'example2@example.com', 
+      location: 'Location 2', 
+      image: 'https://ionicframework.com/docs/img/demos/card-media.png"' 
+    },
+    { 
+      title: 'Card 3', 
+      email: 'example3@example.com', 
+      location: 'Location 3', 
+      image: 'https://ionicframework.com/docs/img/demos/card-media.png"' 
+    },
+    { 
+      title: 'Card 4', 
+      email: 'example4@example.com', 
+      location: 'Location 4', 
+      image: 'https://ionicframework.com/docs/img/demos/card-media.png"' 
+    }
   ];
-  
-  
+
+  action1() {
+    console.log('Action 1 clicked');
+    // Add your logic for action 1 here
+  }
+
+
   constructor(private menu: MenuController, private router: Router) { }
   
  
@@ -29,7 +52,7 @@ export class AdminPage implements OnInit {
   ngOnInit() {}
 
   ajouter(){
-    this.router.navigate(['/ajoutervendeur']);
+    this.router.navigate(['/ajouter-vendeur']);
   }
 
   Delete(){

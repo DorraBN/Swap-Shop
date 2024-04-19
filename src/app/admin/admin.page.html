@@ -6,78 +6,102 @@
   referrerpolicy="no-referrer"
 />
 
-<div class="container" style="width: 3120px">
-  <div class="row py-5 px-2">
-    <div class="col-md-8" style="width: 360px; height: 410px">
-      <ion-toolbar class="custom-toolbar">
-        <div style="display: flex; align-items: center">
-          <span class="menu-icon" (click)="toggleSidebar()">&#9776;</span>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            height: 9%;
+            margin-bottom: 3%;
+          "
+        >
+          <span
+            class="menu-icon"
+            style="margin-left: 9px"
+            (click)="toggleSidebar()"
+            >&#9776;</span
+          >
           <h3 class="m-b-0" style="margin-left: 10px">Vendeurs</h3>
         </div>
-      </ion-toolbar>
 
-      <div class="card" style="width: 360px">
-        <div class="card-body little-profile text-center">
-          <ion-button
-            color="tertiary"
-            style="margin-top: 60px; margin-bottom: 30px"
-            (click)="ajouter()"
-            >Ajoutez Vendeur</ion-button
+        <div class="card">
+          <div
+            class="card-body little-profile text-center"
+            style="width: 412px; height: 912px"
           >
-          <table class="ion-table" style="margin-left: 10px">
-            <!-- Table header -->
-            <thead style="width: 85%; padding-top: 70%; margin-top: 250px">
-              <tr>
-                <th>VendeurId</th>
-                <th>Email</th>
-                <th>localisation</th>
-                <th>Nbre de ventes total</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
+            <ion-button
+              color="tertiary"
+              style="margin-top: 60px; margin-bottom: 30px"
+              (click)="ajouter()"
+              >Ajoutez Vendeur</ion-button
+            >
+            <div
+              style="display: flex; flex-direction: column; align-items: center"
+            >
+              <ion-card
+                style="width: 96%; height: 90px"
+                *ngFor="let card of cards"
+              >
+                <ion-grid>
+                  <ion-row>
+                    <ion-col size="2">
+                      <img
+                        style="height: 60px; width: 100%"
+                        alt="Silhouette of mountains"
+                        src="{{ card.image }}"
+                      />
+                    </ion-col>
+                    <ion-col size="7">
+                      <ion-card-content>
+                        <p style="font-size: 0.7rem">Email: {{ card.email }}</p>
+                        <p style="font-size: 0.7rem">
+                          Location: {{ card.location }}
+                        </p>
+                      </ion-card-content>
+                    </ion-col>
 
-            <!-- Table body -->
-            <tbody style="width: 85%; height: 190px; font-size: 12px">
-              <!-- Replace the static data with dynamic data using *ngFor -->
-              <tr *ngFor="let item of tableData">
-                <td>{{ item.id }}</td>
-
-                <td>{{ item.email }}</td>
-                <td>{{ item.localisation }}</td>
-                <td>{{ item.ventestotales }}</td>
-                <ion-icon
-                  name="trash"
-                  color="danger"
-                  slot="end"
-                  (click)="Delete()"
-                  size="small"
-                  style="cursor: pointer"
-                ></ion-icon>
-                <ion-icon
-                  color="primary"
-                  name="create"
-                  (click)="Edit()"
-                  size="small"
-                  style="cursor: pointer"
-                ></ion-icon>
-              </tr>
-            </tbody>
-          </table>
+                    <ion-col size="1">
+                      <ion-button
+                        (click)="setOpen(true)"
+                        style="font-size: 0.7rem; margin-right: 20px"
+                        >Action</ion-button
+                      >
+                      <ion-action-sheet
+                        [isOpen]="isActionSheetOpen"
+                        header="Actions"
+                        [buttons]="actionSheetButtons"
+                        (didDismiss)="setOpen(false)"
+                      ></ion-action-sheet>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-card>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="sidebar" [ngClass]="{ 'sidebar-open': sidebarOpen }">
-      <div class="pro-img">
-        <img src="https://i.imgur.com/8RKXAIV.jpg" alt="user" />
-      </div>
-      <h3 class="m-b-0">Vendeur</h3>
-      <a href="/home2"><ion-icon name="home"></ion-icon> home</a
-      ><a href=""><ion-icon name="stats-chart"></ion-icon> Statistics</a>
-      <a href="/post"> <ion-icon name="create-outline"></ion-icon> Posts </a>
+    <div
+      class="sidebar"
+      style="margin-top: 14%"
+      [ngClass]="{'sidebar-open': sidebarOpen}"
+    >
+      <div class="sidebar" [ngClass]="{'sidebar-open': sidebarOpen}">
+        <div class="pro-img">
+          <img src="https://i.imgur.com/8RKXAIV.jpg" alt="user" />
+        </div>
+        <h3 class="m-b-0">Brad Macullam</h3>
+        <a href="/home2"><ion-icon name="home"></ion-icon> home</a
+        ><a href=""><ion-icon name="stats-chart"></ion-icon> Statistics</a>
+        <a href="/post"> <ion-icon name="create-outline"></ion-icon> Posts </a>
 
-      <a href="#"><ion-icon name="mail"></ion-icon> Messages</a>
-      <a href="#"><ion-icon name="settings"></ion-icon> Settings</a>
-      <a href="/sign"><ion-icon name="log-out"></ion-icon> Logout</a>
+        <a href="#"><ion-icon name="mail"></ion-icon> Messages</a>
+        <a href="#"><ion-icon name="settings"></ion-icon> Settings</a>
+        <a href="/sign"><ion-icon name="log-out"></ion-icon> Logout</a>
+      </div>
     </div>
   </div>
 </div>
