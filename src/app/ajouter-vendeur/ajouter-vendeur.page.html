@@ -6,72 +6,48 @@
   referrerpolicy="no-referrer"
 />
 
-<div class="container" style="width: 380px">
-  <div class="row py-5 px-2">
-    <div class="col-md-8" style="width: 360px; height: 410px">
-      <ion-toolbar class="custom-toolbar">
-        <div style="display: flex; align-items: center">
-          <span class="menu-icon" (click)="toggleSidebar()">&#9776;</span>
-          <h3 class="m-b-0" style="margin-left: 10px">Categories</h3>
-        </div>
-      </ion-toolbar>
-
-      <div class="card" style="width: 230px; padding-top: 20px">
-        <div class="card-body little-profile text-center">
-          <ion-list style="height: 320px">
-            <ion-list>
-              <ion-item>
-                <ion-input
-                  style="height: 50px; width: 90%"
-                  placeholder="Nom Complet"
-                ></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-input placeholder="Nom d utilisateur"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-input placeholder="Email" type="email"></ion-input>
-              </ion-item>
-
-              <ion-item>
-                <ion-input type="tel" placeholder="Telephone"></ion-input>
-              </ion-item>
-
-              <ion-item>
-                <ion-input type="password" placeholder="Password"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-input placeholder="Adresse de boutique"></ion-input>
-              </ion-item>
-            </ion-list>
-          </ion-list>
-
-          <ion-button color="tertiary" style="margin-top: 20px">
-            Ajoutez
-          </ion-button>
-          <ion-icon
-            name="arrow-back"
-            class="arrow"
-            slot="start"
-            style="margin-right: 100px"
-            (click)="goToHome2()"
-            color="default"
-          ></ion-icon>
-        </div>
-      </div>
-    </div>
-    <div class="sidebar" [ngClass]="{ 'sidebar-open': sidebarOpen }">
-      <div class="pro-img">
-        <img src="https://i.imgur.com/8RKXAIV.jpg" alt="user" />
-      </div>
-      <h3 class="m-b-0">Vendeur</h3>
-      <a href="/home2"><ion-icon name="home"></ion-icon> home</a
-      ><a href=""><ion-icon name="stats-chart"></ion-icon> Statistics</a>
-      <a href="/post"> <ion-icon name="create-outline"></ion-icon> Posts </a>
-
-      <a href="#"><ion-icon name="mail"></ion-icon> Messages</a>
-      <a href="#"><ion-icon name="settings"></ion-icon> Settings</a>
-      <a href="/sign"><ion-icon name="log-out"></ion-icon> Logout</a>
-    </div>
-  </div>
-</div>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="medium" (click)="cancel()">Cancel</ion-button>
+    </ion-buttons>
+    <ion-title style="text-align: center">Ajouter un vendeur</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item style="height: 80px; margin-top: 40px">
+    <ion-input placeholder="Nom Complet" [(ngModel)]="nomComplet"></ion-input>
+  </ion-item>
+  <ion-item style="height: 80px">
+    <ion-input
+      placeholder="Nom d'utilisateur"
+      [(ngModel)]="nomUtilisateur"
+    ></ion-input>
+  </ion-item>
+  <ion-item style="height: 80px">
+    <ion-input placeholder="Email" type="email" [(ngModel)]="email"></ion-input>
+  </ion-item>
+  <ion-item style="height: 80px">
+    <ion-input
+      type="tel"
+      placeholder="Telephone"
+      [(ngModel)]="telephone"
+    ></ion-input>
+  </ion-item>
+  <ion-item style="height: 80px">
+    <ion-input
+      type="password"
+      placeholder="Password"
+      [(ngModel)]="password"
+    ></ion-input>
+  </ion-item>
+  <ion-item style="height: 80px">
+    <ion-input
+      placeholder="Adresse de boutique"
+      [(ngModel)]="adresseBoutique"
+    ></ion-input>
+  </ion-item>
+</ion-content>
