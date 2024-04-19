@@ -155,6 +155,7 @@ margin-left: 550px;
 }
 .dash{
   margin-left: 10px;
+  text-align: center;
 }
 
 
@@ -164,10 +165,12 @@ margin-left: 550px;
   box-shadow: 10px 14px 18px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
 border:2px solid #5C5696;
+margin-left: 25px;
 width: 300px;
-  margin: 5px;
-  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+
+box-shadow: .5rem .5rem 1rem rgba(0,0,0,0.6);
 }
+
 .card2 {
 background-color: #da1d5c;
   border-radius: 8px;
@@ -175,8 +178,9 @@ background-color: #da1d5c;
   text-align: center;
 border:2px solid #5C5696;
 width: 300px;
-  margin: 5px;
-  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+ margin-right: 25px;
+ margin-left: 10px;
+ box-shadow: .5rem .5rem 1rem rgba(0,0,0,0.6);
 }
 .card3 {
 background-color: #e59f3c;
@@ -185,8 +189,8 @@ background-color: #e59f3c;
   text-align: center;
 border:2px solid #5C5696;
   width: 300px;
-  margin: 5px;
-  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  margin-left: 25px;
+  box-shadow: .5rem .5rem 1rem rgba(0,0,0,0.6);
 }
 
 .pro{
@@ -203,8 +207,9 @@ border:2px solid #5C5696;
   text-align: center;
 border:2px solid #5C5696;
 width: 300px;
-  margin: 5px;
-  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+margin-right: 25px;
+margin-left: 10px;
+box-shadow: .5rem .5rem 1rem rgba(0,0,0,0.6);
 }
 .icon{
   margin-left: 95px;
@@ -225,6 +230,8 @@ margin-top: 5PX;
   --item-gap: 2%;
   --item-default-color: #060606;
   background-color: #c089ed;
+  margin-right: 15px;
+  margin-left: 15px;
   height: 10rem;
   display: grid;
   grid-auto-flow: column;

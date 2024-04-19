@@ -130,6 +130,10 @@ const routes: Routes = [
     path: 'statics',
     loadChildren: () => import('./statics/statics.module').then( m => m.StaticsPageModule)
   },
+  {
+    path: 'dashv',
+    loadChildren: () => import('./dashv/dashv.module').then( m => m.DashvPageModule)
+  },
 
 
 
