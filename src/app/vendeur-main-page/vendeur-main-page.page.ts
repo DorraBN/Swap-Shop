@@ -10,7 +10,13 @@ import { MenuController } from '@ionic/angular';
 export class VendeurMainPagePage implements OnInit {
 
   constructor(private menu: MenuController, private router: Router) { }
-  
+  goCategories(){
+    this.router.navigate(['/vendeur-categories']);
+  }
+
+  goVentes(){
+    this.router.navigate(['/vendeur-ventes']);
+  }
   ngOnInit() {}
 
   toggleMenu() {
