@@ -16,12 +16,6 @@ import { RouteReuseStrategy } from '@angular/router'; // Import manquant pour Ro
 
 import { DetailsComponent } from './details/details.component';
 
-import { VendeurMainPageComponent } from './vendeur-main-page/vendeur-main-page.component';
-import {VendeurCategoriesComponent}  from './vendeur-categories/vendeur-categories.component';
-import { VendeurCategoriesAjoutezComponent } from './vendeur-categories-ajoutez/vendeur-categories-ajoutez.component';
-import {VendeurVentesComponent} from './vendeur-ventes/vendeur-ventes.component';
-import { AdminMainPageComponent} from './admin-main-page/admin-main-page.component';
-import { AjouterVendeurComponent } from './ajouter-vendeur/ajouter-vendeur.component';
 
 import { NewpostComponent } from './newpost/newpost.component';
 
@@ -40,6 +34,8 @@ import { SigninPage } from './signin/signin.page';
 import { HomePage } from './home/home.page';
 import { SignupPage } from './signup/signup.page';
 import { FilterPage } from './filter/filter.page';
+import { AdminMainPagePage } from './admin-main-page/admin-main-page.page';
+
 const routes: Routes = [
   { path: 'home2', component: Home2Page },
   { path: 'detail', component: DetailPage },
@@ -47,6 +43,8 @@ const routes: Routes = [
   { path: 'home', component: HomePage },
   { path: 'signup', component: SignupPage },
   { path: 'filter', component: FilterPage },
+  { path: 'admin', component: AdminMainPagePage},
+
 ];
 
 
@@ -56,7 +54,7 @@ const routes: Routes = [
 
 @NgModule({
 
-  declarations: [AppComponent,  ProfileComponent, AllComponent, EditComponent, NewpostComponent, PostsComponent,AppComponent,AjouterVendeurComponent,AdminMainPageComponent,VendeurVentesComponent ,VendeurCategoriesComponent, AllComponent, EditComponent,  NewpostComponent, PostsComponent,  DetailsComponent,VendeurMainPageComponent],
+  declarations: [AppComponent,  ProfileComponent, AllComponent, EditComponent, NewpostComponent, PostsComponent,AppComponent, AllComponent, EditComponent,  NewpostComponent, PostsComponent,  DetailsComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),

@@ -4,12 +4,12 @@ import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-admin-main-page',
-  templateUrl: './admin-main-page.component.html',
-  styleUrls: ['./admin-main-page.component.scss'],
+  templateUrl: './admin-main-page.page.html',
+  styleUrls: ['./admin-main-page.page.scss'],
 })
-export class AdminMainPageComponent  implements OnInit {
+export class AdminMainPagePage implements OnInit {
 
-  
+ 
   tableData = [
     { id: 1, email: 'seller1@example.com', localisation: 'Paris', ventestotales: 20 },
     { id: 2, email: 'seller2@example.com', localisation: 'New York', ventestotales: 15 },
