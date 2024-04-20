@@ -159,6 +159,23 @@ const routes: Routes = [
     path: 'users',
     loadChildren: () => import('./dorra/users/users.module').then( m => m.UsersPageModule)
   },
+  {
+    path: 'buyers',
+    loadChildren: () => import('./dorra/buyers/buyers.module').then( m => m.BuyersPageModule)
+  },
+  {
+    path: 'vendeurs',
+    loadChildren: () => import('./dorra/vendeurs/vendeurs.module').then( m => m.VendeursPageModule)
+  },
+  {
+    path: 'adminprofile',
+    loadChildren: () => import('./dorra/adminprofile/adminprofile.module').then( m => m.AdminprofilePageModule)
+  },
+  {
+    path: 'vendeurprofile',
+    loadChildren: () => import('./dorra/vendeurprofile/vendeurprofile.module').then( m => m.VendeurprofilePageModule)
+  },
+
 
 
 

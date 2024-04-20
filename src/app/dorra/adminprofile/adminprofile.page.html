@@ -1,0 +1,66 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  integrity="sha512-vQbC7jo2Psdheux1lSnfvkDMNfU/nZkzVsw6A6fGFG5AdK2GDuPAdD/WDJ4IzYhqkvX2SdprnE17kS0E9Ye9kQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+<div class="container">
+
+  <div class="row  ">
+      <div class="col-md-8">
+          <div class="card">
+              <!-- Ajout de l'icône de trois tirets -->
+              <span class="menu-icon" (click)="toggleSidebar()">&#9776;</span>
+
+
+        <img class="card-img-top" src="assets/sales.jpg" alt="Card image cap" />
+        <div class="card-body little-profile text-center">
+          <div class="pro-img">
+            <img src="https://i.imgur.com/8RKXAIV.jpg" alt="user" />
+          </div>
+          <h3 class="m-b-0">Brad Macullam</h3>
+          <p>Phones&amp;PCs seller</p>
+          <a
+            href="/edit"
+            class="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded"
+            data-abc="true"
+            >Edit profile</a
+          >
+          <div class="row text-center m-t-20">
+            <div class="col-lg-4 col-md-4 m-t-20">
+              <h3 class="m-b-0 font-light">10434</h3>
+              <small>Articles</small>
+            </div>
+            <div class="col-lg-4 col-md-4 m-t-20">
+              <h3 class="m-b-0 font-light">434K</h3>
+              <small>sales</small>
+            </div>
+            <div class="col-lg-4 col-md-4 m-t-20">
+              <h3 class="m-b-0 font-light">5454</h3>
+              <small>purchase</small>
+            </div>
+          </div>
+          <hr />
+          <!-- Ajout du tiret de 3 -->
+        </div>
+      </div>
+    </div>
+    <div class="sidebar" [ngClass]="{ 'sidebar-open': sidebarOpen }">
+      <div class="sidebar" [ngClass]="{ 'sidebar-open': sidebarOpen }">
+        <div class="pro-img">
+          <img src="https://i.imgur.com/8RKXAIV.jpg" alt="user" />
+        </div>
+        <h3 class="m-b-0">Brad Macullam</h3>
+        <a href="/users"><ion-icon name="pricetags"></ion-icon>produits</a
+        ><a href="/statics"><ion-icon name="stats-chart"></ion-icon> Statistics</a>
+        <a href="/post"> <ion-icon name="create-outline"></ion-icon> Posts </a>
+
+        <a href="#"><ion-icon name="people"></ion-icon>Acheteurs</a>
+        <a href="#"><ion-icon name="settings"></ion-icon> Settings</a>
+        <a href="/sign"><ion-icon name="log-out"></ion-icon> Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
