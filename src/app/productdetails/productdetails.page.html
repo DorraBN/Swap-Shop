@@ -1,14 +1,10 @@
 <div class="container">
   <div class="container1">
     <!-- Bouton de retour -->
-    <ion-icon name="arrow-back" class="arrow" (click)="gotoelectronic()"></ion-icon>
-   
+    <ion-icon name="arrow-back" class="arrow" (click)="gotoelectronic()"></ion-icon>  
   </div>
- 
   <div class="row product-detail">
     <img class="product-img" src="{{productdata?.images[0]}}">
- 
- 
     <div class="button-container">
       <button  class="btn btn-primary">Buy Now</button>&nbsp;
       <button (click)="addtocart(productdata)" class="btn btn-success"  *ngIf="showadd">Add to Cart</button>

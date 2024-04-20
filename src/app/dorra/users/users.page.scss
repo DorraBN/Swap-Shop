@@ -1,0 +1,164 @@
+ion-item {
+    --background: rgba(248, 248, 250, .96);//rgba(123, 22, 119, 0.96)
+    --border: 2px solid #000;
+    --box-shadow: 0px 0px 20px #5C5696;
+  
+    h2 {
+      font-weight: bold;
+      font-size: 18px;
+      padding-top: 8px;
+    }
+  
+  }
+  
+  ion-content {
+    --background: #eeeef1;
+    --border: 2px solid #000;
+    --box-shadow: 0px 0px 20px #5C5696;
+  }
+  
+.barrr{
+  font-size: 21px;
+}
+  .container{
+  
+    width: 410px;
+    margin-left: 500px;
+ 
+ 
+  }
+  ion-searchbar {
+    --box-shadow: none;
+    --border-radius: 12px;
+  }
+  
+  .more {
+    font-size: 12px;
+    color: #FB4E4E;
+  }
+  .b1{
+    margin-bottom: -5px;
+
+    font-size: 18px;
+  }
+  .b2{
+    margin-top: 11px;
+    font-size: 25px;
+  }
+  
+ 
+  .card:hover{
+    background-color: #a39dd1;
+  }
+  .card.active{
+    background-color: #5C5696;
+  }
+  .card {
+    width: 350px;
+    padding: 5px;
+    background-color: white;
+    box-shadow: none;
+    border-radius: 24px;
+  }
+.all{
+  width: 20px;
+
+}
+  
+  .b{
+    color: #af38a3;
+    font-size: 20px;
+  }
+  .category {
+    width: 100%;
+    box-shadow: none;
+    border-radius: 14px;
+  }
+  
+  .titre{
+    margin-left: -130px;
+    margin-top: 50px;
+
+  }
+  ion-card-subtitle{
+    margin-left: -180px;
+ 
+  }
+
+  .icons{
+    display: flex;
+  }
+  .titre{
+    font-size: 18px;
+  font-weight: bold;  }
+  ion-card-content {
+    .img-wrapper {
+      border-radius: 14px;
+      height: 200px;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+  display: flex;
+
+  
+  
+  }
+  ion-card{
+    border: 2px dashed #af38a3;
+
+height: 200px;
+
+  }
+
+  ion-img{
+
+    width: 80%;
+    height: 70%;
+    margin-left: -75px;
+    margin-top: -25px;
+
+
+  }
+  ion-card-header {
+    ion-icon {
+      font-size: 60px;
+    }
+  
+ 
+  }
+  .bar5{
+    font-size: 25px;
+    color: #af38a3;
+  }
+  .bar{
+    font-size: 25px;
+    color: red;
+    margin-left: 255px;
+  }
+  .wrapper {
+    padding-bottom: 0;
+  }
+  .img-wrapper1{
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin-top: -10px;
+  }
+  
+  ion-badge {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .add{
+    position: fixed;
+    bottom: 20px; /* Réglez la position verticale selon vos besoins */
+               margin-left: 320px;/* Réglez la position horizontale selon vos besoins */
+    z-index: 9999; /* Assurez-vous que l'icône est au-dessus de tout autre contenu */
+    font-size: 35px;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: #5C5696;
+    color: #eeeef1;
+    font-weight: bold;
+}

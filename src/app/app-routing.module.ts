@@ -1,16 +1,16 @@
 
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component'; // Importez le composant de connexion
-import { ProfileComponent } from './profile/profile.component';
+import { LoginComponent } from './dorra/login/login.component'; // Importez le composant de connexion
+import { ProfileComponent } from './dorra/profile/profile.component';
 
 
 
 
-import { AllComponent } from './all/all.component';
-import { EditComponent } from './edit/edit.component';
+import { AllComponent } from './dorra/all/all.component';
+import { EditComponent } from './dorra/edit/edit.component';
 
-import { NewpostComponent } from './newpost/newpost.component';
+import { NewpostComponent } from './dorra/newpost/newpost.component';
 import { PostsComponent } from './posts/posts.component';
 
 
@@ -56,48 +56,48 @@ const routes: Routes = [
   },
   {
     path: 'detail',
-    loadChildren: () => import('./detail/detail.module').then( m => m.DetailPageModule)
+    loadChildren: () => import('./dorra/detail/detail.module').then( m => m.DetailPageModule)
   },
   {
     path: 'info',
-    loadChildren: () => import('./info/info.module').then( m => m.InfoPageModule)
+    loadChildren: () => import('./dorra/info/info.module').then( m => m.InfoPageModule)
   },
   {
     path: 'favoris',
-    loadChildren: () => import('./favoris/favoris.module').then( m => m.FavorisPageModule)
+    loadChildren: () => import('./dorra/favoris/favoris.module').then( m => m.FavorisPageModule)
   },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
+    loadChildren: () => import('./dorra/home/home.module').then( m => m.HomePageModule),
   
   },
   {
     path: 'home2',
-    loadChildren: () => import('./home2/home2.module').then( m => m.Home2PageModule)
+    loadChildren: () => import('./dorra/home2/home2.module').then( m => m.Home2PageModule)
   },
   {
     path: 'signin',
-    loadChildren: () => import('./signin/signin.module').then( m => m.SigninPageModule)
+    loadChildren: () => import('./dorra/signin/signin.module').then( m => m.SigninPageModule)
   },
   {
     path: 'signup',
-    loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
+    loadChildren: () => import('./dorra/signup/signup.module').then( m => m.SignupPageModule)
   },
   {
     path: 'nav',
-    loadChildren: () => import('./nav/nav.module').then( m => m.NavPageModule)
+    loadChildren: () => import('./dorra/nav/nav.module').then( m => m.NavPageModule)
   },
   {
     path: 'searche',
-    loadChildren: () => import('./searche/searche.module').then( m => m.SearchePageModule)
+    loadChildren: () => import('./dorra/searche/searche.module').then( m => m.SearchePageModule)
   },
   {
     path: 'filter',
-    loadChildren: () => import('./filter/filter.module').then( m => m.FilterPageModule)
+    loadChildren: () => import('./dorra/filter/filter.module').then( m => m.FilterPageModule)
   },
   {
     path: 'home3',
-    loadChildren: () => import('./home3/home3.module').then( m => m.Home3PageModule)
+    loadChildren: () => import('./dorra/home3/home3.module').then( m => m.Home3PageModule)
   },
   {
     path: 'admin-main-page',
@@ -126,13 +126,14 @@ const routes: Routes = [
   {
     path: 'categories-ajouter',
     loadChildren: () => import('./categories-ajouter/categories-ajouter.module').then( m => m.CategoriesAjouterPageModule)
-  },  {
+  },
+  {
     path: 'statics',
-    loadChildren: () => import('./statics/statics.module').then( m => m.StaticsPageModule)
+    loadChildren: () => import('./dorra/statics/statics.module').then( m => m.StaticsPageModule)
   },
   {
     path: 'dashv',
-    loadChildren: () => import('./dashv/dashv.module').then( m => m.DashvPageModule)
+    loadChildren: () => import('./dorra/dashv/dashv.module').then( m => m.DashvPageModule)
   },
   {
     path: 'cart-page',
@@ -153,6 +154,10 @@ const routes: Routes = [
   {
     path: 'productdetails',
     loadChildren: () => import('./productdetails/productdetails.module').then( m => m.ProductdetailsPageModule)
+  },
+  {
+    path: 'users',
+    loadChildren: () => import('./dorra/users/users.module').then( m => m.UsersPageModule)
   },
 
 

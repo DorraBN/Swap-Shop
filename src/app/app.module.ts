@@ -14,26 +14,26 @@ import { RouteReuseStrategy } from '@angular/router'; // Import manquant pour Ro
 
 
 
-import { DetailsComponent } from './details/details.component';
+import { DetailsComponent } from './dorra/details/details.component';
 
 
-import { NewpostComponent } from './newpost/newpost.component';
+import { NewpostComponent } from './dorra/newpost/newpost.component';
 
 
-import { ProfileComponent } from './profile/profile.component';
+import { ProfileComponent } from './dorra/profile/profile.component';
 
 import { PreloadAllModules} from '@angular/router';
-import { AllComponent } from './all/all.component';
-import { EditComponent } from './edit/edit.component';
+import { AllComponent } from './dorra/all/all.component';
+import { EditComponent } from './dorra/edit/edit.component';
 
 import { PostsComponent } from './posts/posts.component';
 
-import { Home2Page } from './home2/home2.page';
-import { DetailPage } from './detail/detail.page';
-import { SigninPage } from './signin/signin.page';
-import { HomePage } from './home/home.page';
-import { SignupPage } from './signup/signup.page';
-import { FilterPage } from './filter/filter.page';
+import { Home2Page } from './dorra/home2/home2.page';
+import { DetailPage } from './dorra/detail/detail.page';
+import { SigninPage } from './dorra/signin/signin.page';
+import { HomePage } from './dorra/home/home.page';
+import { SignupPage } from './dorra/signup/signup.page';
+import { FilterPage } from './dorra/filter/filter.page';
 import { AdminMainPagePage } from './admin-main-page/admin-main-page.page';
 import { HttpClientModule } from '@angular/common/http';
 
