@@ -16,7 +16,7 @@ export class StaticsPage implements OnInit {
 
   pro()
   {
-    this.router.navigate(['/profile']);
+    this.router.navigate(['/adminprofile']);
   }
 
 }

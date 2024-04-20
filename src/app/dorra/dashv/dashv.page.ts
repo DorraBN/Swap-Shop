@@ -17,7 +17,7 @@ export class DashvPage implements OnInit {
 
   pro()
   {
-    this.router.navigate(['/profile']);
+    this.router.navigate(['/vendeurprofile']);
   }
 
 

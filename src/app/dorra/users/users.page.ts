@@ -15,7 +15,7 @@ export class UsersPage implements OnInit {
 
  
   goback() {
-    this.router.navigate(['/home2']);
+    this.router.navigate(['/vendeurprofile']);
   }
   ngOnInit(): void {
     throw new Error('Method not implemented.');
