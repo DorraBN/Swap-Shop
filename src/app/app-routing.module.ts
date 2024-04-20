@@ -129,6 +129,14 @@ const routes: Routes = [
     path: 'view-vente',
     loadChildren: () => import('./view-vente/view-vente.module').then( m => m.ViewVentePageModule)
   },
+  {
+    path: 'category-view',
+    loadChildren: () => import('./category-view/category-view.module').then( m => m.CategoryViewPageModule)
+  },
+  {
+    path: 'ajouter-produit',
+    loadChildren: () => import('./ajouter-produit/ajouter-produit.module').then( m => m.AjouterProduitPageModule)
+  },
 
 ];
 

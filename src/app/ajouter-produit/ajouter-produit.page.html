@@ -1,0 +1,83 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  integrity="sha512-vQbC7jo2Psdheux1lSnfvkDMNfU/nZkzVsw6A6fGFG5AdK2GDuPAdD/WDJ4IzYhqkvX2SdprnE17kS0E9Ye9kQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="medium" (click)="cancel()">Cancel</ion-button>
+    </ion-buttons>
+    <ion-title style="text-align: center">Ajouter un produit</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item
+    style="
+      height: 160px;
+      margin-top: 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    "
+  >
+    <input
+      id="fileInput"
+      type="file"
+      accept="image/*"
+      (change)="previewImage($event)"
+      style="
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 120px;
+        height: 120px;
+        cursor: pointer;
+      "
+    />
+    <ion-icon name="image" size="large" (click)="FileInput()"></ion-icon>
+
+    <div class="image-preview" *ngIf="imageUrl">
+      <div>
+        <img
+          [src]="imageUrl"
+          alt="Preview"
+          style="
+            width: 160px;
+            height: 160px;
+            margin-left: 50%;
+            margin-top: 40px;
+          "
+        />
+      </div>
+    </div>
+  </ion-item>
+  <ion-item style="height: 80px">
+    <ion-input placeholder="Nom de produit" [(ngModel)]="title"></ion-input>
+  </ion-item>
+
+  <ion-item style="height: 80px">
+    <ion-input
+      placeholder="Description"
+      type="text"
+      [(ngModel)]="description"
+    ></ion-input>
+  </ion-item>
+  <ion-item style="height: 80px">
+    <div style="display: flex; align-items: center">
+      <ion-label style="margin-right: 10px">Rating:</ion-label>
+      <div *ngFor="let _ of [1, 2, 3, 4, 5]; let i = index">
+        <ion-icon
+          [name]="i < rating ? 'star' : 'star-outline'"
+          (click)="setRating(i + 1)"
+        ></ion-icon>
+      </div>
+    </div>
+  </ion-item>
+</ion-content>
