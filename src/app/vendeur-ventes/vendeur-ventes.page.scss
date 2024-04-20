@@ -1,176 +1,15 @@
-.custom-col {
-  flex: 1 0 25%; /* Adjust width as needed */
-  max-width: 120px;
-}
-
-/* Styling for the table */
-ion-content {
-  padding: 20px;
-} /* Adjusting text properties for table header */
-/* Adjusting table width to fit content and make it responsive */
-.ion-table {
-  width: 90%; /* Set table width to 100% */
-  table-layout: fixed; /* Fix table layout to prevent column width from changing */
-}
-
-/* Adjusting text properties for table header */
-.ion-table th {
-  border: 1.5px solid rgb(115, 88, 196);
-  font-size: 12px; /* Adjust font size as needed */
-  font-weight: center; /* Adjust font weight as needed */
-  text-align: center; /* Adjust text alignment as needed */
-  white-space: nowrap; /* Prevent text wrapping */
-  overflow: hidden; /* Hide overflowing text */
-  text-overflow: ellipsis; /* Show ellipsis for overflow */
-}
-
-/* Adjusting text properties for table body */
-.ion-table td {
-  border: 1.5px solid rgb(115, 88, 196);
-  font-size: 10px; /* Adjust font size as needed */
-  font-weight: normal; /* Adjust font weight as needed */
-  text-align: center; /* Adjust text alignment as needed */
-  white-space: nowrap; /* Prevent text wrapping */
-  overflow: hidden; /* Hide overflowing text */
-  text-overflow: ellipsis; /* Show ellipsis for overflow */
-}
-
-/* Make table scrollable horizontally on small screens */
-@media (max-width: 768px) {
-  .ion-table {
-    overflow-x: auto; /* Enable horizontal scroll */
-    display: block; /* Change display mode to block */
-  }
-}
-
-/* Styling for alternating row colors */
-.ion-table tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-/* Hover effect for table rows */
-.ion-table tbody tr:hover {
-  background-color: #f5f5f5;
-}
-
-/* Styling for alternating row colors */
-.ion-table tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-/* Hover effect for table rows */
-.ion-table tbody tr:hover {
-  background-color: #f5f5f5;
-}
-ion-content {
-  padding: 20px;
-} /* Adjusting text properties for table header */
-/* Adjusting table width to fit content and make it responsive */
-.ion-table {
-  width: 90%; /* Set table width to 100% */
-  table-layout: fixed; /* Fix table layout to prevent column width from changing */
-
-  border: 1.5px solid rgb(115, 88, 196);
-}
-
-/* Adjusting text properties for table header */
-.ion-table th {
-  font-size: 12px; /* Adjust font size a
-    s needed */
-  font-weight: center; /* Adjust font weight as needed */
-  text-align: center; /* Adjust text alignment as needed */
-  white-space: nowrap; /* Prevent text wrapping */
-  overflow: hidden; /* Hide overflowing text */
-  text-overflow: ellipsis; /* Show ellipsis for overflow */
-  border: 1.5px solid rgb(115, 88, 196);
-}
-.im {
-  margin-bottom: 5px;
-  width: 85px; /* Définir la largeur souhaitée pour les images */
-  height: 85px; /* Définir la hauteur souhaitée pour les images */
-  border-radius: 50%; /* Créer un cercle en utilisant un rayon de bordure égal à la moitié de la largeur/hauteur */
-  border: 2px solid blue;
-  background-color: #ae7ceb; /* Ajouter une bordure bleue de 2px */
-  object-fit: cover; /* Pour s'assurer que l'image couvre tout le cercle */
-}
-img {
-  height: 60%;
-  width: 60%;
-}
-.card-row {
-  display: flex;
-  margin-top: 15px;
-}
-
-ion-card {
-  width: 76px;
-  height: 76px; /* Set height to match width for square shape */
-  margin: 4px;
-}
-/* Style for when card is hovered */
-ion-card:hover {
-  background-color: rgb(173, 144, 252); /* Change background color on hover */
-  transform: scale(1.1); /* Increase size on hover */
-}
-
-ion-card-subtitle {
-  padding-bottom: 30px;
-  font-size: 0.8em;
-}
-.card {
-  width: 50%;
-  margin: 3px;
-  height: 90%;
-
-  box-shadow: 0px 0px 10px #5c5696;
-}
-.card:hover {
-  transform: translateZ(-10px);
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
-
-  background-color: #7f34db;
-}
 .container {
-  max-width: 20px;
-  height: 800px;
-  margin: 0 auto;
-}
-
-.card-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* Optional: to center align the cards horizontally */
-}
-
-/* Adjusting image preview */
-.image-preview {
-  margin-top: 20px; /* Adjust margin as needed */
-}
-
-.custom-toolbar {
-  --ion-toolbar-background: rgb(135, 117, 214);
-  color: #fff;
-}
-
-/* Centering the image within its container */
-.image-preview img {
-  display: block;
-  margin: 0 auto;
-}
-.circular-image img {
-  border-radius: 100%;
-  width: 130px; /* Adjust as needed */
-  height: 130px; /* Adjust as needed */
-  object-fit: cover; /* Maintain aspect ratio */
+  width: 100%;
+  height: 100vh;
 }
 
 .card {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  background: linear-gradient(90deg, #c7c5f4, #aca2f5);
+  background: linear-gradient(90deg, #c7c5f4, #776bcc);
   height: 105%;
-  box-shadow: 0px 0px 20px #6d61d8;
+  box-shadow: 0px 0px 20px #5c5696;
   margin-top: -14px;
 }
 /* Style pour le menu latéral */
@@ -239,6 +78,19 @@ a {
 
   overflow: hidden;
 }
+.sidebar {
+  position: absolute;
+  top: calc(9% + 3px); /* Adjust this value as needed */
+  left: 0;
+  width: 250px; /* Adjust the width as needed */
+  background-color: #f4f4f4;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%);
+}
+
+.sidebar-open {
+  transform: translateX(0);
+}
 
 .btn {
   display: inline-block;
@@ -281,8 +133,10 @@ a {
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-right: -15px;
+  margin-top: 25px;
   margin-left: -15px;
+  height: 250px;
+  width: 350px;
 }
 
 .col-md-4 {
@@ -323,22 +177,22 @@ a {
   cursor: pointer;
 }
 .sidebar {
-  height: 400px;
+  height: 83%;
   width: 0;
   margin-top: 20px;
   z-index: 1;
   position: fixed;
   left: 160;
-  background-color: #c2ace0;
+  background-color: #6d0df4;
   overflow-x: hidden;
   transition: 0.5s;
-  padding-top: 3px;
+  padding-top: 60px;
 }
 
 .sidebar a {
   padding: 10px 15px;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 20px;
   color: #818181;
   display: block;
   transition: 0.3s;
@@ -349,7 +203,7 @@ a {
 }
 
 .sidebar-open {
-  width: 150px;
+  width: 250px;
 }
 .px-2 {
   padding-left: 0.5rem;
@@ -360,25 +214,4 @@ a {
 }
 .card-body {
   padding: 0; /* Modification de cette propriété pour éliminer le padding */
-}
-.container {
-  width: 300px;
-  height: 320px;
-}
-
-.pro-img {
-  text-align: center;
-  margin-top: 20px;
-}
-.image-button-container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 70px;
-  margin-left: 10px;
-  width: 230px;
-}
-.image-button {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }

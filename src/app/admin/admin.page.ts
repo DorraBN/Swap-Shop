@@ -55,14 +55,29 @@ export class AdminPage implements OnInit {
     }
   ];
  
-
+  searchTerm: string = '';
+  filteredCards: any[] = []; 
+  filterCards(event: any) {
+    const searchTerm = event.target ? event.target.value.toLowerCase() : '';
+    if (!this.searchTerm.trim()) { // If search term is empty, show all data
+      this.filteredCards = this.cards;
+    } else {
+      // Filter data based on search term
+      this.filteredCards = this.cards.filter(card =>
+        card.email.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+        card.location.toLowerCase().includes(this.searchTerm.toLowerCase())
+      );
+    }
+  }
   action1() {
     console.log('Action 1 clicked');
     // Add your logic for action 1 here
   }
 
 
-  constructor(private menu: MenuController, private router: Router,private actionSheetCtrl: ActionSheetController,private modalCtrl: ModalController) { }
+  constructor(private menu: MenuController, private router: Router,private actionSheetCtrl: ActionSheetController,private modalCtrl: ModalController) { 
+    this.filteredCards=this.cards;
+  }
   
  
   goToHome2() {

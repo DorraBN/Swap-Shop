@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { RouteReuseStrategy } from '@angular/router'; // Import manquant pour RouteReuseStrategy
 
-
+import { FilterPipe } from './filter.pipe';
 
 import { NewpostComponent } from './newpost/newpost.component';
 
@@ -39,7 +39,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  declarations: [AppComponent,  ProfileComponent, AllComponent, EditComponent, NewpostComponent, PostsComponent],
+  declarations: [AppComponent, FilterPipe , ProfileComponent, AllComponent, EditComponent, NewpostComponent, PostsComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),

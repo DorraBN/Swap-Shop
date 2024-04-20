@@ -6,67 +6,98 @@
   referrerpolicy="no-referrer"
 />
 
-<div class="container" style="width: 3120px">
-  <div class="row py-5 px-2">
-    <div class="col-md-8" style="width: 360px; height: 410px">
-      <ion-toolbar class="custom-toolbar">
-        <div style="display: flex; align-items: center">
-          <span class="menu-icon" (click)="toggleSidebar()">&#9776;</span>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            height: 9%;
+            margin-bottom: 3%;
+          "
+        >
+          <span
+            class="menu-icon"
+            style="margin-left: 16px"
+            (click)="toggleSidebar()"
+            >&#9776;</span
+          >
           <h3 class="m-b-0" style="margin-left: 10px">Ventes</h3>
         </div>
-      </ion-toolbar>
 
-      <div class="card" style="width: 360px">
-        <div class="card-body little-profile text-center">
-          <table class="ion-table" style="margin-top: 100px; margin-left: 10px">
-            <!-- Table header -->
-            <thead style="width: 85%; padding-top: 70%; margin-top: 250px">
-              <tr>
-                <th>Number of Sales</th>
-                <th>Email</th>
-                <th>Category Name</th>
-                <th>Item Name</th>
-                <th>Price</th>
-                <th>Action</th>
-              </tr>
-            </thead>
+        <div class="card">
+          <div
+            class="card-body little-profile text-center"
+            style="width: 412px; height: 912px; margin-left: 2%"
+          >
+            <ion-searchbar
+              [(ngModel)]="searchTerm"
+              (input)="filterCategories($event)"
+              placeholder="Chercher Ventes..."
+            ></ion-searchbar>
 
-            <!-- Table body -->
-            <tbody style="width: 85%; height: 190px; font-size: 12px">
-              <!-- Replace the static data with dynamic data using *ngFor -->
-              <tr *ngFor="let item of tableData">
-                <td>{{ item.sales }}</td>
+            <ion-card
+              style="width: 96%; height: 90px"
+              *ngFor=" let item of filteredData"
+            >
+              <ion-grid>
+                <ion-row class="justify-content-center">
+                  <ion-col size="9">
+                    <ion-card-content>
+                      <p style="font-size: 0.7rem; text-align: left">
+                        <strong>ID Sales: </strong>{{ item.id}}
+                      </p>
+                      <p style="font-size: 0.7rem; text-align: left">
+                        <strong>Email Client:</strong> {{ item.email}}
+                      </p>
+                      <p style="font-size: 0.7rem; text-align: left">
+                        <strong> Category: </strong>
+                        {{ item.category }}
 
-                <td>{{ item.email }}</td>
-                <td>{{ item.category }}</td>
-                <td>{{ item.itemName }}</td>
-                <td>{{ item.price }}</td>
-                <ion-icon
-                  name="trash"
-                  slot="end"
-                  (click)="Delete()"
-                  size="small"
-                  color="danger"
-                  style="cursor: pointer"
-                ></ion-icon>
-              </tr>
-            </tbody>
-          </table>
+                        <strong> Item Name: </strong>{{ item.itemName }}
+                      </p>
+                    </ion-card-content>
+                  </ion-col>
+
+                  <ion-col size="1">
+                    <ion-button
+                      (click)="setOpen(true)"
+                      style="font-size: 0.7rem; margin-right: 20px"
+                      >Action</ion-button
+                    >
+                    <ion-action-sheet
+                      [isOpen]="isActionSheetOpen"
+                      header="Actions"
+                      [buttons]="actionSheetButtons"
+                      (didDismiss)="setOpen(false)"
+                    ></ion-action-sheet>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card>
+          </div>
         </div>
       </div>
     </div>
-    <div class="sidebar" [ngClass]="{ 'sidebar-open': sidebarOpen }">
-      <div class="pro-img">
-        <img src="https://i.imgur.com/8RKXAIV.jpg" alt="user" />
-      </div>
-      <h3 class="m-b-0">Vendeur</h3>
-      <a href="/home2"><ion-icon name="home"></ion-icon> home</a
-      ><a href=""><ion-icon name="stats-chart"></ion-icon> Statistics</a>
-      <a href="/post"> <ion-icon name="create-outline"></ion-icon> Posts </a>
+  </div>
 
-      <a href="#"><ion-icon name="mail"></ion-icon> Messages</a>
-      <a href="#"><ion-icon name="settings"></ion-icon> Settings</a>
-      <a href="/sign"><ion-icon name="log-out"></ion-icon> Logout</a>
+  <div class="sidebar" [ngClass]="{'sidebar-open': sidebarOpen}">
+    <div class="pro-img">
+      <img
+        src="https://i.imgur.com/8RKXAIV.jpg"
+        style="margin-top: 30px"
+        alt="user"
+      />
     </div>
+    <h3 class="m-b-0">Brad Macullam</h3>
+    <a href="/home2"><ion-icon name="home"></ion-icon> home</a
+    ><a href=""><ion-icon name="stats-chart"></ion-icon> Statistics</a>
+    <a href="/posts"> <ion-icon name="create-outline"></ion-icon> Posts </a>
+
+    <a href="#"><ion-icon name="mail"></ion-icon> Messages</a>
+    <a href="#"><ion-icon name="setting"> </ion-icon> Settings</a>
+    <a href="/sign"><ion-icon name="log-out"></ion-icon> Logout</a>
   </div>
 </div>

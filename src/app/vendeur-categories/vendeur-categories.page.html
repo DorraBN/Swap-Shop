@@ -6,87 +6,84 @@
   referrerpolicy="no-referrer"
 />
 
-<div class="container" style="width: 3120px">
-  <div class="row py-5 px-2">
-    <div class="col-md-8" style="width: 360px; height: 410px">
-      <ion-toolbar class="custom-toolbar">
-        <div style="display: flex; align-items: center">
-          <span class="menu-icon" (click)="toggleSidebar()">&#9776;</span>
-          <h3 class="m-b-0" style="margin-left: 10px">Ajoutez Catégories</h3>
-        </div>
-      </ion-toolbar>
-
-      <div class="card" style="width: 260px">
-        <div class="card-body little-profile text-center">
-          <ion-button
-            color="tertiary"
-            style="margin-top: 60px; margin-bottom: 30px"
-            (click)="ajouter()"
-            >Ajoutez Category</ion-button
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            height: 9%;
+            margin-bottom: 3%;
+            width: 412px;
+          "
+        >
+          <span
+            class="menu-icon"
+            style="margin-left: 9px"
+            (click)="toggleSidebar()"
+            >&#9776;</span
           >
-          <ion-card>
-            <img src="assets/c1.png" />
+          <h3 class="m-b-0" style="margin-left: 10px">Vendeurs</h3>
+        </div>
 
-            <ion-card-subtitle>Meubles</ion-card-subtitle>
-          </ion-card>
+        <div class="card">
+          <div
+            class="card-body little-profile text-center"
+            style="width: 412px; height: 912px"
+          >
+            <ion-searchbar
+              [(ngModel)]="searchTerm"
+              (input)="filterCategories($event)"
+              placeholder="Chercher categories..."
+            ></ion-searchbar>
 
-          <ion-card>
-            <img src="assets/c9.png" />
-
-            <ion-card-subtitle>Livres</ion-card-subtitle>
-          </ion-card>
-          <ion-card>
-            <img src="assets/c3.png" style="width: 30px" />
-
-            <ion-card-subtitle>Vetements</ion-card-subtitle>
-          </ion-card>
-          <ion-card>
-            <img src="assets/c4.png" />
-
-            <ion-card-subtitle>Apareils electromenagers</ion-card-subtitle>
-          </ion-card>
-          <ion-card>
-            <img src="assets/c5.png" />
-
-            <ion-card-subtitle>Fournitures scolaires</ion-card-subtitle>
-          </ion-card>
-          <ion-card>
-            <img src="assets/c13.png" />
-
-            <ion-card-subtitle>Apareils electroniques</ion-card-subtitle>
-          </ion-card>
-          <ion-card>
-            <img src="assets/c12.png" />
-
-            <ion-card-subtitle
-              >Équipement sportif et de plein air</ion-card-subtitle
+            <ion-button
+              color="tertiary"
+              style="
+                margin-top: 60px;
+                margin-bottom: 30px;
+                margin-left: 30%;
+                margin-right: 30%;
+              "
+              (click)="ajouter()"
+              expand="block"
+              >Ajoutez Category</ion-button
             >
-          </ion-card>
-          <ion-card>
-            <img src="assets/c11.png" />
-
-            <ion-card-subtitle>équipement de bricolage</ion-card-subtitle>
-          </ion-card>
-          <ion-card>
-            <img src="assets/c10.png" />
-
-            <ion-card-subtitle>Instruments de musique</ion-card-subtitle>
-          </ion-card>
+            <div
+              class="card-row"
+              style="display: flex; align-items: center; flex-wrap: wrap"
+            >
+              <div
+                *ngFor="let category of filteredCategories"
+                class="card-item"
+              >
+                <img
+                  [src]="'assets/c' + category.id + '.png'"
+                  alt=""
+                  class="im"
+                />
+                <p class="p3">{{ category.name }}</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="sidebar" [ngClass]="{ 'sidebar-open': sidebarOpen }">
-      <div class="pro-img">
-        <img src="https://i.imgur.com/8RKXAIV.jpg" alt="user" />
-      </div>
-      <h3 class="m-b-0">Vendeur</h3>
-      <a href="/home2"><ion-icon name="home"></ion-icon> home</a
-      ><a href=""><ion-icon name="stats-chart"></ion-icon> Statistics</a>
-      <a href="/post"> <ion-icon name="create-outline"></ion-icon> Posts </a>
 
-      <a href="#"><ion-icon name="mail"></ion-icon> Messages</a>
-      <a href="#"><ion-icon name="settings"></ion-icon> Settings</a>
-      <a href="/sign"><ion-icon name="log-out"></ion-icon> Logout</a>
+      <div class="sidebar" [ngClass]="{'sidebar-open': sidebarOpen}">
+        <div class="pro-img">
+          <img src="https://i.imgur.com/8RKXAIV.jpg" alt="user" />
+        </div>
+        <h3 class="m-b-0">Brad Macullam</h3>
+        <a href="/home2"><ion-icon name="home"></ion-icon> home</a
+        ><a href=""><ion-icon name="stats-chart"></ion-icon> Statistics</a>
+        <a href="/posts"> <ion-icon name="create-outline"></ion-icon> Posts </a>
+
+        <a href="#"><ion-icon name="mail"></ion-icon> Messages</a>
+        <a href="#"><ion-icon name="setting"> </ion-icon> Settings</a>
+        <a href="/sign"><ion-icon name="log-out"></ion-icon> Logout</a>
+      </div>
     </div>
   </div>
 </div>

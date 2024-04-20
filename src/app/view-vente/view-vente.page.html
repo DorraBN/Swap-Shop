@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="medium" (click)="cancel()">Return</ion-button>
+    </ion-buttons>
+    <ion-title style="text-align: center">Item Details</ion-title>
+    <ion-buttons slot="end"> </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item style="height: 80px; margin-top: 40px">
+    <ion-label>
+      <h3>Item Id</h3>
+      <p>{{id}}</p>
+    </ion-label>
+  </ion-item>
+  <ion-item style="height: 80px">
+    <ion-label>
+      <h3>Email Client</h3>
+      <p>{{email}}</p>
+    </ion-label>
+  </ion-item>
+
+  <ion-item style="height: 80px">
+    <ion-label>
+      <h3>Category</h3>
+      <p>{{category}}</p>
+    </ion-label>
+  </ion-item>
+
+  <ion-item style="height: 80px">
+    <ion-label>
+      <h3>Item Name</h3>
+      <p>{{itemName}}</p>
+    </ion-label>
+  </ion-item>
+  <ion-item style="height: 80px">
+    <ion-label>
+      <h3>Item Price</h3>
+      <p>{{price}}</p>
+    </ion-label>
+  </ion-item>
+</ion-content>

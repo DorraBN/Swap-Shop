@@ -32,6 +32,11 @@
             class="card-body little-profile text-center"
             style="width: 412px; height: 912px"
           >
+            <ion-searchbar
+              [(ngModel)]="searchTerm"
+              (input)="filterCards($event)"
+              placeholder="Chercher Vendeur..."
+            ></ion-searchbar>
             <ion-button
               color="tertiary"
               style="
@@ -50,7 +55,7 @@
             >
               <ion-card
                 style="width: 96%; height: 90px"
-                *ngFor="let card of cards"
+                *ngFor="let card of filteredCards"
               >
                 <ion-grid>
                   <ion-row>

@@ -125,6 +125,10 @@ const routes: Routes = [
     path: 'view-vendeur',
     loadChildren: () => import('./view-vendeur/view-vendeur.module').then( m => m.ViewVendeurPageModule)
   },
+  {
+    path: 'view-vente',
+    loadChildren: () => import('./view-vente/view-vente.module').then( m => m.ViewVentePageModule)
+  },
 
 ];
 
