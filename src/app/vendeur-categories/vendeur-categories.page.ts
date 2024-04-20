@@ -19,7 +19,7 @@ export class VendeurCategoriesPage implements OnInit {
   ngOnInit() {}
 
   ajouter(){
-    this.router.navigate(['/ajouter']);
+    this.router.navigate(['/vendeur-categories-ajouter']);
   }
 
   toggleMenu() {
