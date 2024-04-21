@@ -5,14 +5,12 @@
   crossorigin="anonymous"
   referrerpolicy="no-referrer"
 />
-
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button color="medium" (click)="cancel()">Return</ion-button>
+      <ion-button color="medium" (click)="cancel()">Retourner</ion-button>
     </ion-buttons>
-    <ion-title style="text-align: center">Vendeur Details</ion-title>
-    <ion-buttons slot="end"> </ion-buttons>
+    <ion-title style="text-align: center"> Produit Details</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
@@ -43,43 +41,22 @@
 
   <ion-item style="height: 80px; margin-top: 40px">
     <ion-label>
-      <h3>Nom Complet</h3>
-      <p>{{nomComplet}}</p>
+      <h3>Nom du produit</h3>
+      <p>{{title}}</p>
     </ion-label>
   </ion-item>
 
-  <ion-item style="height: 80px">
+  <ion-item style="height: 80px; margin-top: 40px">
     <ion-label>
-      <h3>Nom Utilisateur</h3>
-      <p>{{nomUtilisateur}}</p>
+      <h3>Description</h3>
+      <p>{{description}}</p>
     </ion-label>
   </ion-item>
 
-  <ion-item style="height: 80px">
+  <ion-item style="height: 80px; margin-top: 40px">
     <ion-label>
-      <h3>Email</h3>
-      <p>{{email}}</p>
-    </ion-label>
-  </ion-item>
-
-  <ion-item style="height: 80px">
-    <ion-label>
-      <h3>Telephone</h3>
-      <p>{{telephone}}</p>
-    </ion-label>
-  </ion-item>
-
-  <ion-item style="height: 80px">
-    <ion-label>
-      <h3>Password</h3>
-      <p>{{password}}</p>
-    </ion-label>
-  </ion-item>
-
-  <ion-item style="height: 80px">
-    <ion-label>
-      <h3>Adresse de boutique</h3>
-      <p>{{adresseBoutique}}</p>
+      <h3>Category</h3>
+      <p>{{category}}</p>
     </ion-label>
   </ion-item>
 </ion-content>

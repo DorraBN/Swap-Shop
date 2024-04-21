@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import Swiper from 'swiper';
 import { AjouterProduitPage } from '../ajouter-produit/ajouter-produit.page';
+import { ProductEditPage } from '../product-edit/product-edit.page';
+import { ProductViewPage } from '../product-view/product-view.page';
 
 @Component({
   selector: 'app-category-view',
@@ -49,12 +51,60 @@ export class CategoryViewPage implements OnInit {
   ];
   filteredproduct: any[]; 
   goback() {
-    this.router.navigate(['/home2']);
+    this.router.navigate(['/vendeur-main-page']);
   }
   
-  go() {
-    this.router.navigate(['/info']);
+  deleteCategory(){
+    const alert = document.createElement('ion-alert');
+      alert.header = 'Alert!';
+      alert.message = 'Are you sure you want to delete?';
+      alert.buttons = [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log('Delete canceled');
+          },
+        },
+        {
+          text: 'OK',
+          role: 'confirm',
+          handler: () => {
+            this.delete();
+            // Perform deletion logic here
+          },
+        },
+      ];
+      document.body.appendChild(alert);
+      return alert.present();
   }
+  
+  delete() {
+      const alert = document.createElement('ion-alert');
+      alert.header = 'Alert!';
+      alert.message = 'Are you sure you want to delete?';
+      alert.buttons = [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log('Delete canceled');
+          },
+        },
+        {
+          text: 'OK',
+          role: 'confirm',
+          handler: () => {
+            console.log('Item deleted');
+            // Perform deletion logic here
+          },
+        },
+      ];
+      document.body.appendChild(alert);
+      return alert.present();
+    
+  }
+
 
 
 
@@ -100,5 +150,40 @@ export class CategoryViewPage implements OnInit {
   }
   ajouter(){
     
+  }
+  
+  async view(){
+
+    const modal = await this.modalCtrl.create({
+      component: ProductViewPage,
+      componentProps: {
+        
+      }
+    });
+  
+    modal.present();
+
+    const { data, role } = await modal.onWillDismiss();
+
+    if (role === 'confirm') {
+    }
+
+  }
+  async Edit(){
+    
+    const modal = await this.modalCtrl.create({
+      component: ProductEditPage,
+      componentProps: {
+        
+      }
+    });
+  
+    modal.present();
+
+    const { data, role } = await modal.onWillDismiss();
+
+    if (role === 'confirm') {
+    }
+
   }
 }

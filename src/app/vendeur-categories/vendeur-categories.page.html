@@ -19,12 +19,21 @@
             width: 412px;
           "
         >
+          <ion-icon
+            name="arrow-back"
+            class="barrr"
+            style="padding-bottom: 40px"
+            size="large"
+            (click)="goback()"
+          ></ion-icon>
           <span
             class="menu-icon"
+            size="large"
             style="margin-left: 9px"
             (click)="toggleSidebar()"
             >&#9776;</span
           >
+
           <h3 class="m-b-0" style="margin-left: 10px">Vendeurs</h3>
         </div>
 
@@ -58,6 +67,7 @@
               <div
                 *ngFor="let category of filteredCategories"
                 class="card-item"
+                (click)="detail()"
               >
                 <img
                   [src]="'assets/c' + category.id + '.png'"

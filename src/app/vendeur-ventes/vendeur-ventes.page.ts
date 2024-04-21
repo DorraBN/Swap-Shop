@@ -165,6 +165,8 @@ export class VendeurVentesPage implements OnInit {
   }
 
   filteredData: any[]; // Variable to store the filtered data
-
+  goback() {
+    this.router.navigate(['/vendeur-main-page']);
+  }
   
 }

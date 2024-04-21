@@ -137,6 +137,14 @@ const routes: Routes = [
     path: 'ajouter-produit',
     loadChildren: () => import('./ajouter-produit/ajouter-produit.module').then( m => m.AjouterProduitPageModule)
   },
+  {
+    path: 'product-edit',
+    loadChildren: () => import('./product-edit/product-edit.module').then( m => m.ProductEditPageModule)
+  },
+  {
+    path: 'product-view',
+    loadChildren: () => import('./product-view/product-view.module').then( m => m.ProductViewPageModule)
+  },
 
 ];
 

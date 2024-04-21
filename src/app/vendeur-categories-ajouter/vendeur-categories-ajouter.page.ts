@@ -11,6 +11,11 @@ export class VendeurCategoriesAjouterPage implements OnInit {
   ngOnInit(): void {
     
   }
+
+
+  goback() {
+    this.router.navigate(['/vendeur-categories']);
+  }
   constructor(private router: Router) {}
 
   goToHome2() {

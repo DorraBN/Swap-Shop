@@ -21,9 +21,14 @@ export class VendeurCategoriesPage implements OnInit {
   ajouter(){
     this.router.navigate(['/vendeur-categories-ajouter']);
   }
+  detail(){
+    this.router.navigate(['/category-view']);
+  }
 
   toggleMenu() {
     this.menu.toggle();
+  }  goback() {
+    this.router.navigate(['/vendeur-main-page']);
   }
 
   filteredCategories: any[] = [

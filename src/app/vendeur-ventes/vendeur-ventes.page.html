@@ -7,77 +7,85 @@
 />
 
 <div class="container">
-  <div class="row">
-    <div class="col-md-8">
+  <div class="col-md-8">
+    <div class="card">
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          height: 9%;
+          margin-bottom: 3%;
+        "
+      >
+        <ion-icon
+          name="arrow-back"
+          class="barrr"
+          size="large"
+          (click)="goback()"
+          style="padding-bottom: 50px; padding-top: 13px; padding-right: 10px"
+        ></ion-icon>
+        <span
+          class="menu-icon"
+          style="margin-top: 40px; margin-bottom: 20px; margin-right: 60px"
+          (click)="toggleSidebar()"
+          >&#9776;</span
+        >
+
+        <h3 class="m-b-0" style="margin-left: 10px; margin-top: 10px">
+          Ventes
+        </h3>
+      </div>
+
       <div class="card">
         <div
-          style="
-            display: flex;
-            align-items: center;
-            height: 9%;
-            margin-bottom: 3%;
-          "
+          class="card-body little-profile text-center"
+          style="width: 412px; height: 912px; margin-left: 2%"
         >
-          <span
-            class="menu-icon"
-            style="margin-left: 16px"
-            (click)="toggleSidebar()"
-            >&#9776;</span
+          <ion-searchbar
+            [(ngModel)]="searchTerm"
+            (input)="filterCategories($event)"
+            placeholder="Chercher Ventes..."
+          ></ion-searchbar>
+
+          <ion-card
+            style="width: 96%; height: 90px"
+            *ngFor=" let item of filteredData"
           >
-          <h3 class="m-b-0" style="margin-left: 10px">Ventes</h3>
-        </div>
+            <ion-grid>
+              <ion-row class="justify-content-center">
+                <ion-col size="9">
+                  <ion-card-content>
+                    <p style="font-size: 0.7rem; text-align: left">
+                      <strong>ID Sales: </strong>{{ item.id}}
+                    </p>
+                    <p style="font-size: 0.7rem; text-align: left">
+                      <strong>Email Client:</strong> {{ item.email}}
+                    </p>
+                    <p style="font-size: 0.7rem; text-align: left">
+                      <strong> Category: </strong>
+                      {{ item.category }}
 
-        <div class="card">
-          <div
-            class="card-body little-profile text-center"
-            style="width: 412px; height: 912px; margin-left: 2%"
-          >
-            <ion-searchbar
-              [(ngModel)]="searchTerm"
-              (input)="filterCategories($event)"
-              placeholder="Chercher Ventes..."
-            ></ion-searchbar>
+                      <strong> Item Name: </strong>{{ item.itemName }}
+                    </p>
+                  </ion-card-content>
+                </ion-col>
 
-            <ion-card
-              style="width: 96%; height: 90px"
-              *ngFor=" let item of filteredData"
-            >
-              <ion-grid>
-                <ion-row class="justify-content-center">
-                  <ion-col size="9">
-                    <ion-card-content>
-                      <p style="font-size: 0.7rem; text-align: left">
-                        <strong>ID Sales: </strong>{{ item.id}}
-                      </p>
-                      <p style="font-size: 0.7rem; text-align: left">
-                        <strong>Email Client:</strong> {{ item.email}}
-                      </p>
-                      <p style="font-size: 0.7rem; text-align: left">
-                        <strong> Category: </strong>
-                        {{ item.category }}
-
-                        <strong> Item Name: </strong>{{ item.itemName }}
-                      </p>
-                    </ion-card-content>
-                  </ion-col>
-
-                  <ion-col size="1">
-                    <ion-button
-                      (click)="setOpen(true)"
-                      style="font-size: 0.7rem; margin-right: 20px"
-                      >Action</ion-button
-                    >
-                    <ion-action-sheet
-                      [isOpen]="isActionSheetOpen"
-                      header="Actions"
-                      [buttons]="actionSheetButtons"
-                      (didDismiss)="setOpen(false)"
-                    ></ion-action-sheet>
-                  </ion-col>
-                </ion-row>
-              </ion-grid>
-            </ion-card>
-          </div>
+                <ion-col size="1">
+                  <ion-button
+                    (click)="setOpen(true)"
+                    style="font-size: 0.7rem; margin-right: 20px"
+                    >Action</ion-button
+                  >
+                  <ion-action-sheet
+                    [isOpen]="isActionSheetOpen"
+                    header="Actions"
+                    [buttons]="actionSheetButtons"
+                    (didDismiss)="setOpen(false)"
+                  ></ion-action-sheet>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card>
         </div>
       </div>
     </div>
