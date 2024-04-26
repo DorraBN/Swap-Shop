@@ -174,7 +174,27 @@ const routes: Routes = [
   {
     path: 'vendeurprofile',
     loadChildren: () => import('./dorra/vendeurprofile/vendeurprofile.module').then( m => m.VendeurprofilePageModule)
+  },  {
+    path: 'ajouter-produit',
+    loadChildren: () => import('./ajouter-produit/ajouter-produit.module').then( m => m.AjouterProduitPageModule)
   },
+  {
+    path: 'ajouter-vendeur',
+    loadChildren: () => import('./ajouter-vendeur/ajouter-vendeur.module').then( m => m.AjouterVendeurPageModule)
+  },
+  {
+    path: 'category-view',
+    loadChildren: () => import('./category-view/category-view.module').then( m => m.CategoryViewPageModule)
+  },
+  {
+    path: 'product-view',
+    loadChildren: () => import('./product-view/product-view.module').then( m => m.ProductViewPageModule)
+  },
+  {
+    path: 'product-edit',
+    loadChildren: () => import('./product-edit/product-edit.module').then( m => m.ProductEditPageModule)
+  },
+
 
 
 

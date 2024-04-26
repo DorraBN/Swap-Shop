@@ -1,0 +1,96 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  integrity="sha512-vQbC7jo2Psdheux1lSnfvkDMNfU/nZkzVsw6A6fGFG5AdK2GDuPAdD/WDJ4IzYhqkvX2SdprnE17kS0E9Ye9kQ=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="medium" (click)="cancel()">Cancel</ion-button>
+    </ion-buttons>
+    <ion-title style="text-align: center">Ajouter un vendeur</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item
+    style="
+      height: 160px;
+      margin-top: 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    "
+  >
+    <input
+      id="fileInput"
+      type="file"
+      accept="image/*"
+      (change)="previewImage($event)"
+      style="
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 120px;
+        height: 120px;
+        cursor: pointer;
+      "
+    />
+    <ion-icon name="image" size="large" (click)="FileInput()"></ion-icon>
+
+    <div class="image-preview" *ngIf="imageUrl">
+      <div>
+        <img
+          [src]="imageUrl"
+          alt="Preview"
+          style="
+            width: 160px;
+            height: 160px;
+            margin-left: 50%;
+            margin-top: 40px;
+          "
+        />
+      </div>
+    </div>
+  </ion-item>
+  <ion-item style="height: 80px">
+    <ion-input placeholder="Nom Complet" [(ngModel)]="nomComplet"></ion-input>
+  </ion-item>
+  <ion-item style="height: 80px">
+    <ion-input
+      placeholder="Nom d'utilisateur"
+      [(ngModel)]="nomUtilisateur"
+    ></ion-input>
+  </ion-item>
+  <ion-item style="height: 80px">
+    <ion-input placeholder="Email" type="email" [(ngModel)]="email"></ion-input>
+  </ion-item>
+  <ion-item style="height: 80px">
+    <ion-input
+      type="tel"
+      placeholder="Telephone"
+      [(ngModel)]="telephone"
+    ></ion-input>
+  </ion-item>
+  <ion-item style="height: 80px">
+    <ion-input
+      type="password"
+      placeholder="Password"
+      [(ngModel)]="password"
+    ></ion-input>
+  </ion-item>
+  <ion-item style="height: 80px">
+    <ion-label>Adresse de boutique</ion-label>
+    <ion-select [(ngModel)]="adresseBoutique" placeholder="{{adresseBoutique}}">
+      <ion-select-option value="Adresse 1">Adresse 1</ion-select-option>
+      <ion-select-option value="Adresse 2">Adresse 2</ion-select-option>
+      <ion-select-option value="Adresse 3">Adresse 3</ion-select-option>
+      <ion-select-option value="Adresse 4">Adresse 4</ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-content>

@@ -3,23 +3,24 @@
 <div class="container">
 	<div class="screen">
 		<div class="screen__content"> <img src="assets/image.png" alt="" class="background-img">
-			<form class="login">
+			<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()"  >
+
         <div class="login__field">
           <ion-icon name="person" class="login__icon"></ion-icon>
-					<input type="text" class="login__input" placeholder="Username">
+					<input type="text" class="login__input" placeholder="Username" name="username"  formControlName="username" >
 				</div>
         <div class="login__field">
           <ion-icon name="call" class="login__icon"></ion-icon>
-					<input type="text" class="login__input" placeholder="Phone">
+					<input type="text" class="login__input" placeholder="Phone" name="phone"  formControlName="phone" >
           
 				</div>
 				<div class="login__field">
           <ion-icon name="mail" class="login__icon"></ion-icon>
-					<input type="text" class="login__input" placeholder="Email">
+					<input type="text" class="login__input" placeholder="Email" name="email"  formControlName="email" >
 				</div>
 				<div class="login__field">
           <ion-icon name="lock-open" class="login__icon"></ion-icon>
-					<input type="password" class="login__input" placeholder="Password">
+					<input type="password" class="login__input" placeholder="Password" name="password"  formControlName="password" >
           
 				</div>
        
@@ -33,21 +34,20 @@
               <ion-select-option value="bananas">both</ion-select-option>
             </ion-select>
           </div>
-          <input type="file" accept="image/*" class="image" id="profileImage" name="profileImage">
+          <input type="file" accept="image/*" class="image" id="profileImage" name="profileImage"   formControlName="profileImage" >
         
         
  
-				<button class="button login__submit">
-          <ion-icon name="log-in" class="button__icon"></ion-icon>
-					<span class="button__text">Sign up</span>
-          
-				</button>			
+		  <button class="button login__submit" [disabled]="registrationForm.invalid" type="submit">
+			<ion-icon name="log-in" class="button__icon"></ion-icon>
+			<span class="button__text">Sign up</span>
+		</button>	
         <span class="text1">Already have an account? <a href="/signin" class="text3">sign in</a> </span>
 
 			</form>
 			
 		
 		</div>
-		
+		  .0 
 	</div>
 </div>
