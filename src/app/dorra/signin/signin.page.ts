@@ -31,19 +31,18 @@ export class SigninPage implements OnInit {
   
   onSubmit() {
     const user = this.registrationForm.value;
-    this.authService.register(user).subscribe(
+    this.authService.login(user).subscribe(
       (response) => { 
         console.log('Utilisateur enregistré avec succès', response);
         this.alertMessage = 'Inscription réussie. Vous pouvez vous connecter.';
         this.registrationForm.reset();
-
-        // Redirection en fonction du rôle de l'utilisateur
-        if (user.role === 'admin') {
-          this.router.navigate(['/adminprofile']); // Redirige vers la page d'administration
-        } else if (user.role === 'seller') {
-          this.router.navigate(['/vendeurprofile']); // Redirige vers la page du vendeur
+  
+       
+        if (response.user.role === "admin") {
+          this.router.navigate(['/adminprofile']); 
+        } else if (response.user.role === 'seller') {
+          this.router.navigate(['/vendeurprofile']); 
         } else {
-          // Redirection par défaut, par exemple la page d'accueil
           this.router.navigate(['/home']);
         }
       },
@@ -54,21 +53,22 @@ export class SigninPage implements OnInit {
     );
   }
   
+  
 
 
   async showAndRedirect() {
     const loading = await this.loadingController.create({
-      message: 'Loading...', // Message de chargement
-      duration: 3000, // Durée du chargement (ms)
-      spinner: 'circles' // Type de spinner
+      message: 'Loading...', 
+      duration: 3000, 
+      spinner: 'circles' 
     });
 
-    await loading.present(); // Afficher le chargement
+    await loading.present(); 
 
-    // Rediriger vers home2 après 3 secondes
+   
     setTimeout(() => {
       loading.dismiss(); // Masquer le chargement
-      this.router.navigateByUrl('/home2'); // Rediriger vers la page home2
+    //  this.router.navigateByUrl('/home2'); // Rediriger vers la page home2
     }, 3000);
   }
     email: string = '';
