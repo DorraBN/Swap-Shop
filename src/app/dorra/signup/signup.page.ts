@@ -14,6 +14,18 @@ export class SignupPage implements OnInit {
   registrationForm: FormGroup;
   alertMessage: string = '';
 
+  profileImageSrc: string | ArrayBuffer | null = null; // Variable pour stocker l'URL de l'image
+
+
+  onProfileImageChange(event: any) {
+    const selectedImage = event.target.files[0];
+    if (selectedImage) {
+      console.log(selectedImage.name); // Nom du fichier
+      console.log(selectedImage); // Objet File complet
+      // Vous pouvez maintenant utiliser le chemin ou l'objet File selon vos besoins
+    }
+  }
+
   constructor(private fb: FormBuilder, private authService: AuthService) {
     this.registrationForm = this.fb.group({
       username: ['', Validators.required],

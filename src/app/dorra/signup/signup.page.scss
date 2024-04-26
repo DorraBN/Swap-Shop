@@ -6,6 +6,11 @@
 	padding: 0;	
 	
 }
+.profile-image {
+	max-width: 20px; // Spécifiez la largeur maximale souhaitée pour l'image
+	max-height: 20px; // Spécifiez la hauteur maximale souhaitée pour l'image
+  }
+  
 
 body {
 	background: linear-gradient(90deg, #C7C5F4, #776BCC);		

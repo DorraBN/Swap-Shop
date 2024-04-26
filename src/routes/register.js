@@ -2,9 +2,11 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const multer = require('multer');
+const { GridFsStorage } = require('multer-gridfs-storage');
 
 const port = 3000;
-const bcrypt=require('bcryptjs');
+const bcrypt = require('bcryptjs');
 
 const mongo_url = "mongodb://localhost:27017/dbconnect";
 (async () => {
@@ -20,82 +22,77 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json());
-const userSchema= new mongoose.Schema({
-    username:String,
-    phone:String,
 
-   email:String,
-   password:String,
-   role:String,
-
+const userSchema = new mongoose.Schema({
+    username: String,
+    phone: String,
+    email: String,
+    password: String,
+    role: String,
+    profileImage: String // Ajout du champ profileImage dans le schéma de l'utilisateur
 });
 const User = mongoose.model('User', userSchema);
 
-// Register route
-app.post('/register', async (req, res) => {
-  console.log('Requête POST reçue sur /register', req.body);
- 
-  try {
-    const { username,phone,email, password,role } = req.body;
-    const existingUser = await User.findOne({ username });
-    if (existingUser) {
-      return res.status(400).json({ message: 'User already exists' });
-      console.log(`user exits`);
-
+// Configuration de multer pour la gestion des téléchargements d'images
+const storage = new GridFsStorage({
+    url: 'mongodb://localhost:27017/dbconnect',
+    options: { useNewUrlParser: true, useUnifiedTopology: true },
+    file: (req, file) => {
+        return {
+            filename: file.originalname, // Nom du fichier dans la base de données
+            bucketName: 'profileImages' // Nom du bucket dans la base de données
+        };
     }
+});
 
-    const hashedPassword = await bcrypt.hash(password, 10);
+const upload = multer({ storage });
 
-    const newUser = new User({ username,phone,email, password: hashedPassword,role });
-   
-    await newUser.save();
+// Route pour enregistrer un nouvel utilisateur avec une image de profil
+app.post('/register', upload.single('profileImage'), async (req, res) => {
+    console.log('Requête POST reçue sur /register', req.body);
+    try {
+        const { username, phone, email, password, role,profileImage } = req.body;
+        const existingUser = await User.findOne({ email });
+        if (existingUser) {
+            return res.status(400).json({ message: 'User already exists' });
+        }
+
+        const hashedPassword = await bcrypt.hash(password, 10);
+      
+
+        const newUser = new User({ username, phone, email, password: hashedPassword, role, profileImage });
+        await newUser.save();
         
         res.status(200).json({ message: 'User registered successfully' });
-    
-
-
-    
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Error registering user' });
-  }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Error registering user' });
+    }
 });
+
 app.post('/login', async (req, res) => {
     console.log('Requête POST reçue sur /login', req.body);
-  
     try {
-      const { email, password } = req.body;
-  
-      // Vérifiez si l'utilisateur existe dans la base de données en fonction de l'email
-      const user = await User.findOne({ email });
-  
-      if (!user) {
-        return res.status(400).json({ message: 'User not found' });
-      }
-  
-      // Vérifiez si le mot de passe est correct
-      const passwordMatch = await bcrypt.compare(password, user.password);
-  
-      if (!passwordMatch) {
-        return res.status(401).json({ message: 'Incorrect password' });
-      }
-  
-      // Authentification réussie
-      res.status(200).json({ message: 'Authentication successful', user: user });
-  
+        const { email, password } = req.body;
+        const user = await User.findOne({ email });
+        if (!user) {
+            return res.status(400).json({ message: 'User not found' });
+        }
+        const passwordMatch = await bcrypt.compare(password, user.password);
+        if (!passwordMatch) {
+            return res.status(401).json({ message: 'Incorrect password' });
+        }
+        res.status(200).json({ message: 'Authentication successful', user: user });
     } catch (error) {
-      console.error(error);
-      res.status(500).json({ message: 'Error authenticating user' });
+        console.error(error);
+        res.status(500).json({ message: 'Error authenticating user' });
     }
-  });
-  
-
+});
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
-
-    
 });
+
 
 
 /*

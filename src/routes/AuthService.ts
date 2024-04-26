@@ -19,5 +19,8 @@ export class AuthService {
     login(credentials: any): Observable<any> {
       return this.http.post<any>('http://localhost:3000/login', credentials);
     }
+    getUsernameAfterLogin(credentials: any): Observable<any> {
+      return this.http.post<any>('http://localhost:3000/login', credentials);
+    }
   }
 
