@@ -20,32 +20,23 @@ export class SignupPage implements OnInit {
       phone: ['', Validators.required],
       email: ['', Validators.required],
       password: ['', Validators.required],
-      role: ['', Validators.required],
-      profileImage: ['', Validators.required],
+      profileImage: [''] // You can add validators for file input if needed
     });
   }
   
   onSubmit() {
     const user = this.registrationForm.value;
-    this.authService.register(user)
-      .pipe(
-        catchError(error => {
-          console.error('Erreur lors de l\'enregistrement', error);
-          this.alertMessage = 'Erreur lors de l\'enregistrement. Veuillez réessayer!';
-          return throwError(error);
-        })
-      )
-      .subscribe(
-        (response: any) => { 
-          console.log('Utilisateur enregistré avec succès', response);
-          this.alertMessage = 'Inscription réussie. Vous pouvez vous connecter.';
-          this.registrationForm.reset();
-        },
-        (error: any) => { 
-          console.error('Erreur lors de l\'enregistrement', error);
-          this.alertMessage = 'Erreur lors de l\'enregistrement. Veuillez réessayer!';
-        }
-      );
+    this.authService.register(user).subscribe(
+      (response) => { 
+        console.log('Utilisateur enregistré avec succès', response);
+        this.alertMessage = 'Inscription réussie. Vous pouvez vous connecter.';
+        this.registrationForm.reset();
+      },
+      (error) => { 
+        console.error('Erreur lors de l\'enregistrement', error);
+        this.alertMessage = 'Erreur lors de l\'enregistrement. Veuillez réessayer!';
+      }
+    );
   }
 
   ngOnInit() {

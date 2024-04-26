@@ -13,7 +13,7 @@ export class AuthService {
   
     register(user: any): Observable<any> {
 
-      return this.http.post<any>('http://localhost:9000/register', user);
+      return this.http.post<any>('http://localhost:3000/register', user);
     }
   
    

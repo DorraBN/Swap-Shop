@@ -1,9 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const bodyParser = require('body-parser');
 
-const port = 9000;
-
+const port = 3000;
+const bcrypt=require('bcryptjs');
 
 const mongo_url = "mongodb://localhost:27017/dbconnect";
 (async () => {
@@ -17,6 +18,7 @@ const mongo_url = "mongodb://localhost:27017/dbconnect";
 
 const app = express();
 app.use(cors());
+app.use(bodyParser.json());
 app.use(express.json());
 const userSchema= new mongoose.Schema({
     username:String,
@@ -40,7 +42,7 @@ app.post('/register', async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const newUser = new User({ username,email, password: hashedPassword });
-    connsole.log(newUser);
+   
     await newUser.save();
         
         res.status(200).json({ message: 'User registered successfully' });
@@ -54,8 +56,11 @@ app.post('/register', async (req, res) => {
   }
 });
 
+
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
+
+    
 });
 
 
