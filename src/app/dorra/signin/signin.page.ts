@@ -1,17 +1,60 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../../../routes/AuthService';
+import { catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 import { LoadingController } from '@ionic/angular';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.page.html',
   styleUrls: ['./signin.page.scss'],
 })
 export class SigninPage implements OnInit {
-  constructor( private loadingController: LoadingController,private router: Router) {}
-  ngOnInit(): void {
+
+  constructor(private fb: FormBuilder, private authService: AuthService, private loadingController: LoadingController,private router: Router) {
+    this.registrationForm = this.fb.group({
     
+      email: ['', Validators.required],
+      
+      password: ['', Validators.required],
+      
+    });
   }
+
+
+
+  registrationForm: FormGroup;
+  alertMessage: string = '';
+
+
+  
+  onSubmit() {
+    const user = this.registrationForm.value;
+    this.authService.register(user).subscribe(
+      (response) => { 
+        console.log('Utilisateur enregistré avec succès', response);
+        this.alertMessage = 'Inscription réussie. Vous pouvez vous connecter.';
+        this.registrationForm.reset();
+
+        // Redirection en fonction du rôle de l'utilisateur
+        if (user.role === 'admin') {
+          this.router.navigate(['/adminprofile']); // Redirige vers la page d'administration
+        } else if (user.role === 'seller') {
+          this.router.navigate(['/vendeurprofile']); // Redirige vers la page du vendeur
+        } else {
+          // Redirection par défaut, par exemple la page d'accueil
+          this.router.navigate(['/home']);
+        }
+      },
+      (error) => { 
+        console.error('Erreur lors de l\'enregistrement', error);
+        this.alertMessage = 'Erreur lors de l\'enregistrement. Veuillez réessayer!';
+      }
+    );
+  }
+  
+
 
   async showAndRedirect() {
     const loading = await this.loadingController.create({
@@ -38,5 +81,9 @@ export class SigninPage implements OnInit {
       
       // Par exemple, vous pouvez appeler un service d'authentification pour valider les informations d'identification.
     }
+    ngOnInit(): void {
+    
+    }
+  
 
 }

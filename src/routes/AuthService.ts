@@ -16,6 +16,8 @@ export class AuthService {
       return this.http.post<any>('http://localhost:3000/register', user);
     }
   
-   
+    login(credentials: any): Observable<any> {
+      return this.http.post<any>('http://localhost:3000/login', credentials);
+    }
   }
 

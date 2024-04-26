@@ -21,10 +21,11 @@
 					<input type="password" class="login__input" placeholder="Password" name="password" formControlName="password">
 				</div>
 				<div class="reg">
-					<ion-select placeholder="register as" [multiple]="false">
-						<ion-select-option value="apples">buyer</ion-select-option>
-						<ion-select-option value="oranges">seller</ion-select-option>
-						<ion-select-option value="bananas">both</ion-select-option>
+					<ion-select placeholder="register as" [multiple]="false"  formControlName="role" >
+						<ion-select-option value="buyer">buyer</ion-select-option>
+						<ion-select-option value="seller">seller</ion-select-option>
+						<ion-select-option value="both">both</ion-select-option>
+						<ion-select-option value="admin">admin</ion-select-option>
 					</ion-select>
 				</div>
 				<input type="file" accept="image/*" class="image" id="profileImage" name="profileImage" formControlName="profileImage">

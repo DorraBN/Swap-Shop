@@ -19,6 +19,7 @@ export class SignupPage implements OnInit {
       username: ['', Validators.required],
       phone: ['', Validators.required],
       email: ['', Validators.required],
+      role: ['', Validators.required],
       password: ['', Validators.required],
       profileImage: [''] // You can add validators for file input if needed
     });

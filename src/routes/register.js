@@ -22,8 +22,11 @@ app.use(bodyParser.json());
 app.use(express.json());
 const userSchema= new mongoose.Schema({
     username:String,
+    phone:String,
+
    email:String,
-   password:String
+   password:String,
+   role:String,
 
 });
 const User = mongoose.model('User', userSchema);
@@ -33,15 +36,17 @@ app.post('/register', async (req, res) => {
   console.log('Requête POST reçue sur /register', req.body);
  
   try {
-    const { username,email, password } = req.body;
+    const { username,phone,email, password,role } = req.body;
     const existingUser = await User.findOne({ username });
     if (existingUser) {
       return res.status(400).json({ message: 'User already exists' });
+      console.log(`user exits`);
+
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    const newUser = new User({ username,email, password: hashedPassword });
+    const newUser = new User({ username,phone,email, password: hashedPassword,role });
    
     await newUser.save();
         
@@ -55,6 +60,35 @@ app.post('/register', async (req, res) => {
     res.status(500).json({ message: 'Error registering user' });
   }
 });
+app.post('/login', async (req, res) => {
+    console.log('Requête POST reçue sur /login', req.body);
+  
+    try {
+      const { email, password } = req.body;
+  
+      // Vérifiez si l'utilisateur existe dans la base de données en fonction de l'email
+      const user = await User.findOne({ email });
+  
+      if (!user) {
+        return res.status(400).json({ message: 'User not found' });
+      }
+  
+      // Vérifiez si le mot de passe est correct
+      const passwordMatch = await bcrypt.compare(password, user.password);
+  
+      if (!passwordMatch) {
+        return res.status(401).json({ message: 'Incorrect password' });
+      }
+  
+      // Authentification réussie
+      res.status(200).json({ message: 'Authentication successful', user: user });
+  
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Error authenticating user' });
+    }
+  });
+  
 
 
 app.listen(port, () => {

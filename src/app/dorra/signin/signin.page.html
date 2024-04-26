@@ -3,15 +3,15 @@
 <div class="container">
 	<div class="screen">
 		<div class="screen__content"> <img src="assets/image.png" alt="" class="background-img">
-			<form class="login">
+			<form class="login" [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
        
 				<div class="login__field">
           <ion-icon name="mail" class="login__icon"></ion-icon>
-					<input type="text" class="login__input" placeholder="Email">
+					<input type="text" class="login__input" placeholder="Email" formControlName="email">
 				</div>
 				<div class="login__field">
           <ion-icon name="lock-open" class="login__icon"></ion-icon>
-					<input type="password" class="login__input" placeholder="Password">
+					<input type="password" class="login__input" placeholder="Password" formControlName="password">
           <span class="text">Forgot password ?</span>
 				</div>
      
