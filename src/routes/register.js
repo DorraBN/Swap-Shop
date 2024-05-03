@@ -47,6 +47,101 @@ const storage = new GridFsStorage({
 
 const upload = multer({ storage });
 
+
+
+
+
+// Définition du modèle Mongoose pour la collection 'produit'
+
+
+const produitSchema = new mongoose.Schema({
+    email: String,
+    nom: String,
+    description: String,
+    price: String,
+    image: Buffer, // Utilisez un champ Buffer pour stocker les données binaires de l'image
+    quantity: String,
+    color: String,
+    brand: String
+});
+
+const Produit = mongoose.model('Produit', produitSchema);
+
+app.post('/produit', async (req, res) => {
+    console.log('Requête POST reçue sur /produit', req.body);
+    try {
+        const { email, nom, description, price, quantity, color, brand } = req.body;
+        let { image } = req.body;
+
+        // Convertir l'image en un Buffer avant de l'enregistrer
+        image = Buffer.from(image, 'base64');
+
+        const existingProduit = await Produit.findOne({ nom });
+        if (existingProduit) {
+            return res.status(400).json({ message: 'Produit already exists' });
+        }
+
+        const nouveauProduit = new Produit({
+            email,
+            nom,
+            description,
+            price,
+            image,
+            quantity,
+            color,
+            brand
+        });
+
+        await nouveauProduit.save();
+        
+        res.status(200).json({ message: 'Produit registered successfully' });
+    } catch (error) {
+        console.error('Error registering produit:', error);
+        res.status(500).json({ message: 'Error registering produit' });
+    }
+});
+
+    
+
+// Définition du modèle Mongoose pour la collection 'vendeurs'
+const vendeurSchema = new mongoose.Schema({
+    email: String, // Ajout du champ email
+    NomEntreprise: String,
+    catprod: [String],
+    methpay: [String],
+    adresse: String,
+    methliv: String
+});
+
+const Vendeur = mongoose.model('Vendeurs', vendeurSchema);
+
+// Définition de la route POST pour '/vendeur'
+app.post('/vendeur', async (req, res) => {
+    console.log('Requête POST reçue sur /vendeur', req.body);
+    try {
+        const { email, NomEntreprise, catprod, methpay, adresse, methliv } = req.body;
+        const existingVendeur = await Vendeur.findOne({ NomEntreprise });
+        if (existingVendeur) {
+            return res.status(400).json({ message: 'Vendeur already exists' });
+        }
+
+        const nouveauVendeur = new Vendeur({
+            email, // Ajout de l'e-mail ici
+            NomEntreprise,
+            catprod,
+            methpay,
+            adresse,
+            methliv
+        });
+
+        await nouveauVendeur.save();
+        
+        res.status(200).json({ message: 'Vendeur registered successfully' });
+    } catch (error) {
+        console.error('Error registering vendeur:', error);
+        res.status(500).json({ message: 'Error registering vendeur' });
+    }
+});
 // Route pour enregistrer un nouvel utilisateur avec une image de profil
 app.post('/register', upload.single('profileImage'), async (req, res) => {
     console.log('Requête POST reçue sur /register', req.body);
@@ -88,6 +183,9 @@ app.post('/login', async (req, res) => {
         res.status(500).json({ message: 'Error authenticating user' });
     }
 });
+
+
+
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
