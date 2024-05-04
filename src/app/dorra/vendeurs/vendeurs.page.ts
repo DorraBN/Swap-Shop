@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-
+import { AuthService } from 'src/routes/AuthService';
 
 @Component({
   selector: 'app-vendeurs',
@@ -9,12 +9,27 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./vendeurs.page.scss'],
 })
 export class VendeursPage implements OnInit {
+  sellers: any[] = [];
+  sellerPairs: any[] = [];
 
-  constructor( private router:Router,public alertController: AlertController) { }
+  constructor(
+    private router: Router,
+    public alertController: AlertController,
+    private authService: AuthService
+  ) { }
 
-
-  ngOnInit() {
+  ngOnInit(): void {
+    this.authService.getSellers().subscribe(
+      (response: any[]) => {
+        this.sellers = response;
+        this.sellerPairs = this.chunkArray(this.sellers, 2);
+      },
+      (error) => {
+        console.error('Erreur lors de la récupération des vendeurs', error);
+      }
+    );
   }
+
   async openHelpDialog() {
     const alert = await this.alertController.create({
       header: 'Détails',
@@ -33,12 +48,21 @@ export class VendeursPage implements OnInit {
     await alert.present();
   }
 
+  add() {
+    this.router.navigate(['/ajoutervendeur']);
+  }
 
-  
-
-  pro()
-  {
+  pro() {
     this.router.navigate(['/adminprofile']);
   }
 
+  // Fonction pour diviser un tableau en sous-tableaux de taille donnée
+  chunkArray(array: any[], size: number): any[] {
+    const chunkedArray = [];
+    for (let i = 0; i < array.length; i += size) {
+      chunkedArray.push(array.slice(i, i + size));
+    }
+    return chunkedArray;
+  }
+  
 }

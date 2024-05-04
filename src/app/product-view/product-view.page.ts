@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, NavParams } from '@ionic/angular';
 
 @Component({
   selector: 'app-product-view',
@@ -25,12 +25,12 @@ export class ProductViewPage implements OnInit {
   cancel() {
     this.modalCtrl.dismiss(null, 'cancel');
   }
-  constructor(private modalCtrl: ModalController) { 
-
-  }
-
+  constructor(private modalCtrl: ModalController ,private navParams: NavParams) { }
+  productData: any;
   ngOnInit() {
+    // Récupérer les données du vendeur passées depuis la page précédente
+    this.productData = this.navParams.get('productData');
   }
 
-
+  
 }

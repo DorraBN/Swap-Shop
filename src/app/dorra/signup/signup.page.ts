@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../../routes/AuthService';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-signup',
@@ -26,7 +28,7 @@ export class SignupPage implements OnInit {
     }
   }
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {
+  constructor(private fb: FormBuilder, private authService: AuthService,private router:Router) {
     this.registrationForm = this.fb.group({
       username: ['', Validators.required],
       phone: ['', Validators.required],
@@ -43,6 +45,8 @@ export class SignupPage implements OnInit {
       (response) => { 
         console.log('Utilisateur enregistré avec succès', response);
         this.alertMessage = 'Inscription réussie. Vous pouvez vous connecter.';
+        this.router.navigate(['/ajoutervendeur'], { queryParams: { email: user.email } });
+        
         this.registrationForm.reset();
       },
       (error) => { 
@@ -51,6 +55,7 @@ export class SignupPage implements OnInit {
       }
     );
   }
+  
 
   ngOnInit() {
   }

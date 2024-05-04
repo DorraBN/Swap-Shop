@@ -1,263 +1,165 @@
+body {
+	background: linear-gradient(90deg, #C7C5F4, #776BCC);		
+}
+
 .container {
-    max-width: 20px;
-    height: 800px;
-    margin: 0 auto;
-  }
-  /* Adjusting image preview */
-  .image-preview {
-    margin-top: 20px; /* Adjust margin as needed */
-  }
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+}
+ion-list ion-item ion-input {
+  height: 50px;
+  width: 80%;
+
+  font-size: 16px;
   
-  .custom-toolbar {
-    --ion-toolbar-background: rgb(135, 117, 214);
-    color: #fff;
-  }
-  
-  /* Centering the image within its container */
-  .image-preview img {
-    display: block;
-    margin: 0 auto;
-  }
-  .circular-image img {
-    border-radius: 100%;
-    width: 130px; /* Adjust as needed */
-    height: 130px; /* Adjust as needed */
-    object-fit: cover; /* Maintain aspect ratio */
-  }
-  
-  .card {
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    background: linear-gradient(90deg, #c7c5f4, #aca2f5);
-    height: 105%;
-    box-shadow: 0px 0px 20px #6d61d8;
-    margin-top: -14px;
-  }
-  /* Style pour le menu latéral */
-  ion-menu {
-    --ion-background-color: #f4f4f4; /* Couleur de fond */
-    --ion-width: 250px; /* Largeur du menu */
-  }
-  
-  ion-header {
-    background-color: #007bff; /* Couleur de fond de l'en-tête */
-    color: white; /* Couleur du texte de l'en-tête */
-  }
-  
-  ion-toolbar {
-    --ion-color-base: #007bff; /* Couleur de base de la barre d'outils */
-  }
-  
-  ion-title {
-    font-size: 1.5rem; /* Taille de police du titre */
-  }
-  
-  ion-content {
-    height: calc(100% - 56px); /* Hauteur du contenu, ajustée pour l'en-tête */
-  }
-  
-  ion-list {
-    padding: 0; /* Supprimer le remplissage par défaut */
-  }
-  
-  ion-item {
-    padding: 10px 20px; /* Remplissage intérieur */
-    font-size: 1.1rem; /* Taille de police */
-    color: #333; /* Couleur du texte */
-  }
-  
-  ion-item:hover {
-    background-color: #ddd; /* Couleur de fond au survol */
-  }
-  
-  ion-item:first-child {
-    border-top: none; /* Supprimer la bordure supérieure pour le premier élément */
-  }
-  
-  ion-item:last-child {
-    border-bottom: none; /* Supprimer la bordure inférieure pour le dernier élément */
-  }
-  
-  .card-img-top {
-    width: 100%;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-  }
-  
-  .card-body {
-    padding: 20px;
-  }
-  
-  a {
-    text-decoration: none;
-  }
-  
-  .pro-img img {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-  
-    overflow: hidden;
-  }
-  
-  .btn {
-    display: inline-block;
-    font-weight: 400;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    cursor: pointer;
-    user-select: none;
-  
-    border: 1px solid transparent;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: 0.25rem;
-    color: #fff;
-  }
-  
-  .btn-primary {
-    background: linear-gradient(90deg, #090911, #7060e9);
-  }
-  
-  .btn-primary:hover {
-    background-color: #0069d9;
-    border-color: #0062cc;
-  }
-  
-  .btn-md {
-    padding: 0.45rem 0.85rem;
-  }
-  
-  .btn-rounded {
-    border-radius: 20px;
-  }
-  
-  .text-center {
-    text-align: center;
-  }
-  
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
-  }
-  
-  .col-md-4 {
-    flex: 0 0 33.333333%;
-    max-width: 33.333333%;
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-  
-  .m-t-10 {
-    margin-top: 10px;
-  }
-  
-  .m-t-20 {
-    margin-top: 20px;
-  }
-  
-  .font-light {
-    font-weight: 300;
-  }
-  .bars {
-    font-size: 35px;
-    background: linear-gradient(90deg, #c7c5f4, #776bcc);
-  }
-  
-  .py-5 {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
-  .arrow {
-    font-size: 20px;
-    cursor: pointer;
-    margin-left: 185px;
-    margin-top: -280px;
-  }
-  .menu-icon {
-    font-size: 30px;
-    cursor: pointer;
-  }
-  .sidebar {
-    height: 400px;
-    width: 0;
-    margin-top: 20px;
-    z-index: 1;
-    position: fixed;
-    left: 160;
-    background-color: #c2ace0;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 3px;
-  }
-  
-  .sidebar a {
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 13px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-  }
-  ion-list ion-item {
-    height: 50px;
-    margin-bottom: 4px;
-  }
-  
-  ion-list ion-item ion-input {
-    width: 80%;
-  }
-  
-  .sidebar a:hover {
-    color: #f1f1f1;
-  }
-  
-  .sidebar-open {
-    width: 150px;
-  }
-  .px-2 {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-  .pro-img {
-    margin-top: -65px; /* Ajout de cette propriété pour ajuster la position de l'image pro-img */
-  }
-  .card-body {
-    padding: 0; /* Modification de cette propriété pour éliminer le padding */
-  }
-  .container {
-    width: 400px;
-  }
-  
-  .pro-img {
-    text-align: center;
-    margin-top: 20px;
-  }
-  ion-list ion-item ion-input {
-    height: 50px;
-    width: 80%;
-  
-    font-size: 13px;
-  }
-  
-  ion-list ion-item {
-    margin-bottom: 4px;
-  }
-  
-  .image-button-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 70px;
+}
+
+ion-list ion-item {
+  margin-bottom: 4px;
+}
+ion-list ion-item {
+  height: 50px;
+  margin-bottom: 4px;
+}
+
+ion-list ion-item ion-input {
+  width: 80%;
+}
+
+ion-title {
+  font-size: 1.5rem; /* Taille de police du titre */
+}
+
+ion-content {
+  height: calc(100% - 56px); /* Hauteur du contenu, ajustée pour l'en-tête */
+}
+
+ion-list {
+  padding: 0; /* Supprimer le remplissage par défaut */
+}
+
+ion-item {
+  padding: 10px 20px; /* Remplissage intérieur */
+  font-size: 1.1rem; /* Taille de police */
+  color: #333; /* Couleur du texte */
+}
+
+ion-item:hover {
+  background-color: #ddd; /* Couleur de fond au survol */
+}
+
+ion-item:first-child {
+  border-top: none; /* Supprimer la bordure supérieure pour le premier élément */
+}
+
+ion-item:last-child {
+  border-bottom: none; /* Supprimer la bordure inférieure pour le dernier élément */
+}
+
+.card-img-top {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+
+
+.screen {		
+	background: linear-gradient(90deg, #5D54A4, #7C78B8);		
+	position: relative;	
+	height: 670px;
+	margin-top: 10px;
+	width: 360px;	
+	box-shadow: 0px 0px 24px #5C5696;
+}
+
+.screen__content {
+	z-index: 1;
+	position: relative;	
+	height: 100%;
+}
+
+.screen__background {		
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 0;
+	-webkit-clip-path: inset(0 0 0 0);
+	clip-path: inset(0 0 0 0);	
+}
+
+.screen__background__shape {
+	transform: rotate(45deg);
+	position: absolute;
+}
+
+.screen__background__shape1 {
+	height: 520px;
+	width: 520px;
+	background: #FFF;	
+	top: -50px;
+	right: 120px;	
+	border-radius: 0 72px 0 0;
+}
+
+.screen__background__shape2 {
+	height: 220px;
+	width: 220px;
+	background: #6C63AC;	
+	top: -172px;
+	right: 0;	
+	border-radius: 32px;
+}
+
+.screen__background__shape3 {
+	height: 540px;
+	width: 190px;
+	background: linear-gradient(270deg, #5D54A4, #6A679E);
+	top: -24px;
+	right: 0;	
+	border-radius: 32px;
+}
+
+.screen__background__shape4 {
+	height: 400px;
+	width: 200px;
+	background: #7E7BB9;	
+	top: 420px;
+	right: 50px;	
+	border-radius: 60px;
+}
+.image{
+    font-size: 10px;
+    margin-top: 8px;
     margin-left: 10px;
-    width: 230px;
-  }
-  .image-button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 300vh;
+}
+
+.screen {		
+	background: linear-gradient(90deg, #5D54A4, #7C78B8);		
+	position: relative;	
+	height: 670px;
+	margin-top: 10px;
+	width: 360px;	
+	box-shadow: 0px 0px 24px #5C5696;
+}
+
+.screen__content {
+	z-index: 1;
+	position: relative;	
+	height: 100%;
+}

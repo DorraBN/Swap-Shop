@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router'; // Importez ActivatedRoute
 import { ModalController } from '@ionic/angular';
 import Swiper from 'swiper';
 import { AjouterProduitPage } from '../ajouter-produit/ajouter-produit.page';
 import { ProductViewPage } from '../product-view/product-view.page';
 import { ProductEditPage } from '../product-edit/product-edit.page';
+import { AuthService } from 'src/routes/AuthService';
 
 
 @Component({
@@ -14,31 +14,53 @@ import { ProductEditPage } from '../product-edit/product-edit.page';
   styleUrls: ['./category-view.page.scss'],
 })
 export class CategoryViewPage implements OnInit {
-
- 
+  produits: any[] = [];
+  filteredProducts: any[] = [];
   swiperInitialized = false;
-  searchTerm: string = ''; 
-  
+  searchTerm: string = '';
+  userEmail!: string;
+  userProducts: any[] = [];
 
-  constructor(private router: Router,private modalCtrl: ModalController) {
+
+  
+  ngOnInit() {
+    const userEmail = this.authService.getUserEmail();
+    if (userEmail) {
+      this.authService.getProduits().subscribe(
+        (products: any[]) => {
+          this.userProducts = products.filter(product => product.email === userEmail);
+          this.filteredProducts = [...this.userProducts];
+        },
+        (error) => {
+          console.error('Erreur lors de la récupération des produits', error);
+        }
+      );
+    }
+  }
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute, // Injectez ActivatedRoute
+    private modalCtrl: ModalController,
+ private authService:AuthService
+  ) {
     this.filteredproduct = this.products;
   }
 
   filterCategories(event: any) {
     const searchTerm = event.target ? event.target.value.toLowerCase() : '';
-    if (!searchTerm.trim()) { // If search term is empty, show all data
+    if (!searchTerm.trim()) {
       this.filteredproduct = this.products;
     } else {
-      // Filter data based on search term
       this.filteredproduct = this.products.filter(item =>
         item.title.toLowerCase().includes(searchTerm) 
       );
     }
   }
   
-  ngOnInit(): void {
-    
-  }
+  
+ 
+  
+
   generateRange(n: number): number[] {
     return Array.from({ length: n }, (_, i) => i);
   }
@@ -109,7 +131,16 @@ export class CategoryViewPage implements OnInit {
   }
 
 
-
+  getUserInfo() {
+    this.authService.getProduits().subscribe(
+      (response: any[]) => {
+        this.produits = response; 
+      },
+      (error) => {
+        console.error('Erreur lors de la récupération des vendeurs', error);
+      }
+    );
+  }
 
 
   goback1(){
@@ -155,23 +186,36 @@ export class CategoryViewPage implements OnInit {
     
   }
   
-  async view(){
-
+  deleteProduct(productEmail: string) {
+    this.authService.deleteProductByEmail(productEmail).subscribe(
+      () => {
+        // Suppression du produit de la liste
+        this.userProducts = this.userProducts.filter(product => product.email !== productEmail);
+        this.filteredProducts = [...this.userProducts];
+      },
+      (error) => {
+        console.error('Erreur lors de la suppression du produit', error);
+      }
+    );
+  }
+  
+  async view(product: any) {
     const modal = await this.modalCtrl.create({
       component: ProductViewPage,
       componentProps: {
-        
+        productData: product
       }
     });
   
     modal.present();
-
+  
     const { data, role } = await modal.onWillDismiss();
-
+  
     if (role === 'confirm') {
+      // Logique de confirmation si nécessaire
     }
-
   }
+  
   async Edit(){
     
     const modal = await this.modalCtrl.create({
@@ -189,5 +233,9 @@ export class CategoryViewPage implements OnInit {
     }
 
   }
+  gotoadd()
+{
+  this.router.navigate(['/ajouter-produit']);
+}
 
 }

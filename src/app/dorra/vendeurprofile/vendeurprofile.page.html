@@ -1,7 +1,7 @@
 
 
 <div class="container">
-
+<ion-content>
   <div class="row  ">
       <div class="col-md-8">
           <div class="card">
@@ -11,11 +11,24 @@
 
         <img class="card-img-top" src="assets/sales.jpg" alt="Card image cap" />
         <div class="card-body little-profile text-center">
-          <div class="pro-img">
-            <img src="https://i.imgur.com/8RKXAIV.jpg" alt="user" />
+          
+          <div *ngIf="users.length > 0">
+            <ul class="no-decoration-list1">
+              <li *ngFor="let user of users">
+                <div class="pro-img">
+                  <!-- Utilisation de la propriété profileImage de chaque utilisateur -->
+                  <img [src]="user.profileImage" alt="user" />
+                </div>
+                <p> {{ user.username }}</p>
+                <!-- Ajoutez d'autres propriétés d'utilisateur que vous souhaitez afficher -->
+              </li>
+            </ul>
           </div>
-          <h3 class="m-b-0">Brad Macullam</h3>
-          <p>Phones&amp;PCs seller</p>
+          
+          
+        
+          <!-- Affichage des vendeurs -->
+        
           <a
             href="/edit"
             class="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded"
@@ -35,9 +48,39 @@
               <h3 class="m-b-0 font-light">5454</h3>
               <small>purchase</small>
             </div>
+           
+            <div *ngIf="users.length > 0">
+              <h4 class="inf">Informations personnelles</h4>
+              <ul class="no-decoration-list">
+                <li *ngFor="let user of users">
+                  <p>Nom: {{ user.username }}</p>
+                  <p>E-mail: {{ user.email }}</p>
+                  <p>Tél: {{ user.phone }}</p>
+                  <p> {{ user.
+                    profileImage }}</p>
+                  <!-- Ajoutez d'autres propriétés d'utilisateur que vous souhaitez afficher -->
+                </li>
+              </ul>
+            </div>
+          
+          </div>
+          <div *ngIf="vendeurs.length > 0">
+            <h4 class="inf">Information sur produits</h4>
+            <ul class="no-decoration-list">
+              <li *ngFor="let vendeur of vendeurs">
+                
+                <p>Nom d'entreprise : {{ vendeur.NomEntreprise }}</p>
+                <p> catégories de produits: {{ vendeur.catprod }}</p>
+                <p> méthodes de payement: {{ vendeur.methpay}}</p>
+                <p> adress: {{ vendeur.adresse}}</p>
+                <p> méthodes de livraison: {{ vendeur.methliv}}</p>
+                <!-- Ajoutez d'autres propriétés de vendeur que vous souhaitez afficher -->
+              </li>
+            </ul>
           </div>
           <hr />
-          <!-- Ajout du tiret de 3 -->
+    
+  
         </div>
       </div>
     </div>
@@ -47,7 +90,8 @@
           <img src="https://i.imgur.com/8RKXAIV.jpg" alt="user" />
         </div>
         <h3 class="m-b-0">Brad Macullam</h3>
-        <a href="/users"><ion-icon name="pricetags"></ion-icon>produits</a
+        <a (click)="go()"> <ion-icon name="pricetags"></ion-icon>produits</a>
+
         ><a href="/dashv"><ion-icon name="stats-chart"></ion-icon> Statistics</a>
         <a href="/post"> <ion-icon name="create-outline"></ion-icon> Posts </a>
         <a href="/buyers"><ion-icon name="people"></ion-icon>Acheteurs</a>
@@ -55,5 +99,5 @@
         <a href="/sign"><ion-icon name="log-out"></ion-icon> Logout</a>
       </div>
     </div>
-  </div>
+  </div></ion-content>
 </div>

@@ -93,6 +93,7 @@
     background-color: #ae7ceb; /* Ajouter une bordure bleue de 2px */
     object-fit: cover; /* Pour s'assurer que l'image couvre tout le cercle */
   }
+  /*
   img {
     height: 60%;
     width: 60%;
@@ -104,13 +105,13 @@
   
   ion-card {
     width: 76px;
-    height: 76px; /* Set height to match width for square shape */
+    height: 76px;
     margin: 4px;
   }
-  /* Style for when card is hovered */
+
   ion-card:hover {
-    background-color: rgb(173, 144, 252); /* Change background color on hover */
-    transform: scale(1.1); /* Increase size on hover */
+    background-color: rgb(173, 144, 252); 
+    transform: scale(1.1);
   }
   
   ion-card-subtitle {
@@ -139,12 +140,12 @@
   .card-row {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Optional: to center align the cards horizontally */
+    justify-content: center; 
   }
   
-  /* Adjusting image preview */
+  
   .image-preview {
-    margin-top: 20px; /* Adjust margin as needed */
+    margin-top: 20px; 
   }
   
   .custom-toolbar {
@@ -152,16 +153,16 @@
     color: #fff;
   }
   
-  /* Centering the image within its container */
+ 
   .image-preview img {
     display: block;
     margin: 0 auto;
   }
   .circular-image img {
     border-radius: 100%;
-    width: 130px; /* Adjust as needed */
-    height: 130px; /* Adjust as needed */
-    object-fit: cover; /* Maintain aspect ratio */
+    width: 130px; 
+    height: 130px; 
+    object-fit: cover;
   }
   
   .card {
@@ -173,51 +174,51 @@
     box-shadow: 0px 0px 20px #6d61d8;
     margin-top: -14px;
   }
-  /* Style pour le menu latéral */
+
   ion-menu {
-    --ion-background-color: #f4f4f4; /* Couleur de fond */
-    --ion-width: 250px; /* Largeur du menu */
+    --ion-background-color: #f4f4f4;
+    --ion-width: 250px;
   }
   
   ion-header {
-    background-color: #007bff; /* Couleur de fond de l'en-tête */
-    color: white; /* Couleur du texte de l'en-tête */
+    background-color: #007bff;
+    color: white; 
   }
   
   ion-toolbar {
-    --ion-color-base: #007bff; /* Couleur de base de la barre d'outils */
+    --ion-color-base: #007bff;
   }
   
   ion-title {
-    font-size: 1.5rem; /* Taille de police du titre */
+    font-size: 1.5rem; 
   }
   
   ion-content {
-    height: calc(100% - 56px); /* Hauteur du contenu, ajustée pour l'en-tête */
+    height: calc(100% - 56px); 
   }
   
   ion-list {
-    padding: 0; /* Supprimer le remplissage par défaut */
+    padding: 0;
   }
   
   ion-item {
-    padding: 10px 20px; /* Remplissage intérieur */
-    font-size: 1.1rem; /* Taille de police */
-    color: #333; /* Couleur du texte */
+    padding: 10px 20px;
+    font-size: 1.1rem; 
+    color: #333; 
   }
   
   ion-item:hover {
-    background-color: #ddd; /* Couleur de fond au survol */
+    background-color: #ddd; 
   }
   
   ion-item:first-child {
-    border-top: none; /* Supprimer la bordure supérieure pour le premier élément */
+    border-top: none; 
   }
   
   ion-item:last-child {
-    border-bottom: none; /* Supprimer la bordure inférieure pour le dernier élément */
-  }
-  
+    border-bottom: none;
+  }*/
+  /*
   .card-img-top {
     width: 100%;
     border-top-left-radius: 10px;
@@ -356,11 +357,12 @@
     padding-right: 0.5rem;
   }
   .pro-img {
-    margin-top: -65px; /* Ajout de cette propriété pour ajuster la position de l'image pro-img */
-  }
-  .card-body {
-    padding: 0; /* Modification de cette propriété pour éliminer le padding */
-  }
+    margin-top: -65px;
+  }*/
+ // .card-body {
+ //   padding: 0; /* Modification de cette propriété pour éliminer le padding */
+ // }
+  /*
   .container {
     width: 300px;
     height: 320px;
@@ -381,4 +383,4 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
+  }*/

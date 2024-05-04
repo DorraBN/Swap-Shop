@@ -103,10 +103,7 @@ const routes: Routes = [
     path: 'admin-main-page',
     loadChildren: () => import('./admin-main-page/admin-main-page.module').then( m => m.AdminMainPagePageModule)
   },
-  {
-    path: 'vendeur-main-page',
-    loadChildren: () => import('./vendeur-main-page/vendeur-main-page.module').then( m => m.VendeurMainPagePageModule)
-  },
+
   {
     path: 'vendeur-ventes',
     loadChildren: () => import('./vendeur-ventes/vendeur-ventes.module').then( m => m.VendeurVentesPageModule)
@@ -174,7 +171,8 @@ const routes: Routes = [
   {
     path: 'vendeurprofile',
     loadChildren: () => import('./dorra/vendeurprofile/vendeurprofile.module').then( m => m.VendeurprofilePageModule)
-  },  {
+  },
+  {
     path: 'ajouter-produit',
     loadChildren: () => import('./ajouter-produit/ajouter-produit.module').then( m => m.AjouterProduitPageModule)
   },
@@ -193,7 +191,15 @@ const routes: Routes = [
   {
     path: 'product-edit',
     loadChildren: () => import('./product-edit/product-edit.module').then( m => m.ProductEditPageModule)
+  },  {
+    path: 'sellers',
+    loadChildren: () => import('./sellers/sellers.module').then( m => m.SellersPageModule)
   },
+  {
+    path: 'seller-view',
+    loadChildren: () => import('./seller-view/seller-view.module').then( m => m.SellerViewPageModule)
+  },
+
 
 
 

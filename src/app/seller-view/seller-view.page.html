@@ -1,0 +1,74 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="medium" (click)="cancel()">Retourner</ion-button>
+    </ion-buttons>
+    <ion-title style="text-align: center"> Produit Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item
+    style="
+      height: 160px;
+      margin-top: 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    "
+  >
+    <div class="image-preview" *ngIf="imageUrl">
+      <div>
+        <img
+          [src]="imageUrl"
+          alt="Preview"
+          style="
+            width: 160px;
+            height: 160px;
+            margin-left: 50%;
+            margin-top: 40px;
+          "
+        />
+      </div>
+    </div>
+  </ion-item>
+
+  <ion-item style="height: 80px; margin-top: 40px">
+    <ion-label>
+      <h3>Nom du vendeur</h3>
+      <p>{{ sellerData.username }}</p>
+    </ion-label>
+  </ion-item>
+
+  <ion-item style="height: 80px; margin-top: 40px">
+    <ion-label>
+      <h3>email du vendeur</h3>
+      <p>{{ sellerData.username }}</p>
+    </ion-label>
+  </ion-item>
+  <ion-item style="height: 80px; margin-top: 40px">
+    <ion-label>
+      <h3>Tél de vendeur s</h3>
+      <p>{{ sellerData.phone}}</p>
+    </ion-label>
+  </ion-item>
+  <ion-item style="height: 80px; margin-top: 40px">
+    <ion-label>
+      <h3>adresse de vendeur</h3>
+      <p>{{ sellerData.adresse}}</p>
+    </ion-label>
+  </ion-item>
+  <ion-item style="height: 80px; margin-top: 40px">
+    <ion-label>
+      <h3>Catégorie de produits</h3>
+      <p>{{ sellerData.catprod}}</p>
+    </ion-label>
+  </ion-item>
+
+  <ion-item style="height: 80px; margin-top: 40px">
+    <ion-label>
+      <h3>Méthode de payement</h3>
+      <p>{{ sellerData.methpay}}</p>
+    </ion-label>
+  </ion-item>
+</ion-content>

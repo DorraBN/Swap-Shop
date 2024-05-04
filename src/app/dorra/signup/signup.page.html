@@ -28,7 +28,7 @@
 						<ion-select-option value="admin">admin</ion-select-option>
 					</ion-select>
 				</div>
-				<input type="file" accept="image/*" class="image" id="profileImage"  formControlName="profileImage" (change)="onProfileImageChange($event)">
+				<input type="file" accept="image/*" class="image" id="profileImage"  formControlName="profileImage" >
 				<div class="pro-img">
 					<img [src]="profileImageSrc" alt="user" *ngIf="profileImageSrc">
 				  </div><button class="button login__submit" [disabled]="registrationForm.invalid" type="submit">
@@ -41,6 +41,6 @@
 			
 		
 		</div>
-		  .0 
+		  
 	</div>
 </div>

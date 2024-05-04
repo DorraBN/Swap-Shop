@@ -184,6 +184,82 @@ app.post('/login', async (req, res) => {
     }
 });
 
+app.get('/users', async (req, res) => {
+    try {
+        const users = await User.find();
+        res.status(200).json(users);
+    } catch (error) {
+        console.error('Erreur lors de la récupération des utilisateurs', error);
+        res.status(500).json({ message: 'Erreur lors de la récupération des utilisateurs' });
+    }
+});
+
+// Route GET pour récupérer tous les vendeurs
+app.get('/vendeurs', async (req, res) => {
+    try {
+        const vendeurs = await Vendeur.find();
+        res.status(200).json(vendeurs);
+    } catch (error) {
+        console.error('Erreur lors de la récupération des vendeurs', error);
+        res.status(500).json({ message: 'Erreur lors de la récupération des vendeurs' });
+    }
+});
+
+app.get('/produits', async (req, res) => {
+    try {
+        const produits = await Produit.find();
+        res.status(200).json(produits);
+    } catch (error) {
+        console.error('Erreur lors de la récupération desproduits', error);
+        res.status(500).json({ message: 'Erreur lors de la récupération des produits' });
+    }
+});
+
+
+// Route GET pour récupérer tous les utilisateurs avec le rôle "seller"
+app.get('/seller', async (req, res) => {
+    try {
+        const users = await User.find({ role: 'seller' }); // Filtrer les utilisateurs par le rôle "seller"
+        res.status(200).json(users);
+    } catch (error) {
+        console.error('Erreur lors de la récupération des utilisateurs', error);
+        res.status(500).json({ message: 'Erreur lors de la récupération des utilisateurs' });
+    }
+});
+
+// Route DELETE pour supprimer un vendeur par ID
+app.delete('/seller/:email', async (req, res) => {
+    try {
+        const sellerEmail = req.params.email;
+        const deletedSeller = await User.findOneAndDelete({ email: sellerEmail, role: 'seller' });
+        if (!deletedSeller) {
+            return res.status(404).json({ message: 'Seller not found' });
+        }
+        res.status(200).json({ message: 'Seller deleted successfully' });
+    } catch (error) {
+        console.error('Error deleting seller:', error);
+        res.status(500).json({ message: 'Error deleting seller' });
+    }
+});
+
+
+
+app.delete('/product/:email', async (req, res) => {
+    try {
+        const productEmail = req.params.email;
+        const deletedProduct = await Product.findOneAndDelete({ email: productEmail });
+        if (!deletedProduct) {
+            return res.status(404).json({ message: 'product not found' });
+        }
+        res.status(200).json({ message: 'product deleted successfully' });
+    } catch (error) {
+        console.error('Error deleting product:', error);
+        res.status(500).json({ message: 'Error deleting product' });
+    }
+});
+
+
+
 
 
 
