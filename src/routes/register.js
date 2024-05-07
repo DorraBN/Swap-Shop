@@ -62,7 +62,8 @@ const produitSchema = new mongoose.Schema({
     image: Buffer, // Utilisez un champ Buffer pour stocker les données binaires de l'image
     quantity: String,
     color: String,
-    brand: String
+    brand: String,
+    catprod: [String],
 });
 
 const Produit = mongoose.model('Produit', produitSchema);
@@ -70,7 +71,7 @@ const Produit = mongoose.model('Produit', produitSchema);
 app.post('/produit', async (req, res) => {
     console.log('Requête POST reçue sur /produit', req.body);
     try {
-        const { email, nom, description, price, quantity, color, brand } = req.body;
+        const { email, nom, description, price, quantity, color, brand,catprod } = req.body;
         let { image } = req.body;
 
         // Convertir l'image en un Buffer avant de l'enregistrer
@@ -89,7 +90,8 @@ app.post('/produit', async (req, res) => {
             image,
             quantity,
             color,
-            brand
+            brand,
+            catprod
         });
 
         await nouveauProduit.save();
@@ -227,6 +229,17 @@ app.get('/seller', async (req, res) => {
     }
 });
 
+app.get('/buyer', async (req, res) => {
+    try {
+        const users = await User.find({ role: 'buyer' }); // Filtrer les utilisateurs par le rôle "seller"
+        res.status(200).json(users);
+    } catch (error) {
+        console.error('Erreur lors de la récupération des utilisateurs', error);
+        res.status(500).json({ message: 'Erreur lors de la récupération des utilisateurs' });
+    }
+});
+
+
 // Route DELETE pour supprimer un vendeur par ID
 app.delete('/seller/:email', async (req, res) => {
     try {
@@ -259,9 +272,93 @@ app.delete('/product/:email', async (req, res) => {
 });
 
 
+app.get('/meubles', async (req, res) => {
+    try {
+        console.log('Tentative de récupération des produits meubles...');
+        // Correction ici : Utiliser le modèle Produit au lieu de Produits
+        const produits = await Produit.find({ catprod: 'Meubles' });
+        console.log('Produits récupérés avec succès:', produits);
+        res.status(200).json(produits);
+    } catch (error) {
+        console.error('Erreur lors de la récupération des produits:', error);
+        res.status(500).json({ message: 'Erreur lors de la récupération des produits' });
+    }
+});
+
+
+app.get('/vetements', async (req, res) => {
+    try {
+        console.log('Tentative de récupération des produits meubles...');
+        // Correction ici : Utiliser le modèle Produit au lieu de Produits
+        const produits = await Produit.find({ catprod: 'Vêtements' });
+        console.log('Produits récupérés avec succès:', produits);
+        res.status(200).json(produits);
+    } catch (error) {
+        console.error('Erreur lors de la récupération des produits:', error);
+        res.status(500).json({ message: 'Erreur lors de la récupération des produits' });
+    }
+});
 
 
 
+
+const favorisSchema = new mongoose.Schema({
+    email: String,
+    nom: String,
+    description: String,
+    price: String,
+    image: Buffer, // Utilisez un champ Buffer pour stocker les données binaires de l'image
+    quantity: String,
+    color: String,
+    brand: String,
+    catprod: [String],
+});
+
+const Favories = mongoose.model('Favories', favorisSchema);
+
+
+
+// Route pour ajouter un produit aux favoris
+app.post('/favorites', async (req, res) => {
+    try {
+      // Récupérer les données du produit à ajouter aux favoris depuis le corps de la requête
+      const { email, nom, description, price, image, quantity, color, brand, catprod } = req.body;
+  
+      // Créer un nouvel objet Produit pour le produit à ajouter aux favoris
+      const nouveauProduitFavoris = new Produit({
+        email,
+        nom,
+        description,
+        price,
+        image,
+        quantity,
+        color,
+        brand,
+        catprod
+      });
+  
+      // Enregistrer le produit dans la collection "Favoris"
+      await nouveauProduitFavoris.save();
+  
+      // Répondre avec un message de succès
+      res.status(200).json({ message: 'Produit ajouté aux favoris avec succès' });
+    } catch (error) {
+      // En cas d'erreur, répondre avec un message d'erreur
+      console.error('Erreur lors de l\'ajout du produit aux favoris:', error);
+      res.status(500).json({ message: 'Erreur lors de l\'ajout du produit aux favoris' });
+    }
+  });
+
+
+  app.get('/favories', async (req, res) => {
+    try {
+        const favories = await Favories.find();
+        res.status(200).json(favories);
+    } catch (error) {
+        console.error('Erreur lors de la récupération des favories', error);
+        res.status(500).json({ message: 'Erreur lors de la récupération des favories' });
+    }
+});
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);

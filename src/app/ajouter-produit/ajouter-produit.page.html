@@ -34,7 +34,18 @@
     <ion-item style="height: 80px">
       <ion-input placeholder="Description" type="text" formControlName="description"></ion-input>
     </ion-item>
-
+    <ion-item>
+      <ion-label>Catégorie de produits</ion-label>
+      <ion-select formControlName="catprod" multiple="true">
+        <ion-select-option value="Meubles">Meubles</ion-select-option>
+        <ion-select-option value="Vêtements">Vêtements</ion-select-option>
+        <ion-select-option value="Électronique">Appareils électronique</ion-select-option>
+        <ion-select-option value="Électronique">Livres</ion-select-option>
+        <ion-select-option value="Électronique">Fournitures scolaires</ion-select-option>
+        <ion-select-option value="Électronique">Appareils électroménagers</ion-select-option>
+        <!-- Ajoutez d'autres options selon vos besoins -->
+      </ion-select>
+    </ion-item>
     <ion-item style="height: 80px">
       <ion-input placeholder="Prix" type="text" formControlName="price"></ion-input>
     </ion-item>

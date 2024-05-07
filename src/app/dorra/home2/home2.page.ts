@@ -20,9 +20,11 @@ export class Home2Page implements OnInit {
     this.router.navigate(['/searche']);
   }
   gotomeuble() {
-    this.router.navigate(['/detail']);
+    this.router.navigate(['/meubles']);
   }
- 
+  gotovetement() {
+    this.router.navigate(['/vetements']);
+  }
   ngOnInit() {}
 selectedNavItem: string | undefined;
 

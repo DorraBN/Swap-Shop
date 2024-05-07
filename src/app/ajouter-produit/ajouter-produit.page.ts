@@ -36,6 +36,7 @@ export class AjouterProduitPage implements OnInit {
         quantity: [''],
         color: [''],
         brand: [''],
+        catprod:[''],
         description: ['', Validators.required],
         price: ['', Validators.required],
       });

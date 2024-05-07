@@ -199,6 +199,22 @@ const routes: Routes = [
     path: 'seller-view',
     loadChildren: () => import('./seller-view/seller-view.module').then( m => m.SellerViewPageModule)
   },
+  {
+    path: 'meubles',
+    loadChildren: () => import('./meubles/meubles.module').then( m => m.MeublesPageModule)
+  },
+  {
+    path: 'vetements',
+    loadChildren: () => import('./vetements/vetements.module').then( m => m.VetementsPageModule)
+  },
+  {
+    path: 'heart',
+    loadChildren: () => import('./heart/heart.module').then( m => m.HeartPageModule)
+  },
+  {
+    path: 'userprofile',
+    loadChildren: () => import('./userprofile/userprofile.module').then( m => m.UserprofilePageModule)
+  },
 
 
 

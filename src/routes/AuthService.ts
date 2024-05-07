@@ -42,6 +42,23 @@ export class AuthService {
 getSellers(): Observable<any> {
   return this.http.get<any>('http://localhost:3000/seller');
 }
+getBuyers(): Observable<any> {
+  return this.http.get<any>('http://localhost:3000/buyer');
+}
+getMeubles(): Observable<any> {
+  return this.http.get<any>('http://localhost:3000/meubles');
+}
+getVetements(): Observable<any> {
+  return this.http.get<any>('http://localhost:3000/vetements');
+}
+getFavories(): Observable<any> {
+  return this.http.get<any>('http://localhost:3000/favories');
+}
+addToFavorites(product: any) {
+  // Envoyer une demande HTTP pour ajouter le produit aux favoris
+  // Vous devrez implémenter cette fonction pour envoyer une demande au serveur
+  return this.http.post<any>('http://localhost:3000/favories', product);
+}
 deleteSellerByEmail(sellerEmail: string): Observable<any> {
   return this.http.delete<any>(`http://localhost:3000/seller/${sellerEmail}`);
 }
