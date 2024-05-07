@@ -7,9 +7,10 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
- 
+  private user: any = {};
   private userEmail: string = '';
     constructor(private http: HttpClient) { }
+    
     enregistrerVendeur(data: any): Observable<any> {
       return this.http.post<any>('http://localhost:3000/vendeur', data);
     }
@@ -22,7 +23,19 @@ export class AuthService {
     getProduits(): Observable<any> {
       return this.http.get<any>('http://localhost:3000/produits');
     }
-  
+  getUserRole(): string {
+    // Récupérer les informations d'authentification depuis le local storage
+    const authData = localStorage.getItem('authData');
+    if (authData) {
+      // Analyser les données JSON pour obtenir l'objet d'authentification
+      const authObject = JSON.parse(authData);
+      // Retourner le rôle de l'utilisateur
+      return authObject.role;
+    } else {
+      // Si aucune donnée d'authentification n'est trouvée, retourner une valeur par défaut
+      return 'user';
+    }
+  }
     // Méthode pour récupérer les données des vendeurs
     getVendeurs(): Observable<any> {
       return this.http.get<any>('http://localhost:3000/vendeurs');
@@ -42,9 +55,7 @@ export class AuthService {
 getSellers(): Observable<any> {
   return this.http.get<any>('http://localhost:3000/seller');
 }
-getBuyers(): Observable<any> {
-  return this.http.get<any>('http://localhost:3000/buyer');
-}
+
 getMeubles(): Observable<any> {
   return this.http.get<any>('http://localhost:3000/meubles');
 }
@@ -70,7 +81,14 @@ deleteProductByEmail(productEmail: string): Observable<any> {
 setEmail(email: string) {
   this.userEmail = email;
 }
+getUserData(): any {
+  return this.user;
+}
 
+// Méthode pour enregistrer les données de l'utilisateur connecté après la connexion
+setUserData(userData: any) {
+  this.user = userData;
+}
 
 setUserEmail(email: string) {
   this.userEmail = email;

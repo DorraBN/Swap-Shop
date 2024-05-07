@@ -1,7 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+
+import { ActivatedRoute, Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
-import { ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/routes/AuthService';
 @Component({
   selector: 'app-userprofile',
@@ -26,30 +27,21 @@ export class UserprofilePage implements OnInit {
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
       this.userEmail = params['email'];
-
+  
+      // Utilisez l'e-mail de l'utilisateur pour récupérer ses informations depuis le backend
       this.authService.getUsers().subscribe(
-        (response: any[]) => { // Ajouter une annotation de type pour response
+        (response: any[]) => {
           // Filtrer les utilisateurs pour récupérer seulement celui correspondant à l'e-mail de l'utilisateur actuel
-          this.users = response.filter((user: any) => user.email === this.userEmail); // Ajouter une annotation de type pour user
+          this.users = response.filter((user: any) => user.email === this.userEmail);
           console.log('Utilisateur récupéré avec succès', this.users);
         },
         (error) => {
           console.error('Erreur lors de la récupération de l\'utilisateur', error);
         }
       );
-
-      this.authService.getBuyers().subscribe(
-        (response: any[]) => { // Ajouter une annotation de type pour response
-          // Filtrer les vendeurs pour récupérer seulement ceux correspondant à l'e-mail de l'utilisateur actuel
-          this.vendeurs = response.filter((vendeur: any) => vendeur.email === this.userEmail); // Ajouter une annotation de type pour vendeur
-          console.log('Vendeurs récupérés avec succès', this.vendeurs);
-        },
-        (error) => {
-          console.error('Erreur lors de la récupération des vendeurs', error);
-        }
-      );
     });
   }
+  
   go() {
     // Stockez l'e-mail du vendeur dans le service partagé
     this.authService.setEmail(this.userEmail);
@@ -67,5 +59,4 @@ export class UserprofilePage implements OnInit {
   toggleSidebar() {
     this.sidebarOpen = !this.sidebarOpen;
   }
-
 }

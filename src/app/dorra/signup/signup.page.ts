@@ -44,10 +44,23 @@ export class SignupPage implements OnInit {
     this.authService.register(user).subscribe(
       (response) => { 
         console.log('Utilisateur enregistré avec succès', response);
-        this.alertMessage = 'Inscription réussie. Vous pouvez vous connecter.';
-        this.router.navigate(['/ajoutervendeur'], { queryParams: { email: user.email } });
-        
         this.registrationForm.reset();
+        
+        // Redirection en fonction du rôle sélectionné
+        switch (user.role) {
+          case 'buyer':
+            this.router.navigate(['/signin']);
+            break;
+          case 'seller':
+            this.router.navigate(['/ajoutervendeur'], { queryParams: { email: user.email } });
+            break;
+          case 'admin':
+            this.router.navigate(['/signin']);
+            break;
+          default:
+            // Redirection par défaut vers une page d'accueil ou autre
+            this.router.navigate(['/accueil']);
+        }
       },
       (error) => { 
         console.error('Erreur lors de l\'enregistrement', error);

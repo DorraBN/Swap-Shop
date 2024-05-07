@@ -229,15 +229,6 @@ app.get('/seller', async (req, res) => {
     }
 });
 
-app.get('/buyer', async (req, res) => {
-    try {
-        const users = await User.find({ role: 'buyer' }); // Filtrer les utilisateurs par le rôle "seller"
-        res.status(200).json(users);
-    } catch (error) {
-        console.error('Erreur lors de la récupération des utilisateurs', error);
-        res.status(500).json({ message: 'Erreur lors de la récupération des utilisateurs' });
-    }
-});
 
 
 // Route DELETE pour supprimer un vendeur par ID
@@ -296,6 +287,19 @@ app.get('/vetements', async (req, res) => {
     } catch (error) {
         console.error('Erreur lors de la récupération des produits:', error);
         res.status(500).json({ message: 'Erreur lors de la récupération des produits' });
+    }
+});
+
+
+
+// Route GET pour récupérer tous les utilisateurs avec le rôle "buyer"
+app.get('/buyers', async (req, res) => {
+    try {
+        const buyers = await User.find({ role: 'buyer' }); // Filtrer les utilisateurs par le rôle "buyer"
+        res.status(200).json(buyers);
+    } catch (error) {
+        console.error('Erreur lors de la récupération des utilisateurs acheteurs', error);
+        res.status(500).json({ message: 'Erreur lors de la récupération des utilisateurs acheteurs' });
     }
 });
 
@@ -365,82 +369,3 @@ app.listen(port, () => {
 });
 
 
-
-/*
-// MySQL Connection Configuration
-const mysql = require('mysql');
-const bodyParser = require('body-parser');
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'sport',
-});
-
-app.use(express.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
-// Registration Endpoint
-app.post('/register', (req, res) => {
-    const { nom, prenom, email, password, confirmPassword, tel } = req.body;
-
-    // Check if any field is missing or empty
-    if (!nom || nom.trim() === '' || !prenom || prenom.trim() === '' ||
-        !email || email.trim() === '' || !password || password.trim() === '' ||
-        !confirmPassword || confirmPassword.trim() === '' || !tel || tel.trim() === '') {
-        res.status(400).send('All fields are required.');
-        return;
-    }
-
-    // Check if password and confirm password match
-    if (password !== confirmPassword) {
-        res.status(400).send('Password and Confirm Password do not match.');
-        return;
-    }
-
-    const sql = 'INSERT INTO sport (nom, prenom, email, password, tel) VALUES (?, ?, ?, ?, ?)';
-    db.query(sql, [nom, prenom, email, password, tel], (err, result) => {
-        if (err) {
-            console.error('Registration error:', err);
-            res.status(500).send(`Registration failed. Error: ${err.message}`);
-            return;
-        }
-
-        // Redirect to another page (replace '/dashboard' with your desired route)
-        res.redirect('/dashboard');
-    });
-});
-
-// ... (Other code)
-
-// Login Endpoint
-app.post('/login', (req, res) => {
-    const { email, password } = req.body;
-
-    // Check if 'email' or 'password' is missing or empty
-    if (!email || email.trim() === '' || !password || password.trim() === '') {
-        res.status(400).send('Email and Password are required.');
-        return;
-    }
-
-    const sql = 'SELECT * FROM sport WHERE email = ? AND password = ?';
-    db.query(sql, [email, password], (err, results) => {
-        if (err) {
-            console.error('Login error:', err);
-            res.status(500).send('Login failed.');
-            return;
-        }
-        if (results.length > 0) {
-            res.send('Login successful.');
-        } else {
-            res.status(401).send('Invalid login credentials.');
-        }
-    });
-});
-
-// ... (Other code)
-
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-});
-*/
