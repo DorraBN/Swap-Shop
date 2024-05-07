@@ -49,17 +49,18 @@
           <ion-card class="card" *ngFor="let product of userProducts">
             <ion-card-content class="ion-text-left">
               <div class="img-wrapper">
-                <ion-icon
-                  name="trash"
-                  class="bar"
-                  (click)="deleteProduct(product.email)"
-                ></ion-icon>
+                <ion-icon name="trash" class="bar" (click)="onDeleteProduct(product.nom)"></ion-icon>
                 <ion-icon name="pencil" class="bar" (click)="Edit()"></ion-icon>
                 <ion-icon name="eye" class="bar" (click)="view(product)"></ion-icon>
                 <ion-img [src]="product.image"></ion-img>
-
+             
+                 
+               
+                
               </div>
+              
               <ion-card-title class="title">{{ product.nom }}</ion-card-title>
+         
               <ion-card-subtitle>{{ product.description }}</ion-card-subtitle>
 
               <ion-card-subtitle>

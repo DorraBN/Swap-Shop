@@ -22,6 +22,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json());
+app.use(express.static('public'));
 
 const userSchema = new mongoose.Schema({
     username: String,
@@ -145,7 +146,7 @@ app.post('/vendeur', async (req, res) => {
     }
 });
 // Route pour enregistrer un nouvel utilisateur avec une image de profil
-app.post('/register', upload.single('profileImage'), async (req, res) => {
+app.post('/register',  upload.single('profileImage'), async (req, res) => {
     console.log('Requête POST reçue sur /register', req.body);
     try {
         const { username, phone, email, password, role,profileImage } = req.body;
@@ -246,22 +247,19 @@ app.delete('/seller/:email', async (req, res) => {
     }
 });
 
-
-
-app.delete('/product/:email', async (req, res) => {
+app.delete('/produit/:productName', async (req, res) => {
     try {
-        const productEmail = req.params.email;
-        const deletedProduct = await Product.findOneAndDelete({ email: productEmail });
-        if (!deletedProduct) {
-            return res.status(404).json({ message: 'product not found' });
-        }
-        res.status(200).json({ message: 'product deleted successfully' });
-    } catch (error) {
-        console.error('Error deleting product:', error);
-        res.status(500).json({ message: 'Error deleting product' });
+      const productName = req.params.productName;
+      const deletedProduct = await Produit.findOneAndDelete({ nom: productName });
+      if (!deletedProduct) {
+        return res.status(404).json({ message: 'Le produit n\'a pas été trouvé.' });
+      }
+      res.status(200).json({ message: 'Produit supprimé avec succès.' });
+    } catch (err) {
+      console.error('Erreur lors de la suppression du produit :', err);
+      res.status(500).json({ error: 'Erreur lors de la suppression du produit.' });
     }
-});
-
+  });
 
 app.get('/meubles', async (req, res) => {
     try {
@@ -363,6 +361,31 @@ app.post('/favorites', async (req, res) => {
         res.status(500).json({ message: 'Erreur lors de la récupération des favories' });
     }
 });
+
+
+// Route pour servir les images depuis MongoDB
+// Route pour servir les images depuis MongoDB
+app.get('/images/:imageId', async (req, res) => {
+    try {
+        const imageId = req.params.imageId;
+
+        // Récupérer l'image depuis MongoDB (remplacez 'VotreModel' par le nom de votre modèle)
+        const image = await VotreModel.findOne({ _id: imageId });
+
+        // Vérifier si l'image existe
+        if (!image) {
+            return res.status(404).json({ message: 'Image not found' });
+        }
+
+        // Envoyer l'image dans la réponse HTTP
+        res.set('Content-Type', image.contentType);
+        res.send(image.data); // 'data' est le champ où vous stockez les données binaires de l'image
+    } catch (error) {
+        console.error('Error fetching image:', error);
+        res.status(500).json({ message: 'Error fetching image' });
+    }
+});
+
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);

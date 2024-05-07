@@ -186,19 +186,21 @@ export class CategoryViewPage implements OnInit {
     
   }
   
-  deleteProduct(productEmail: string) {
-    this.authService.deleteProductByEmail(productEmail).subscribe(
-      () => {
-        // Suppression du produit de la liste
-        this.userProducts = this.userProducts.filter(product => product.email !== productEmail);
-        this.filteredProducts = [...this.userProducts];
-      },
-      (error) => {
-        console.error('Erreur lors de la suppression du produit', error);
-      }
-    );
-  }
-  
+ // Méthode pour supprimer un produit
+ onDeleteProduct(productName: string): void {
+  this.authService.deleteProductByName(productName).subscribe(
+    () => {
+      console.log('Produit supprimé avec succès.');
+      // Rafraîchir la page après la suppression réussie
+      window.location.reload();
+    },
+    error => {
+      console.error('Erreur lors de la suppression du produit :', error);
+      // Gérez les erreurs de suppression ici
+    }
+  );
+}
+
   async view(product: any) {
     const modal = await this.modalCtrl.create({
       component: ProductViewPage,

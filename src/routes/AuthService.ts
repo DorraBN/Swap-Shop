@@ -73,11 +73,11 @@ addToFavorites(product: any) {
 deleteSellerByEmail(sellerEmail: string): Observable<any> {
   return this.http.delete<any>(`http://localhost:3000/seller/${sellerEmail}`);
 }
-deleteProductByEmail(productEmail: string): Observable<any> {
-  return this.http.delete<any>(`http://localhost:3000/product/${productEmail}`);
+
+
+deleteProductByName(productName: string): Observable<any> {
+  return this.http.delete<any>(`http://localhost:3000/produit/${productName}`);
 }
-
-
 setEmail(email: string) {
   this.userEmail = email;
 }
