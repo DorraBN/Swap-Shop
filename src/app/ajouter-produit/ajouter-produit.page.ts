@@ -39,6 +39,7 @@ export class AjouterProduitPage implements OnInit {
         catprod:[''],
         description: ['', Validators.required],
         price: ['', Validators.required],
+        profileImageURL :[''],
       });
     }
 

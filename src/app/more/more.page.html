@@ -8,19 +8,23 @@
               <span class="menu-icon" (click)="toggleSidebar()">&#9776;</span>
 
 
-        <img class="card-img-top" src="assets/sales.jpg" alt="Card image cap" />
         <div class="card-body little-profile text-center">
-          <div class="pro-img">
-            <img src="https://th.bing.com/th?id=OIP.XIJ0I3LnyP6JU32WO-j7vQHaKX&w=211&h=295&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="user" />
+          <div *ngIf="vendeurs.length > 0">
+            <h4 class="inf">Information sur produits</h4>
+            <ul class="no-decoration-list">
+              <li *ngFor="let vendeur of vendeurs">
+                
+                <p>Nom d'entreprise : {{ vendeur.NomEntreprise }}</p>
+                <p> catégories de produits: {{ vendeur.catprod }}</p>
+                <p> méthodes de payement: {{ vendeur.methpay}}</p>
+                <p> adress: {{ vendeur.adresse}}</p>
+                <p> méthodes de livraison: {{ vendeur.methliv}}</p>
+                <!-- Ajoutez d'autres propriétés de vendeur que vous souhaitez afficher -->
+              </li>
+            </ul>
           </div>
-          <h3 class="m-b-0">Celine Doe</h3>
-         
-          <a
-            href="/edit"
-            class="m-t-10 waves-effect waves-dark btn btn-primary btn-md btn-rounded"
-            data-abc="true"
-            >Edit profile</a
-          >
+
+        
           <div class="row text-center m-t-20">
             <div class="col-lg-4 col-md-4 m-t-20">
               <h3 class="m-b-0 font-light"></h3>
@@ -43,14 +47,14 @@
     <div class="sidebar" [ngClass]="{ 'sidebar-open': sidebarOpen }">
       <div class="sidebar" [ngClass]="{ 'sidebar-open': sidebarOpen }">
         <div class="pro-img">
-          <img src="https://th.bing.com/th?id=OIP.XIJ0I3LnyP6JU32WO-j7vQHaKX&w=211&h=295&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="user" />
+          <img src="https://i.imgur.com/8RKXAIV.jpg" alt="user" />
         </div>
         <h3 class="m-b-0">Brad Macullam</h3>
-        <a href="/users"><ion-icon name="Home"></ion-icon>home</a
+        <a href="/users"><ion-icon name="pricetags"></ion-icon>produits</a
         ><a href="/statics"><ion-icon name="stats-chart"></ion-icon> Statistics</a>
         <a href="/post"> <ion-icon name="create-outline"></ion-icon> Posts </a>
 
-        <a href="/vendeurs"><ion-icon name="people"></ion-icon>Vendeurs</a>
+        <a href="#"><ion-icon name="people"></ion-icon>Acheteurs</a>
         <a href="#"><ion-icon name="settings"></ion-icon> Settings</a>
         <a href="/sign"><ion-icon name="log-out"></ion-icon> Logout</a>
       </div>

@@ -31,13 +31,13 @@ export class SigninPage implements OnInit {
         console.log('Utilisateur enregistré avec succès', response);
         this.alertMessage = 'Inscription réussie. Vous pouvez vous connecter.';
         this.registrationForm.reset();
-
+  
         // Stocker l'e-mail de l'utilisateur lors de la connexion
         this.authService.setUserEmail(user.email);
-
-        // Redirection avec l'e-mail en tant que paramètre de requête
-        if (response.user.role === "admin") {
-          this.router.navigate(['/adminprofile']); 
+  
+        // Redirection en fonction du rôle de l'utilisateur
+        if (user.email === 'celine@gmail.com') {
+          this.router.navigate(['/adminprofile']);
         } else if (response.user.role === 'seller') {
           this.router.navigate(['/vendeurprofile'], { queryParams: { email: user.email } });
         } else {
@@ -50,6 +50,7 @@ export class SigninPage implements OnInit {
       }
     );
   }
+  
 
 
   async showAndRedirect() {

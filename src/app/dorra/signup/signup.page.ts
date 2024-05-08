@@ -15,7 +15,7 @@ export class SignupPage implements OnInit {
 
   registrationForm: FormGroup;
   alertMessage: string = '';
-
+  profileImageUrl: string | ArrayBuffer | null = null;
   profileImageSrc: string | ArrayBuffer | null = null; // Variable pour stocker l'URL de l'image
 
 
@@ -27,6 +27,11 @@ export class SignupPage implements OnInit {
       // Vous pouvez maintenant utiliser le chemin ou l'objet File selon vos besoins
     }
   }
+  onFileSelected(event: any) {
+    // Récupérer l'URL de l'image à partir de l'événement
+    this.profileImageUrl = event.target.value;
+}
+
 
   constructor(private fb: FormBuilder, private authService: AuthService,private router:Router) {
     this.registrationForm = this.fb.group({
@@ -35,7 +40,7 @@ export class SignupPage implements OnInit {
       email: ['', Validators.required],
       role: ['', Validators.required],
       password: ['', Validators.required],
-      profileImage: [''] // You can add validators for file input if needed
+      profileImageURL: [''] // You can add validators for file input if needed
     });
   }
   
@@ -68,7 +73,6 @@ export class SignupPage implements OnInit {
       }
     );
   }
-  
 
   ngOnInit() {
   }

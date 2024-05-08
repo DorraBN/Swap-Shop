@@ -1,34 +1,44 @@
+
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { MenuController, ModalController } from '@ionic/angular';
+
+import { ActivatedRoute, Router } from '@angular/router';
+import { MenuController } from '@ionic/angular';
 import { AuthService } from 'src/routes/AuthService';
-import { MorePage } from 'src/app/more/more.page';
 
 @Component({
-  selector: 'app-vendeurprofile',
-  templateUrl: './vendeurprofile.page.html',
-  styleUrls: ['./vendeurprofile.page.scss'],
+  selector: 'app-more',
+  templateUrl: './more.page.html',
+  styleUrls: ['./more.page.scss'],
 })
-export class VendeurprofilePage implements OnInit {
+export class MorePage implements OnInit {
+
   userEmail!: string;
   users: any[] = [];
   vendeurs: any[] = [];
+  
 
   constructor(
     private menu: MenuController,
     private router: Router,
     private route: ActivatedRoute,
     private authService: AuthService,
-    private modalCtrl: ModalController,
-  ) { }
 
-  async ngOnInit() {
+  ) { }
+  
+
+  togo()
+  {
+    this.router.navigate(['/more'])
+  }
+  ngOnInit() {
     this.route.queryParams.subscribe(params => {
       this.userEmail = params['email'];
 
       this.authService.getUsers().subscribe(
-        (response: any[]) => {
-          this.users = response.filter((user: any) => user.email === this.userEmail);
+        (response: any[]) => { // Ajouter une annotation de type pour response
+          // Filtrer les utilisateurs pour récupérer seulement celui correspondant à l'e-mail de l'utilisateur actuel
+          this.users = response.filter((user: any) => user.email === this.userEmail); // Ajouter une annotation de type pour user
           console.log('Utilisateur récupéré avec succès', this.users);
         },
         (error) => {
@@ -37,8 +47,9 @@ export class VendeurprofilePage implements OnInit {
       );
 
       this.authService.getVendeurs().subscribe(
-        (response: any[]) => {
-          this.vendeurs = response.filter((vendeur: any) => vendeur.email === this.userEmail);
+        (response: any[]) => { // Ajouter une annotation de type pour response
+          // Filtrer les vendeurs pour récupérer seulement ceux correspondant à l'e-mail de l'utilisateur actuel
+          this.vendeurs = response.filter((vendeur: any) => vendeur.email === this.userEmail); // Ajouter une annotation de type pour vendeur
           console.log('Vendeurs récupérés avec succès', this.vendeurs);
         },
         (error) => {
@@ -47,28 +58,12 @@ export class VendeurprofilePage implements OnInit {
       );
     });
   }
-
-  async openModal() {
-    const modal = await this.modalCtrl.create({
-      component: MorePage,
-      componentProps: {
-        
-      }
-    });
-  
-    modal.present();
-
-    const { data, role } = await modal.onWillDismiss();
-
-    if (role === 'confirm') {
-    }
-  }
   go() {
     // Stockez l'e-mail du vendeur dans le service partagé
     this.authService.setEmail(this.userEmail);
     // Redirigez vers la page 'CategoryViewPage'
-    this.router.navigate(['/category-view'], { queryParams: { email: this.userEmail } });
-  }
+    this.router.navigate(['/category-view']);
+}
 
 
   toggleMenu() {

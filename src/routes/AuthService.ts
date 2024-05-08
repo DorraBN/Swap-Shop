@@ -74,6 +74,10 @@ deleteSellerByEmail(sellerEmail: string): Observable<any> {
   return this.http.delete<any>(`http://localhost:3000/seller/${sellerEmail}`);
 }
 
+  // Méthode pour récupérer les informations de l'utilisateur à partir de l'e-mail
+  getUserByEmail(email: string): Observable<any> {
+    return this.http.get<any>(`http://localhost:3000/user/${email}`);
+  }
 
 deleteProductByName(productName: string): Observable<any> {
   return this.http.delete<any>(`http://localhost:3000/produit/${productName}`);

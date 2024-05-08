@@ -25,21 +25,17 @@ export class UserprofilePage implements OnInit {
   ) { }
   
   ngOnInit() {
-    this.route.queryParams.subscribe(params => {
-      this.userEmail = params['email'];
-  
-      // Utilisez l'e-mail de l'utilisateur pour récupérer ses informations depuis le backend
-      this.authService.getUsers().subscribe(
-        (response: any[]) => {
-          // Filtrer les utilisateurs pour récupérer seulement celui correspondant à l'e-mail de l'utilisateur actuel
-          this.users = response.filter((user: any) => user.email === this.userEmail);
-          console.log('Utilisateur récupéré avec succès', this.users);
-        },
-        (error) => {
-          console.error('Erreur lors de la récupération de l\'utilisateur', error);
-        }
-      );
-    });
+    const userEmail = this.authService.getUserEmail(); // Supposons que vous avez une méthode getUserEmail() dans votre service AuthService
+    this.authService.getUsers().subscribe(
+      (response: any[]) => {
+        // Filtrer les utilisateurs pour récupérer seulement celui correspondant à l'e-mail de l'utilisateur connecté
+        this.users = response.filter((user: any) => user.email === userEmail);
+        console.log('Utilisateur récupéré avec succès', this.users);
+      },
+      (error) => {
+        console.error('Erreur lors de la récupération de l\'utilisateur', error);
+      }
+    );
   }
   
   go() {

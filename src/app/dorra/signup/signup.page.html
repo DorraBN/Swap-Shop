@@ -28,10 +28,11 @@
 						<ion-select-option value="admin">admin</ion-select-option>
 					</ion-select>
 				</div>
-				<input type="file" accept="image/*" class="image" id="profileImage"  formControlName="profileImage" >
+				<input type="text" name="profileImageURL" class="image" id="profileImageURL" formControlName="profileImageURL" >
+
 				<div class="pro-img">
-					<img [src]="profileImageSrc" alt="user" *ngIf="profileImageSrc">
-				  </div><button class="button login__submit" [disabled]="registrationForm.invalid" type="submit">
+					<img [src]="profileImageUrl" alt="user" *ngIf="profileImageUrl" style="width: 12%;">
+				</div><button class="button login__submit" [disabled]="registrationForm.invalid" type="submit">
 					<ion-icon name="log-in" class="button__icon"></ion-icon>
 					<span class="button__text">Sign up</span>
 				</button>

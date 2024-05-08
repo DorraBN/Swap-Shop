@@ -30,7 +30,7 @@ const userSchema = new mongoose.Schema({
     email: String,
     password: String,
     role: String,
-    profileImage: String // Ajout du champ profileImage dans le schéma de l'utilisateur
+    profileImageURL: String // Ajout du champ profileImage dans le schéma de l'utilisateur
 });
 const User = mongoose.model('User', userSchema);
 
@@ -65,6 +65,7 @@ const produitSchema = new mongoose.Schema({
     color: String,
     brand: String,
     catprod: [String],
+profileImageURL:String
 });
 
 const Produit = mongoose.model('Produit', produitSchema);
@@ -72,7 +73,7 @@ const Produit = mongoose.model('Produit', produitSchema);
 app.post('/produit', async (req, res) => {
     console.log('Requête POST reçue sur /produit', req.body);
     try {
-        const { email, nom, description, price, quantity, color, brand,catprod } = req.body;
+        const { email, nom, description, price, quantity, color, brand,catprod,profileImageURL } = req.body;
         let { image } = req.body;
 
         // Convertir l'image en un Buffer avant de l'enregistrer
@@ -92,7 +93,8 @@ app.post('/produit', async (req, res) => {
             quantity,
             color,
             brand,
-            catprod
+            catprod,
+            profileImageURL
         });
 
         await nouveauProduit.save();
@@ -146,10 +148,10 @@ app.post('/vendeur', async (req, res) => {
     }
 });
 // Route pour enregistrer un nouvel utilisateur avec une image de profil
-app.post('/register',  upload.single('profileImage'), async (req, res) => {
+app.post('/register',  upload.single('profileImageURL'), async (req, res) => {
     console.log('Requête POST reçue sur /register', req.body);
     try {
-        const { username, phone, email, password, role,profileImage } = req.body;
+        const { username, phone, email, password, role,profileImageURL } = req.body;
         const existingUser = await User.findOne({ email });
         if (existingUser) {
             return res.status(400).json({ message: 'User already exists' });
@@ -158,7 +160,7 @@ app.post('/register',  upload.single('profileImage'), async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, 10);
       
 
-        const newUser = new User({ username, phone, email, password: hashedPassword, role, profileImage });
+        const newUser = new User({ username, phone, email, password: hashedPassword, role, profileImageURL });
         await newUser.save();
         
         res.status(200).json({ message: 'User registered successfully' });
@@ -260,6 +262,7 @@ app.delete('/produit/:productName', async (req, res) => {
       res.status(500).json({ error: 'Erreur lors de la suppression du produit.' });
     }
   });
+
 
 app.get('/meubles', async (req, res) => {
     try {
@@ -363,6 +366,20 @@ app.post('/favorites', async (req, res) => {
 });
 
 
+
+app.get('/user/:email', async (req, res) => {
+    try {
+      const userEmail = req.params.email;
+      const user = await User.findOne({ email: userEmail });
+      if (!user) {
+        return res.status(404).json({ message: 'Utilisateur non trouvé' });
+      }
+      res.status(200).json(user);
+    } catch (error) {
+      console.error('Erreur lors de la récupération de l\'utilisateur', error);
+      res.status(500).json({ message: 'Erreur lors de la récupération de l\'utilisateur' });
+    }
+  });
 // Route pour servir les images depuis MongoDB
 // Route pour servir les images depuis MongoDB
 app.get('/images/:imageId', async (req, res) => {
