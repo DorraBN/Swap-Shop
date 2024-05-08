@@ -231,6 +231,10 @@ const routes: Routes = [
     path: 'acheteur-view',
     loadChildren: () => import('./acheteur-view/acheteur-view.module').then( m => m.AcheteurViewPageModule)
   },
+  {
+    path: 'edit-profile',
+    loadChildren: () => import('./edit-profile/edit-profile.module').then( m => m.EditProfilePageModule)
+  },
 
 
 

@@ -4,9 +4,8 @@
   <div class="row  ">
       <div class="col-md-8">
           <div class="card">
-              <!-- Ajout de l'icône de trois tirets -->
-              <span class="menu-icon" (click)="toggleSidebar()">&#9776;</span>
-
+       
+            
 
         <div class="card-body little-profile text-center">
           <div *ngIf="vendeurs.length > 0">
@@ -40,24 +39,11 @@
             </div>
           </div>
           <hr />
-          <!-- Ajout du tiret de 3 -->
+        
         </div>
       </div>
     </div>
-    <div class="sidebar" [ngClass]="{ 'sidebar-open': sidebarOpen }">
-      <div class="sidebar" [ngClass]="{ 'sidebar-open': sidebarOpen }">
-        <div class="pro-img">
-          <img src="https://i.imgur.com/8RKXAIV.jpg" alt="user" />
-        </div>
-        <h3 class="m-b-0">Brad Macullam</h3>
-        <a href="/users"><ion-icon name="pricetags"></ion-icon>produits</a
-        ><a href="/statics"><ion-icon name="stats-chart"></ion-icon> Statistics</a>
-        <a href="/post"> <ion-icon name="create-outline"></ion-icon> Posts </a>
-
-        <a href="#"><ion-icon name="people"></ion-icon>Acheteurs</a>
-        <a href="#"><ion-icon name="settings"></ion-icon> Settings</a>
-        <a href="/sign"><ion-icon name="log-out"></ion-icon> Logout</a>
-      </div>
-    </div>
+   
+   
   </div>
 </div>

@@ -25,6 +25,10 @@ export class Home2Page implements OnInit {
   gotovetement() {
     this.router.navigate(['/vetements']);
   }
+
+  gotelectronique(){
+    this.router.navigate(['/electronic']);
+  }
   ngOnInit() {}
 selectedNavItem: string | undefined;
 

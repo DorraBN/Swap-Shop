@@ -5,6 +5,10 @@
      
        
    }
+   .voir{
+    font-size: 9px;
+    color: wheat;
+   }
    .scrollable-container {
     max-height: 80vh; /* Définissez la hauteur maximale ici, par exemple 80% de la hauteur de la vue */
     overflow-y: scroll; /* Afficher une barre de défilement verticale même si le contenu ne dépasse pas la hauteur maximale */

@@ -71,6 +71,8 @@ export class VendeurprofilePage implements OnInit {
   }
 
 
+
+  
   toggleMenu() {
     this.menu.toggle();
   }

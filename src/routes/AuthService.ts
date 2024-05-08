@@ -10,6 +10,17 @@ export class AuthService {
   private user: any = {};
   private userEmail: string = '';
     constructor(private http: HttpClient) { }
+    private profileImageURL: string = ''; 
+
+    
+    getProfileImageUrl(): string {
+      return this.profileImageURL;
+    }
+  
+  
+    setProfileImageUrl(url: string): void {
+      this.profileImageURL = url;
+    }
     
     enregistrerVendeur(data: any): Observable<any> {
       return this.http.post<any>('http://localhost:3000/vendeur', data);

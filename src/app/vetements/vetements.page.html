@@ -2,9 +2,7 @@
   <ion-header class="ion-no-border">
     <ion-item lines="none">
       <ion-avatar slot="end" style="margin-left: 10px"></ion-avatar>
-      <ion-avatar slot="end">
-        <img src="https://i.imgur.com/8RKXAIV.jpg" alt="user" />
-      </ion-avatar>
+      
       <ion-label>
         <ion-icon name="pricetags" class="bars"></ion-icon>
         <h2>Vetements</h2>
@@ -39,8 +37,8 @@
                 (click)="like(product)"
               ></ion-icon>
               
-                <ion-img [src]="product.image"></ion-img>
               </div>
+              <ion-img [src]="product.profileImageURL"></ion-img>
               <ion-card-title class="title">{{ product.nom }}</ion-card-title>
               <ion-card-subtitle>{{ product.description }}</ion-card-subtitle>
               <ion-card-subtitle>

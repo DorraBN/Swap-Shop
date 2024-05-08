@@ -21,9 +21,10 @@ export class CategoryViewPage implements OnInit {
   userEmail!: string;
   userProducts: any[] = [];
 
-
+  profileImageURL: string = '';
   
   ngOnInit() {
+   
     const userEmail = this.authService.getUserEmail();
     if (userEmail) {
       this.authService.getProduits().subscribe(
@@ -149,10 +150,8 @@ export class CategoryViewPage implements OnInit {
   
 
   ngAfterViewInit() {
-    // Définition des options de swiper
+   
     const swiperOptions = {
-      // Ajoutez vos options ici
-      // Par exemple:
       slidesPerView: 1,
       spaceBetween: 10,
       loop: true,
@@ -186,17 +185,17 @@ export class CategoryViewPage implements OnInit {
     
   }
   
- // Méthode pour supprimer un produit
+
  onDeleteProduct(productName: string): void {
   this.authService.deleteProductByName(productName).subscribe(
     () => {
       console.log('Produit supprimé avec succès.');
-      // Rafraîchir la page après la suppression réussie
+      
       window.location.reload();
     },
     error => {
       console.error('Erreur lors de la suppression du produit :', error);
-      // Gérez les erreurs de suppression ici
+  
     }
   );
 }
