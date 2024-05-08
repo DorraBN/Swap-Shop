@@ -32,7 +32,7 @@ export class AjouterProduitPage implements OnInit {
     
       this.registrationForm = this.fb.group({
         nom: ['', Validators.required],
-        image: [''],
+       
         quantity: [''],
         color: [''],
         brand: [''],

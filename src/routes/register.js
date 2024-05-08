@@ -59,13 +59,12 @@ const produitSchema = new mongoose.Schema({
     email: String,
     nom: String,
     description: String,
-    price: String,
-    image: Buffer, // Utilisez un champ Buffer pour stocker les données binaires de l'image
-    quantity: String,
+    price: Number, // Utilisation d'un type de données numérique pour le prix
+    quantity: Number, // Utilisation d'un type de données numérique pour la quantité
     color: String,
     brand: String,
     catprod: [String],
-profileImageURL:String
+    profileImageURL: { type: String, required: true } // Validation de l'URL de l'image de profil
 });
 
 const Produit = mongoose.model('Produit', produitSchema);
@@ -73,23 +72,20 @@ const Produit = mongoose.model('Produit', produitSchema);
 app.post('/produit', async (req, res) => {
     console.log('Requête POST reçue sur /produit', req.body);
     try {
-        const { email, nom, description, price, quantity, color, brand,catprod,profileImageURL } = req.body;
-        let { image } = req.body;
+        const { email, nom, description, price, quantity, color, brand, catprod, profileImageURL } = req.body;
 
-        // Convertir l'image en un Buffer avant de l'enregistrer
-        image = Buffer.from(image, 'base64');
-
+        // Vérifier si un produit avec le même nom existe déjà
         const existingProduit = await Produit.findOne({ nom });
         if (existingProduit) {
-            return res.status(400).json({ message: 'Produit already exists' });
+            return res.status(409).json({ message: 'Produit already exists' }); // Utilisation du code 409 Conflict
         }
 
+        // Créer un nouveau produit
         const nouveauProduit = new Produit({
             email,
             nom,
             description,
             price,
-            image,
             quantity,
             color,
             brand,
@@ -97,16 +93,16 @@ app.post('/produit', async (req, res) => {
             profileImageURL
         });
 
+        // Sauvegarder le nouveau produit
         await nouveauProduit.save();
         
-        res.status(200).json({ message: 'Produit registered successfully' });
+        res.status(201).json({ message: 'Produit registered successfully' }); // Utilisation du code 201 Created
     } catch (error) {
         console.error('Error registering produit:', error);
-        res.status(500).json({ message: 'Error registering produit' });
+        res.status(500).json({ message: 'Error registering produit' }); // Utilisation du code 500 Internal Server Error
     }
 });
 
-    
 
 // Définition du modèle Mongoose pour la collection 'vendeurs'
 const vendeurSchema = new mongoose.Schema({
@@ -225,6 +221,16 @@ app.get('/produits', async (req, res) => {
 app.get('/seller', async (req, res) => {
     try {
         const users = await User.find({ role: 'seller' }); // Filtrer les utilisateurs par le rôle "seller"
+        res.status(200).json(users);
+    } catch (error) {
+        console.error('Erreur lors de la récupération des utilisateurs', error);
+        res.status(500).json({ message: 'Erreur lors de la récupération des utilisateurs' });
+    }
+});
+
+app.get('/acheteurs', async (req, res) => {
+    try {
+        const users = await User.find({ role: 'buyer' }); // Filtrer les utilisateurs par le rôle "seller"
         res.status(200).json(users);
     } catch (error) {
         console.error('Erreur lors de la récupération des utilisateurs', error);

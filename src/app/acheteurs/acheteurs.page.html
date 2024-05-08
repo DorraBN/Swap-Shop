@@ -13,16 +13,15 @@
 
     <div class="list">
       <ion-icon name="list" class="v"></ion-icon>
-      <h2>Liste de vendeurs</h2>
+      <h2>Liste de clients</h2>
     </div>
 
-    <!-- Cartes des vendeurs -->
     <div class="card-container">
       <ion-card *ngFor="let seller of sellers">
         <img [src]="seller.profileImageURL" />
         <ion-card-header>
-          <ion-card-subtitle>nom de vendeurs: {{ seller.username}}</ion-card-subtitle>
-          <ion-card-subtitle>Email: {{ seller.email }}</ion-card-subtitle>
+          <ion-card-subtitle>nom du client: {{ seller.username}}</ion-card-subtitle>
+          <ion-card-subtitle>Email du client: {{ seller.email }}</ion-card-subtitle>
          
         </ion-card-header>
         <ion-card-content>

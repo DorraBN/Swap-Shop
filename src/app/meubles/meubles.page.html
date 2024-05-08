@@ -38,8 +38,9 @@
                 [class.red]="isLiked" 
                 (click)="like(product)"
               ></ion-icon>
-                <ion-img [src]="product.image"></ion-img>
+              
               </div>
+              <ion-img [src]="product.profileImageURL"></ion-img>
               <ion-card-title class="title">{{ product.nom }}</ion-card-title>
               <ion-card-subtitle>{{ product.description }}</ion-card-subtitle>
               <ion-card-subtitle>

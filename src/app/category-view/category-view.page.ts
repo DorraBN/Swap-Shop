@@ -217,6 +217,26 @@ export class CategoryViewPage implements OnInit {
       // Logique de confirmation si nécessaire
     }
   }
+
+  async edit(product: any) {
+    const modal = await this.modalCtrl.create({
+      component: ProductEditPage,
+      componentProps: {
+        productData: product
+      }
+    });
+  
+    modal.present();
+  
+    const { data, role } = await modal.onWillDismiss();
+  
+    if (role === 'confirm') {
+      // Logique de confirmation si nécessaire
+    }
+  }
+
+
+
   
   async Edit(){
     

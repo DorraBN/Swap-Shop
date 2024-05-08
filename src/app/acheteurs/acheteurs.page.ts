@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { VendeurViewPage } from '../vendeur-view/vendeur-view.page';
 import { AlertController, ModalController } from '@ionic/angular';
-import { VendeurViewPage } from 'src/app/vendeur-view/vendeur-view.page';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/routes/AuthService';
+import { AcheteurViewPage } from '../acheteur-view/acheteur-view.page';
 
 @Component({
-  selector: 'app-vendeurs',
-  templateUrl: './vendeurs.page.html',
-  styleUrls: ['./vendeurs.page.scss'],
+  selector: 'app-acheteurs',
+  templateUrl: './acheteurs.page.html',
+  styleUrls: ['./acheteurs.page.scss'],
 })
-export class VendeursPage implements OnInit {
+export class AcheteursPage implements OnInit {
+
   sellers: any[] = [];
   sellerPairs: any[] = [];
 
@@ -23,7 +25,7 @@ export class VendeursPage implements OnInit {
 
   async viewSeller(seller: any) {
     const modal = await this.modalCtrl.create({
-      component: VendeurViewPage,
+      component: AcheteurViewPage,
       componentProps: {
         productData: seller
       }
@@ -39,7 +41,7 @@ export class VendeursPage implements OnInit {
   }
 
   getSellers(): void {
-    this.authService.getSellers().subscribe(
+    this.authService.getAcheteurs().subscribe(
       (data) => {
         this.sellers = data;
       },

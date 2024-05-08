@@ -55,6 +55,9 @@ export class AuthService {
 getSellers(): Observable<any> {
   return this.http.get<any>('http://localhost:3000/seller');
 }
+getAcheteurs(): Observable<any> {
+  return this.http.get<any>('http://localhost:3000/acheteurs');
+}
 
 getMeubles(): Observable<any> {
   return this.http.get<any>('http://localhost:3000/meubles');

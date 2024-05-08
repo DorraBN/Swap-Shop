@@ -12,7 +12,8 @@
     </ion-buttons>
     <ion-title style="text-align: center">Modifier un produit</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+      <ion-button (click)="updateProduct()" [strong]="true">Confirm</ion-button>
+
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -26,7 +27,11 @@
       align-items: center;
     "
   >
-    <input
+    <div class="image-preview" *ngIf="imageUrl">
+      <div>
+        <ion-img [src]="productData.profileImageURL"></ion-img>
+      </div>
+      <input
       id="fileInput"
       type="file"
       accept="image/*"
@@ -41,46 +46,37 @@
         cursor: pointer;
       "
     />
-    <ion-icon name="image" size="large" (click)="FileInput()"></ion-icon>
 
-    <div class="image-preview" *ngIf="imageUrl">
-      <div>
-        <img
-          [src]="imageUrl"
-          alt="Preview"
-          style="
-            width: 160px;
-            height: 160px;
-            margin-left: 50%;
-            margin-top: 40px;
-          "
-        />
-      </div>
     </div>
   </ion-item>
-  <ion-item style="height: 80px">
-    <ion-input
-      placeholder="{{ product.title }}"
-      [(ngModel)]="title"
-    ></ion-input>
+
+  <ion-item>
+    <ion-label position="floating">Nom du produit</ion-label>
+    <ion-input type="text" [(ngModel)]="productData.nom"></ion-input>
   </ion-item>
 
-  <ion-item style="height: 80px">
-    <ion-input
-      placeholder="{{ product.description }}"
-      type="text"
-      [(ngModel)]="description"
-    ></ion-input>
+  <ion-item>
+    <ion-label position="floating">Description du produit</ion-label>
+    <ion-textarea rows="1" [(ngModel)]="productData.description"></ion-textarea>
   </ion-item>
-  <ion-item style="height: 80px">
-    <div style="display: flex; align-items: center">
-      <ion-label style="margin-right: 10px">Rating:</ion-label>
-      <div *ngFor="let _ of [1, 2, 3, 4, 5]; let i = index">
-        <ion-icon
-          [name]="i < rating ? 'star' : 'star-outline'"
-          (click)="setRating(i + 1)"
-        ></ion-icon>
-      </div>
-    </div>
+
+  <ion-item>
+    <ion-label position="floating">Prix du produit</ion-label>
+    <ion-input type="number" [(ngModel)]="productData.price"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Quantité de produit</ion-label>
+    <ion-input type="number" [(ngModel)]="productData.quantity"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Couleur de produit</ion-label>
+    <ion-input type="text" [(ngModel)]="productData.color"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Marque du produit</ion-label>
+    <ion-input type="text" [(ngModel)]="productData.brand"></ion-input>
   </ion-item>
 </ion-content>

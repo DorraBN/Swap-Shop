@@ -219,6 +219,18 @@ const routes: Routes = [
     path: 'more',
     loadChildren: () => import('./more/more.module').then( m => m.MorePageModule)
   },
+  {
+    path: 'vendeur-view',
+    loadChildren: () => import('./vendeur-view/vendeur-view.module').then( m => m.VendeurViewPageModule)
+  },
+  {
+    path: 'acheteurs',
+    loadChildren: () => import('./acheteurs/acheteurs.module').then( m => m.AcheteursPageModule)
+  },
+  {
+    path: 'acheteur-view',
+    loadChildren: () => import('./acheteur-view/acheteur-view.module').then( m => m.AcheteurViewPageModule)
+  },
 
 
 
