@@ -30,18 +30,17 @@ const userSchema = new mongoose.Schema({
     email: String,
     password: String,
     role: String,
-    profileImageURL: String // Ajout du champ profileImage dans le schéma de l'utilisateur
+    profileImageURL: String
 });
 const User = mongoose.model('User', userSchema);
 
-// Configuration de multer pour la gestion des téléchargements d'images
+
 const storage = new GridFsStorage({
     url: 'mongodb://localhost:27017/dbconnect',
     options: { useNewUrlParser: true, useUnifiedTopology: true },
     file: (req, file) => {
         return {
-            filename: file.originalname, // Nom du fichier dans la base de données
-            bucketName: 'profileImages' // Nom du bucket dans la base de données
+            filename: file.originalname,
         };
     }
 });
@@ -51,20 +50,16 @@ const upload = multer({ storage });
 
 
 
-
-// Définition du modèle Mongoose pour la collection 'produit'
-
-
 const produitSchema = new mongoose.Schema({
     email: String,
     nom: String,
     description: String,
-    price: Number, // Utilisation d'un type de données numérique pour le prix
-    quantity: Number, // Utilisation d'un type de données numérique pour la quantité
+    price: Number, 
+    quantity: Number, 
     color: String,
     brand: String,
     catprod: [String],
-    profileImageURL: { type: String, required: true } // Validation de l'URL de l'image de profil
+    profileImageURL: { type: String, required: true } 
 });
 
 const Produit = mongoose.model('Produit', produitSchema);
@@ -74,13 +69,13 @@ app.post('/produit', async (req, res) => {
     try {
         const { email, nom, description, price, quantity, color, brand, catprod, profileImageURL } = req.body;
 
-        // Vérifier si un produit avec le même nom existe déjà
+      
         const existingProduit = await Produit.findOne({ nom });
         if (existingProduit) {
-            return res.status(409).json({ message: 'Produit already exists' }); // Utilisation du code 409 Conflict
+            return res.status(409).json({ message: 'Produit already exists' }); 
         }
 
-        // Créer un nouveau produit
+ 
         const nouveauProduit = new Produit({
             email,
             nom,
@@ -93,20 +88,19 @@ app.post('/produit', async (req, res) => {
             profileImageURL
         });
 
-        // Sauvegarder le nouveau produit
         await nouveauProduit.save();
         
-        res.status(201).json({ message: 'Produit registered successfully' }); // Utilisation du code 201 Created
+        res.status(201).json({ message: 'Produit registered successfully' }); 
     } catch (error) {
         console.error('Error registering produit:', error);
-        res.status(500).json({ message: 'Error registering produit' }); // Utilisation du code 500 Internal Server Error
+        res.status(500).json({ message: 'Error registering produit' }); 
     }
 });
 
 
 // Définition du modèle Mongoose pour la collection 'vendeurs'
 const vendeurSchema = new mongoose.Schema({
-    email: String, // Ajout du champ email
+    email: String, 
     NomEntreprise: String,
     catprod: [String],
     methpay: [String],
@@ -116,7 +110,6 @@ const vendeurSchema = new mongoose.Schema({
 
 const Vendeur = mongoose.model('Vendeurs', vendeurSchema);
 
-// Définition de la route POST pour '/vendeur'
 app.post('/vendeur', async (req, res) => {
     console.log('Requête POST reçue sur /vendeur', req.body);
     try {
@@ -127,7 +120,7 @@ app.post('/vendeur', async (req, res) => {
         }
 
         const nouveauVendeur = new Vendeur({
-            email, // Ajout de l'e-mail ici
+            email, 
             NomEntreprise,
             catprod,
             methpay,
@@ -220,7 +213,7 @@ app.get('/produits', async (req, res) => {
 // Route GET pour récupérer tous les utilisateurs avec le rôle "seller"
 app.get('/seller', async (req, res) => {
     try {
-        const users = await User.find({ role: 'seller' }); // Filtrer les utilisateurs par le rôle "seller"
+        const users = await User.find({ role: 'seller' }); 
         res.status(200).json(users);
     } catch (error) {
         console.error('Erreur lors de la récupération des utilisateurs', error);
@@ -230,7 +223,7 @@ app.get('/seller', async (req, res) => {
 
 app.get('/acheteurs', async (req, res) => {
     try {
-        const users = await User.find({ role: 'buyer' }); // Filtrer les utilisateurs par le rôle "seller"
+        const users = await User.find({ role: 'buyer' }); 
         res.status(200).json(users);
     } catch (error) {
         console.error('Erreur lors de la récupération des utilisateurs', error);
@@ -240,7 +233,7 @@ app.get('/acheteurs', async (req, res) => {
 
 
 
-// Route DELETE pour supprimer un vendeur par ID
+
 app.delete('/seller/:email', async (req, res) => {
     try {
         const sellerEmail = req.params.email;
@@ -273,7 +266,7 @@ app.delete('/produit/:productName', async (req, res) => {
 app.get('/meubles', async (req, res) => {
     try {
         console.log('Tentative de récupération des produits meubles...');
-        // Correction ici : Utiliser le modèle Produit au lieu de Produits
+    
         const produits = await Produit.find({ catprod: 'Meubles' });
         console.log('Produits récupérés avec succès:', produits);
         res.status(200).json(produits);
@@ -287,7 +280,7 @@ app.get('/meubles', async (req, res) => {
 app.get('/vetements', async (req, res) => {
     try {
         console.log('Tentative de récupération des produits meubles...');
-        // Correction ici : Utiliser le modèle Produit au lieu de Produits
+     
         const produits = await Produit.find({ catprod: 'Vêtements' });
         console.log('Produits récupérés avec succès:', produits);
         res.status(200).json(produits);
@@ -299,10 +292,10 @@ app.get('/vetements', async (req, res) => {
 
 
 
-// Route GET pour récupérer tous les utilisateurs avec le rôle "buyer"
+
 app.get('/buyers', async (req, res) => {
     try {
-        const buyers = await User.find({ role: 'buyer' }); // Filtrer les utilisateurs par le rôle "buyer"
+        const buyers = await User.find({ role: 'buyer' }); 
         res.status(200).json(buyers);
     } catch (error) {
         console.error('Erreur lors de la récupération des utilisateurs acheteurs', error);
@@ -318,7 +311,7 @@ const favorisSchema = new mongoose.Schema({
     nom: String,
     description: String,
     price: String,
-    image: Buffer, // Utilisez un champ Buffer pour stocker les données binaires de l'image
+    image: Buffer,
     quantity: String,
     color: String,
     brand: String,
@@ -329,13 +322,12 @@ const Favories = mongoose.model('Favories', favorisSchema);
 
 
 
-// Route pour ajouter un produit aux favoris
 app.post('/favorites', async (req, res) => {
     try {
-      // Récupérer les données du produit à ajouter aux favoris depuis le corps de la requête
+
       const { email, nom, description, price, image, quantity, color, brand, catprod } = req.body;
   
-      // Créer un nouvel objet Produit pour le produit à ajouter aux favoris
+
       const nouveauProduitFavoris = new Produit({
         email,
         nom,
@@ -348,13 +340,12 @@ app.post('/favorites', async (req, res) => {
         catprod
       });
   
-      // Enregistrer le produit dans la collection "Favoris"
+
       await nouveauProduitFavoris.save();
-  
-      // Répondre avec un message de succès
+ 
       res.status(200).json({ message: 'Produit ajouté aux favoris avec succès' });
     } catch (error) {
-      // En cas d'erreur, répondre avec un message d'erreur
+
       console.error('Erreur lors de l\'ajout du produit aux favoris:', error);
       res.status(500).json({ message: 'Erreur lors de l\'ajout du produit aux favoris' });
     }
@@ -386,23 +377,17 @@ app.get('/user/:email', async (req, res) => {
       res.status(500).json({ message: 'Erreur lors de la récupération de l\'utilisateur' });
     }
   });
-// Route pour servir les images depuis MongoDB
-// Route pour servir les images depuis MongoDB
+
 app.get('/images/:imageId', async (req, res) => {
     try {
         const imageId = req.params.imageId;
-
-        // Récupérer l'image depuis MongoDB (remplacez 'VotreModel' par le nom de votre modèle)
         const image = await VotreModel.findOne({ _id: imageId });
-
-        // Vérifier si l'image existe
         if (!image) {
             return res.status(404).json({ message: 'Image not found' });
         }
 
-        // Envoyer l'image dans la réponse HTTP
         res.set('Content-Type', image.contentType);
-        res.send(image.data); // 'data' est le champ où vous stockez les données binaires de l'image
+        res.send(image.data); 
     } catch (error) {
         console.error('Error fetching image:', error);
         res.status(500).json({ message: 'Error fetching image' });
