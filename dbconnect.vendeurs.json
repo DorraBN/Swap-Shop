@@ -1,0 +1,80 @@
+[{
+  "_id": {
+    "$oid": "663ae384bffbe5b4421e571c"
+  },
+  "email": "mark@gmail.com",
+  "NomEntreprise": "Rooms To Go",
+  "catprod": [
+    "Meubles"
+  ],
+  "methpay": [
+    "Virement bancaire"
+  ],
+  "adresse": "New york",
+  "methliv": "Livraison express",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "663ae43bbffbe5b4421e5726"
+  },
+  "email": "jane@gmail.com",
+  "NomEntreprise": "IKEA",
+  "catprod": [
+    "Meubles"
+  ],
+  "methpay": [
+    "Espèces"
+  ],
+  "adresse": "london",
+  "methliv": "Retrait en magasin",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "663ae4d5bffbe5b4421e572f"
+  },
+  "email": "chris@gmail.com",
+  "NomEntreprise": "",
+  "catprod": [
+    "Vêtements"
+  ],
+  "methpay": [
+    "Espèces"
+  ],
+  "adresse": "london",
+  "methliv": "Livraison standard",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "663b5503a703731d827f9a45"
+  },
+  "email": "marcus@gmail.com",
+  "NomEntreprise": "ats",
+  "catprod": [
+    "Meubles"
+  ],
+  "methpay": [
+    "Virement bancaire"
+  ],
+  "adresse": "tunis",
+  "methliv": "Livraison standard",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "663b59c5a703731d827f9a80"
+  },
+  "email": "cyrine@gmail.com",
+  "NomEntreprise": "ajgjg",
+  "catprod": [
+    "Meubles"
+  ],
+  "methpay": [
+    "Chèque"
+  ],
+  "adresse": "tunis",
+  "methliv": "Livraison express",
+  "__v": 0
+}]

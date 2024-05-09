@@ -1,0 +1,17 @@
+[{
+  "_id": {
+    "$oid": "663b5a09a703731d827f9a87"
+  },
+  "email": "cyrine@gmail.com",
+  "nom": "lit",
+  "description": "rien",
+  "price": 150,
+  "quantity": 1,
+  "color": "black",
+  "brand": "rien",
+  "catprod": [
+    "Meubles"
+  ],
+  "profileImageURL": "https://media.but.fr/images_produits/produit-zoom/3514230018010_AMB1.jpg ",
+  "__v": 0
+}]

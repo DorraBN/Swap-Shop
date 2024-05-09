@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router'; // Importez ActivatedRoute
 import { ModalController } from '@ionic/angular';
 import Swiper from 'swiper';
-import { AjouterProduitPage } from '../ajouter-produit/ajouter-produit.page';
-import { ProductViewPage } from '../product-view/product-view.page';
-import { ProductEditPage } from '../product-edit/product-edit.page';
+import { AjouterProduitPage } from '../../ajouter-produit/ajouter-produit.page';
+
+import { ProductEditPage } from '../../product-edit/product-edit.page';
 import { AuthService } from 'src/routes/AuthService';
+import { ProductViewPage } from '../product-view/product-view.page';
 
 
 @Component({

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MenuController, ModalController } from '@ionic/angular';
 import { AuthService } from 'src/routes/AuthService';
-import { MorePage } from 'src/app/more/more.page';
+import { MorePage } from 'src/app/dorra/more/more.page';
 
 @Component({
   selector: 'app-vendeurprofile',

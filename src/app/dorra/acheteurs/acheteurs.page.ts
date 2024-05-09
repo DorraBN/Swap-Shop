@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { VendeurViewPage } from '../vendeur-view/vendeur-view.page';
 import { AlertController, ModalController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/routes/AuthService';

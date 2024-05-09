@@ -182,42 +182,43 @@ const routes: Routes = [
   },
   {
     path: 'category-view',
-    loadChildren: () => import('./category-view/category-view.module').then( m => m.CategoryViewPageModule)
+    loadChildren: () => import('./dorra/category-view/category-view.module').then( m => m.CategoryViewPageModule)
   },
   {
     path: 'product-view',
-    loadChildren: () => import('./product-view/product-view.module').then( m => m.ProductViewPageModule)
+    loadChildren: () => import('./dorra/product-view/product-view.module').then( m => m.ProductViewPageModule)
   },
   {
     path: 'product-edit',
     loadChildren: () => import('./product-edit/product-edit.module').then( m => m.ProductEditPageModule)
-  },  {
+  },
+  {
     path: 'sellers',
-    loadChildren: () => import('./sellers/sellers.module').then( m => m.SellersPageModule)
+    loadChildren: () => import('./dorra/sellers/sellers.module').then( m => m.SellersPageModule)
   },
   {
     path: 'seller-view',
-    loadChildren: () => import('./seller-view/seller-view.module').then( m => m.SellerViewPageModule)
+    loadChildren: () => import('./dorra/seller-view/seller-view.module').then( m => m.SellerViewPageModule)
   },
   {
     path: 'meubles',
-    loadChildren: () => import('./meubles/meubles.module').then( m => m.MeublesPageModule)
+    loadChildren: () => import('./dorra/meubles/meubles.module').then( m => m.MeublesPageModule)
   },
   {
     path: 'vetements',
-    loadChildren: () => import('./vetements/vetements.module').then( m => m.VetementsPageModule)
+    loadChildren: () => import('./dorra/vetements/vetements.module').then( m => m.VetementsPageModule)
   },
   {
     path: 'heart',
-    loadChildren: () => import('./heart/heart.module').then( m => m.HeartPageModule)
+    loadChildren: () => import('./dorra/heart/heart.module').then( m => m.HeartPageModule)
   },
   {
     path: 'userprofile',
-    loadChildren: () => import('./userprofile/userprofile.module').then( m => m.UserprofilePageModule)
+    loadChildren: () => import('./dorra/userprofile/userprofile.module').then( m => m.UserprofilePageModule)
   },
   {
     path: 'more',
-    loadChildren: () => import('./more/more.module').then( m => m.MorePageModule)
+    loadChildren: () => import('./dorra/more/more.module').then( m => m.MorePageModule)
   },
   {
     path: 'vendeur-view',
@@ -225,15 +226,15 @@ const routes: Routes = [
   },
   {
     path: 'acheteurs',
-    loadChildren: () => import('./acheteurs/acheteurs.module').then( m => m.AcheteursPageModule)
+    loadChildren: () => import('./dorra/acheteurs/acheteurs.module').then( m => m.AcheteursPageModule)
   },
   {
     path: 'acheteur-view',
-    loadChildren: () => import('./acheteur-view/acheteur-view.module').then( m => m.AcheteurViewPageModule)
+    loadChildren: () => import('./dorra/acheteur-view/acheteur-view.module').then( m => m.AcheteurViewPageModule)
   },
   {
     path: 'edit-profile',
-    loadChildren: () => import('./edit-profile/edit-profile.module').then( m => m.EditProfilePageModule)
+    loadChildren: () => import('./dorra/edit-profile/edit-profile.module').then( m => m.EditProfilePageModule)
   },
 
 

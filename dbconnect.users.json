@@ -1,0 +1,72 @@
+[{
+  "_id": {
+    "$oid": "663ae267bffbe5b4421e5709"
+  },
+  "username": "celine doe",
+  "phone": "53143270",
+  "email": "celine@gmail.com",
+  "password": "$2a$10$kyL1tLrd8x/8wRed8kvkK.EqEC0uSmw3hByKQ40hET29r/ImkN5hW",
+  "role": "admin",
+  "profileImageURL": "https://th.bing.com/th?id=OIP.XIJ0I3LnyP6JU32WO-j7vQHaKX&w=211&h=295&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "663ae41bbffbe5b4421e5723"
+  },
+  "username": "jane austen",
+  "phone": "531432587",
+  "email": "jane@gmail.com",
+  "password": "$2a$10$a69uFe220B5B99hUL98e1epxBNCe1rLiPHpN7IK622rwab0RZ4dsu",
+  "role": "seller",
+  "profileImageURL": "https://th.bing.com/th?id=OIP.MHdZ4PVuehU04v54wcWX4QHaI5&w=228&h=273&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "663ae4aabffbe5b4421e572c"
+  },
+  "username": "chris",
+  "phone": "546541564",
+  "email": "chris@gmail.com",
+  "password": "$2a$10$TGCNnuXmK2nsYOgLiKrbQujhqZtNVBBMdDOwWhvi0jKmZVOn.YLBq",
+  "role": "seller",
+  "profileImageURL": "https://th.bing.com/th/id/OIP.1V7LX0sQwYq0uDMMRVW5vwHaE8?w=285&h=190&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "663ae551bffbe5b4421e5735"
+  },
+  "username": "ines",
+  "phone": "52147896",
+  "email": "ines@gmail.com",
+  "password": "$2a$10$NavBlxi.jq3lA0S2emMRVOQI0fCtjlVsYsVcHjBG29uQ/Hw7ZLBzm",
+  "role": "buyer",
+  "profileImageURL": "https://th.bing.com/th/id/OIP.9VNRI13uN21DwT_DKODKewHaLH?w=115&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "663b5943a703731d827f9a75"
+  },
+  "username": "mark",
+  "phone": "246578",
+  "email": "mark@gmail.com",
+  "password": "$2a$10$3txybN6fK6BRetnO493dY.CPgtpCPNc/6OquGapdrTtDMfjKZsULi",
+  "role": "seller",
+  "profileImageURL": "https://c.pxhere.com/photos/c7/42/young_man_portrait_beard_young_man_male_handsome_young_man_handsome-1046502.jpg!d",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "663b59b1a703731d827f9a7d"
+  },
+  "username": "cyrine",
+  "phone": "656",
+  "email": "cyrine@gmail.com",
+  "password": "$2a$10$ZkuZfazW0RTpoF7EsqBmieeqvKL75hYBRfvbr6z7ADBGQWCvzLn1a",
+  "role": "seller",
+  "profileImageURL": "https://c.pxhere.com/photos/c7/42/young_man_portrait_beard_young_man_male_handsome_young_man_handsome-1046502.jpg!d",
+  "__v": 0
+}]
