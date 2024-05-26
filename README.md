@@ -8,6 +8,8 @@
 ![ac](https://github.com/DorraBN/Swap-Shop/assets/128906018/4b11b4d9-72e9-4969-87ab-8d53dea92876)
 ![h](https://github.com/DorraBN/Swap-Shop/assets/128906018/f1eb534f-7f83-4018-8024-d181452d8b85)
 ![st](https://github.com/DorraBN/Swap-Shop/assets/128906018/dd9def54-18d1-490c-a3fc-81a79bcec6e5)
+![prod](https://github.com/DorraBN/Swap-Shop/assets/128906018/0a7f4445-05af-4588-b794-9cfe9bc49947)
+![edit](https://github.com/DorraBN/Swap-Shop/assets/128906018/019c9f98-9115-494b-849a-3ad4ca7ce4bf)
 
 
 
